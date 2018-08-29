@@ -21,7 +21,7 @@ namespace Dominio
 
     }
 
-    public class Clientes:Persona
+    public class Cliente:Persona
     {
         public string CUIT { get; set; }
     }
@@ -30,18 +30,22 @@ namespace Dominio
     {
         public string CUIT { get; set; }
         public string NombreProveedor { get; set; }
-        public Producto producto { get; set; }
+        public string Direccion { get; set; }
+        public IList<Producto> Productos { get; set; }
     }
 
     public class Producto
     {
         public int Id { get; set; }
+        public IList<Proveedor> Proveedores { get; set; }
         public TipoProducto tipo { get; set; }
         public string Nombre { get; set; }
         public string Codigo { get; set; }
-        public string Precio { get; set; }
+        public Decimal PrecioCosto { get; set; }
+        public Decimal PrecioVenta { get; set; }
+        public Stock Stock { get; set; }
     }
-
+    
     public class TipoProducto
     {
         public int Id { get; set; }
@@ -53,13 +57,17 @@ namespace Dominio
         public int Id { get; set; }
         public string NumeroRegistro { get; set; }
         public Producto Producto { get; set; }
+        public Proveedor proveedor { get; set; }
     }
 
     public class RegistroVenta
     {
         public int Id { get; set; }
         public string NumeroRegistro { get; set; }
-        public Producto Producto { get; set; }
+        public Cliente Cliente { get; set; }
+        public IList<Producto> Productos { get; set; }
+        public decimal Total { get; set; }
+        public Factura NumeroFacturacion { get; set; }
     }
 
     public class Marca
@@ -70,15 +78,17 @@ namespace Dominio
 
     public class Stock
     {
-
+        public int Id { get; set; }
+        public int Actual { get; set; }
+        public int Minimo { get; set; }
     }
 
-    public class Facturacion
+    public class Factura
     {
-
+        public int IdFactura { get; set; }
     }
 
-    public class usuario
+    public class Usuario
     {
         public int Id { get; set; }
         public string Loguin { get; set; }
