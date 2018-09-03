@@ -8,27 +8,31 @@ namespace Dominio
 {
     public class Persona
     {
-        public int Id { get; set; }
+        public int IdPersona { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string DNI { get; set; }
         public string TelefonoFijo { get; set; }
         public string TelefonoCelular { get; set; }
         public string Domicilio { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public string Pais { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Sexo { get; set; }
         public string email { get; set; }
+        public int Cuit { get; set; }
 
     }
 
     public class Cliente:Persona
     {
-        public string CUIT { get; set; }
+        public int IdCliente { get; set; }
     }
 
     public class Proveedor:Persona
     {
-        public string CUIT { get; set; }
+        public int IdProvedoor { get; set; }
         public string NombreProveedor { get; set; }
         public string Direccion { get; set; }
         public IList<Producto> Productos { get; set; }
@@ -39,7 +43,7 @@ namespace Dominio
         public int Id { get; set; }
         public IList<Proveedor> Proveedores { get; set; }
         public TipoProducto tipo { get; set; }
-        public string Nombre { get; set; }
+        public Marca Marca { get; set; }
         public string Codigo { get; set; }
         public Decimal PrecioCosto { get; set; }
         public Decimal PrecioVenta { get; set; }
@@ -54,25 +58,46 @@ namespace Dominio
 
     public class RegistroCompra
     {
-        public int Id { get; set; }
+        public int IdCompra { get; set; }
         public string NumeroRegistro { get; set; }
-        public Producto Producto { get; set; }
+        public DateTime fecha { get; set; }
+        public IList<CompraItem> CompraItems { get; set; }
         public Proveedor proveedor { get; set; }
+    }
+
+    public class CompraItem
+    {
+        public int IdCompraItem { get; set; }
+        public RegistroCompra Compra { get; set; }
+        public Producto Producto { get; set; }
+        public int Cantidad { get; set; }
+        public Decimal PrecioCompra { get; set; }
     }
 
     public class RegistroVenta
     {
-        public int Id { get; set; }
+        public int IdVenta { get; set; }
         public string NumeroRegistro { get; set; }
         public Cliente Cliente { get; set; }
-        public IList<Producto> Productos { get; set; }
+        public IList<VentaItem> VentaItems { get; set; }
+        public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
         public Factura NumeroFacturacion { get; set; }
     }
 
+    public class VentaItem
+    {
+        public int IdVentaItem { get; set; }
+        public RegistroVenta Venta { get; set; }
+        public Producto Producto { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioUnitario { get; set; }
+        public decimal PrecioParcial { get; set; }
+    }
+
     public class Marca
     {
-        public int Id { get; set; }
+        public int IdMarca { get; set; }
         public string Nombre { get; set; }
     }
 
@@ -83,9 +108,11 @@ namespace Dominio
         public int Minimo { get; set; }
     }
 
-    public class Factura
+    public class Factura 
     {
         public int IdFactura { get; set; }
+        public DateTime Fecha { get; set; }
+        public Cliente Cliente { get; set; }
     }
 
     public class Usuario
