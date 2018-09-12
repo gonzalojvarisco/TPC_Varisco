@@ -14,10 +14,7 @@ namespace Dominio
         public string DNI { get; set; }
         public string TelefonoFijo { get; set; }
         public string TelefonoCelular { get; set; }
-        public string Domicilio { get; set; }
-        public string Localidad { get; set; }
-        public string Provincia { get; set; }
-        public string Pais { get; set; }
+        public Domicilio Domicilio { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Sexo { get; set; }
         public string email { get; set; }
@@ -25,16 +22,27 @@ namespace Dominio
 
     }
 
+    public class Domicilio
+    {
+        public int IdDomicilio { get; set; }
+        public string Calle { get; set; }
+        public string Localidad { get; set; }
+        public string Provincia { get; set; }
+        public int Codigopostal { get; set; }
+        public string Pais { get; set; }
+    }
+
     public class Cliente:Persona
     {
         public int IdCliente { get; set; }
     }
 
-    public class Proveedor:Persona
+    public class Proveedor
     {
         public int IdProvedoor { get; set; }
         public string NombreProveedor { get; set; }
-        public string Direccion { get; set; }
+        public string Cuit { get; set; }
+        public Domicilio Domicilio { get; set; }
         public IList<Producto> Productos { get; set; }
     }
 
@@ -108,21 +116,21 @@ namespace Dominio
         public int Minimo { get; set; }
     }
 
-    public class Factura 
+    public class Factura //// TERMINAR DE ARMAR
     {
         public int IdFactura { get; set; }
         public DateTime Fecha { get; set; }
         public Cliente Cliente { get; set; }
     }
 
-    public class Usuario
+    public class Usuario // VERIFICAR
     {
         public int Id { get; set; }
         public string Loguin { get; set; }
         public PerfilUsuario perfil { get; set; }
     }
 
-    public class PerfilUsuario
+    public class PerfilUsuario  //VERIFICAR
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

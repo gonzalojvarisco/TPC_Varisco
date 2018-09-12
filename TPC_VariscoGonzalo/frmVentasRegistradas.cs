@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TPC_VariscoGonzalo
 {
-    public partial class Form1 : Form
+    public partial class frmVentasRegistradas : Form
     {
-        public Form1()
+        public frmVentasRegistradas()
         {
             InitializeComponent();
         }

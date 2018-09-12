@@ -3,21 +3,21 @@
   <Class Name="Dominio.Persona">
     <Position X="2" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>kAACAAQAAAAAAAAkkAAAgAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>kAAAQAQAAAQAAAAkkAAAgAAACAEAAAAAAAIAAAAAAgA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Proveedor">
-    <Position X="3" Y="7.75" Width="1.5" />
+    <Position X="3" Y="7.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAQCAAAAAAAAAEAAAAAAAgAAAAAAA=</HashCode>
+      <HashCode>AAAQQAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Producto">
-    <Position X="7.25" Y="7" Width="1.5" />
+    <Position X="7.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACBAAAAQEAAAAAAAAAgAAEgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACBBAAAQEAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -31,21 +31,21 @@
   <Class Name="Dominio.RegistroCompra">
     <Position X="4.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAQAAEAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAAQAAAAAAAAAEAAAACAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.RegistroVenta">
     <Position X="6.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAQACEAIAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAACEAIAAAAAAUAgAAAAAAAAAAAA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Marca">
     <Position X="9.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -59,7 +59,7 @@
   <Class Name="Dominio.Factura">
     <Position X="7.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAQEAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +80,21 @@
   <Class Name="Dominio.Cliente">
     <Position X="0.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ModeloDominio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.CompraItem" Collapsed="true">
+    <Position X="9.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAIAAAQAAAAAAAAAAAAAAAAAAEAAAAEAA=</HashCode>
+      <FileName>ModeloDominio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.VentaItem" Collapsed="true">
+    <Position X="11" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAQAAEAAAAAABAAQAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
       <FileName>ModeloDominio.cs</FileName>
     </TypeIdentifier>
   </Class>
