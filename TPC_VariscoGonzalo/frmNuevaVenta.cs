@@ -16,5 +16,16 @@ namespace TPC_VariscoGonzalo
         {
             InitializeComponent();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnClienteNuevo_Click(object sender, EventArgs e)
+        {
+            frmAgregarCliente frmAgregarCliente = new frmAgregarCliente();
+            frmAgregarCliente.ShowDialog();
+        }
     }
 }

@@ -19,7 +19,8 @@ namespace TPC_VariscoGonzalo
 
         private void btnComprasRegistradas_Click(object sender, EventArgs e)
         {
-         
+            frmComprasRegistradas frmComprasRegistradas = new frmComprasRegistradas();
+            frmComprasRegistradas.Show();
         }
 
         private void btnNuevaCompra_Click(object sender, EventArgs e)

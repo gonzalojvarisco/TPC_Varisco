@@ -70,6 +70,7 @@
             this.btnClienteNuevo.TabIndex = 2;
             this.btnClienteNuevo.Text = "¿Nuevo?";
             this.btnClienteNuevo.UseVisualStyleBackColor = true;
+            this.btnClienteNuevo.Click += new System.EventHandler(this.btnClienteNuevo_Click);
             // 
             // lblDni
             // 
@@ -152,6 +153,7 @@
             this.btnVolver.TabIndex = 11;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmNuevaVenta
             // 

@@ -34,5 +34,11 @@ namespace TPC_VariscoGonzalo
             frmClientes frmClientes = new frmClientes();
             frmClientes.ShowDialog();
         }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            frmProveedores frmProveedores = new frmProveedores();
+            frmProveedores.ShowDialog();
+        }
     }
 }

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace TPC_VariscoGonzalo
 {
-    public partial class frmNuevoProducto : Form
+    public partial class frmAgregarCliente : Form
     {
-        public frmNuevoProducto()
+        public frmAgregarCliente()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnVolver_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
     }
 }

@@ -16,5 +16,17 @@ namespace TPC_VariscoGonzalo
         {
             InitializeComponent();
         }
+
+        private void btnAgregarCliente_Click(object sender, EventArgs e)
+        {
+            frmAgregarCliente frmAgregarCliente = new frmAgregarCliente();
+            frmAgregarCliente.ShowDialog();
+        }
+
+        private void btnListaClientes_Click(object sender, EventArgs e)
+        {
+            frmListaClientes frmListaClientes = new frmListaClientes();
+            frmListaClientes.ShowDialog();
+        }
     }
 }

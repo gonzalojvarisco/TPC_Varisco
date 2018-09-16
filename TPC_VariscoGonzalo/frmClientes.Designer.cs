@@ -40,6 +40,7 @@
             this.btnListaClientes.TabIndex = 3;
             this.btnListaClientes.Text = "Lista clientes";
             this.btnListaClientes.UseVisualStyleBackColor = true;
+            this.btnListaClientes.Click += new System.EventHandler(this.btnListaClientes_Click);
             // 
             // btnAgregarCliente
             // 
@@ -49,6 +50,7 @@
             this.btnAgregarCliente.TabIndex = 2;
             this.btnAgregarCliente.Text = "Agregar cliente";
             this.btnAgregarCliente.UseVisualStyleBackColor = true;
+            this.btnAgregarCliente.Click += new System.EventHandler(this.btnAgregarCliente_Click);
             // 
             // frmClientes
             // 
@@ -57,7 +59,6 @@
             this.ClientSize = new System.Drawing.Size(368, 333);
             this.Controls.Add(this.btnListaClientes);
             this.Controls.Add(this.btnAgregarCliente);
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "frmClientes";
             this.Text = "frmClientes";
             this.ResumeLayout(false);
