@@ -82,6 +82,7 @@
             this.Controls.Add(this.lblMes);
             this.Name = "frmVentasRegistradas";
             this.Text = "frmVentasRegistradas";
+            this.Load += new System.EventHandler(this.frmVentasRegistradas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentasRegistradas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

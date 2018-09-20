@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Dominio
 {
-    public class ModeloDominio
+    /*public class ModeloDominio
     {
-        /*public class Persona
+        public class Persona
         {
             public int IdPersona { get; set; }
             public string Nombre { get; set; }
@@ -136,6 +136,6 @@ namespace Dominio
         {
             public int Id { get; set; }
             public string Nombre { get; set; }
-        }*/
-    }
+        }
+    }*/
     }

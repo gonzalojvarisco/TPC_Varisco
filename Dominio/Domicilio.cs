@@ -12,7 +12,7 @@ namespace Dominio
         public string Calle { get; set; }
         public string Localidad { get; set; }
         public string Provincia { get; set; }
-        public int Codigopostal { get; set; }
+        public string Codigopostal { get; set; }
         public string Pais { get; set; }
     }
 }

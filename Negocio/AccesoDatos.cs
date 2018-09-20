@@ -13,5 +13,39 @@ namespace Negocio
         private SqlCommand  comando;
         private SqlDataReader lector;
 
+        public SqlDataReader Lector
+        {
+            get { return lector; }
+        }
+
+        public AccesoDatos()
+        {
+            conexion = new SqlConnection(@"data source=.\SQLEXPRESS; initial catalog= tpc_VariscoGonzalo; integrated security= sspi");
+            comando = new SqlCommand();
+            comando.Connection = conexion;
+        }
+
+        public void setearConsulta(string consulta)
+        {
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = consulta;
+        }
+
+        public void leerConsulta()
+        {
+            try
+            {
+                conexion.Open();
+                lector = comando.ExecuteReader();
+            }
+
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+            }
+
+
     }
 }

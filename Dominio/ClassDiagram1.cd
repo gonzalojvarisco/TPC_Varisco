@@ -1,101 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
-  <Class Name="Dominio.Persona">
-    <Position X="2" Y="3.5" Width="1.5" />
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Dominio.Persona" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>kAAAQAQAAAQAAAAkkAAAgAAACAEAAAAAAAIAAAAAAgA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
+      <HashCode>kAAAQAQAAAAAAAAkkAAAgAAAAAEAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Persona.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Dominio.Proveedor">
-    <Position X="3" Y="7.75" Width="1.75" />
+  <Class Name="Dominio.Domicilio" Collapsed="true">
+    <Position X="7.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQQAAAAAAAAAAAQCAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.Producto">
-    <Position X="7.75" Y="7.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACBBAAAQEAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.TipoProducto">
-    <Position X="5.25" Y="7" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.RegistroCompra">
-    <Position X="4.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAEAAAAAQAAAAAAAAAEAAAACAAAAQAAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.RegistroVenta">
-    <Position X="6.25" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAACEAIAAAAAAUAgAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.Marca">
-    <Position X="9.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.Stock">
-    <Position X="8" Y="5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAABAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.Factura">
-    <Position X="7.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQEAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.Usuario">
-    <Position X="6" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAABAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Dominio.PerfilUsuario">
-    <Position X="4" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
+      <HashCode>AAAAAAAAAgwAAAAAAAAAAAAACAAAAAAEAAAAAAAAAgA=</HashCode>
+      <FileName>Domicilio.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.Cliente">
-    <Position X="0.75" Y="7.75" Width="1.5" />
+    <Position X="7.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Proveedor" Collapsed="true">
+    <Position X="8.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQQAAAAAAAAAAAUAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Proveedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Producto" Collapsed="true">
+    <Position X="9.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBBAAAQEAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Producto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.TipoProducto" Collapsed="true">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TipoProducto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.RegistroCompra" Collapsed="true">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAQAAAAAAAAAEAAAACAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>RegistroCompra.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.CompraItem" Collapsed="true">
-    <Position X="9.25" Y="7" Width="1.5" />
+    <Position X="9.5" Y="0.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAEAAAAAIAAAQAAAAAAAAAAAAAAAAAAEAAAAEAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
+      <FileName>CompraItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.RegistroVenta" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAACEAIAAAAAAUAgAAAAAAAAAAAA=</HashCode>
+      <FileName>RegistroVenta.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Dominio.VentaItem" Collapsed="true">
-    <Position X="11" Y="7" Width="1.5" />
+    <Position X="7.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAQAAEAAAAAABAAQAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
-      <FileName>ModeloDominio.cs</FileName>
+      <FileName>VentaItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Marca" Collapsed="true">
+    <Position X="9" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Marca.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Stock" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAABAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>Stock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Factura" Collapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQEAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Factura.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.Usuario">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAABAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dominio.PerfilUsuario">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PerfilUsuario.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
