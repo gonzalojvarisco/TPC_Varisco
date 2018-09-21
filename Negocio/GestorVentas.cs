@@ -14,8 +14,8 @@ namespace Negocio
             IList<RegistroVenta> lista = new List<RegistroVenta>();
             AccesoDatos conexion = new AccesoDatos();
 
-            /*try
-            {*/
+            try
+            {
                 conexion.setearConsulta("select * from REGISTROVENTAS");
 
                 conexion.leerConsulta();
@@ -38,12 +38,12 @@ namespace Negocio
                 }
 
                 return lista;
-            /*}
+            }
             catch (Exception)
             {
 
                 throw;
-            }*/
+            }
 
         }
 

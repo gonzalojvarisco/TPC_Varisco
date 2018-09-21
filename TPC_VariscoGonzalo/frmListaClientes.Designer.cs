@@ -81,6 +81,7 @@
             this.Controls.Add(this.dgwClientes);
             this.Name = "frmListaClientes";
             this.Text = "frmListaClientes";
+            this.Load += new System.EventHandler(this.frmListaClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

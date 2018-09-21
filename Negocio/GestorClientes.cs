@@ -28,5 +28,26 @@ namespace Negocio
 
             return aux;
         }
+
+        public IList<Cliente> listarClientes()
+        {
+            IList<Cliente> lista = new List<Cliente>();
+            AccesoDatos conexion = new AccesoDatos();
+
+            conexion.setearConsulta("select P.*, C.IDCLIENTE from Personas as p inner join clientes as c on p.IDPERSONA = c.IDPERSONA");
+            conexion.leerConsulta();
+
+            while(conexion.Lector.Read())
+            {
+                Cliente aux = new Cliente();
+
+                aux.IdCliente = conexion.Lector.GetInt32(11);
+                aux.Nombre = conexion.Lector.GetString(1);
+
+                lista.Add(aux);
+            }
+
+            return lista;
+        }
     }
 }
