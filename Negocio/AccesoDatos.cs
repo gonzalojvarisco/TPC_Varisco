@@ -44,7 +44,21 @@ namespace Negocio
                 throw ex;
             }
 
+        }
+
+        public void ejecutarAccion()
+        {
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
 
     }

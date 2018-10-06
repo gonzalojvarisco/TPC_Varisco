@@ -29,35 +29,36 @@
         private void InitializeComponent()
         {
             this.lblNombre = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tboxNombre = new System.Windows.Forms.TextBox();
+            this.tboxApellido = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tboxTelFijo = new System.Windows.Forms.TextBox();
             this.lblTelFijo = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tboxDni = new System.Windows.Forms.TextBox();
             this.lblDni = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tboxProvincia = new System.Windows.Forms.TextBox();
             this.lblProvincia = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tboxLocalidad = new System.Windows.Forms.TextBox();
             this.lblLocalidad = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tboxCalle = new System.Windows.Forms.TextBox();
             this.lblCalle = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tboxTelCelular = new System.Windows.Forms.TextBox();
             this.lblTelCelular = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tboxCuit = new System.Windows.Forms.TextBox();
             this.lblCuit = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.tboxEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
             this.lblSexo = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
             this.lblFechaNac = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.tboxPais = new System.Windows.Forms.TextBox();
             this.lblPais = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.tboxCp = new System.Windows.Forms.TextBox();
             this.lblCp = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.rbtMasculino = new System.Windows.Forms.RadioButton();
+            this.rbtFemenino = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -70,36 +71,36 @@
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
             // 
-            // textBox1
+            // tboxNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(128, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.tboxNombre.Location = new System.Drawing.Point(128, 29);
+            this.tboxNombre.Name = "tboxNombre";
+            this.tboxNombre.Size = new System.Drawing.Size(100, 20);
+            this.tboxNombre.TabIndex = 1;
             // 
-            // textBox2
+            // tboxApellido
             // 
-            this.textBox2.Location = new System.Drawing.Point(128, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.tboxApellido.Location = new System.Drawing.Point(128, 67);
+            this.tboxApellido.Name = "tboxApellido";
+            this.tboxApellido.Size = new System.Drawing.Size(100, 20);
+            this.tboxApellido.TabIndex = 3;
             // 
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(12, 67);
+            this.lblApellido.Location = new System.Drawing.Point(12, 69);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(58, 16);
             this.lblApellido.TabIndex = 2;
             this.lblApellido.Text = "Apellido";
             // 
-            // textBox3
+            // tboxTelFijo
             // 
-            this.textBox3.Location = new System.Drawing.Point(128, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 7;
+            this.tboxTelFijo.Location = new System.Drawing.Point(128, 145);
+            this.tboxTelFijo.Name = "tboxTelFijo";
+            this.tboxTelFijo.Size = new System.Drawing.Size(100, 20);
+            this.tboxTelFijo.TabIndex = 7;
             // 
             // lblTelFijo
             // 
@@ -111,12 +112,12 @@
             this.lblTelFijo.TabIndex = 6;
             this.lblTelFijo.Text = "Tel fijo";
             // 
-            // textBox4
+            // tboxDni
             // 
-            this.textBox4.Location = new System.Drawing.Point(128, 107);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 5;
+            this.tboxDni.Location = new System.Drawing.Point(128, 107);
+            this.tboxDni.Name = "tboxDni";
+            this.tboxDni.Size = new System.Drawing.Size(100, 20);
+            this.tboxDni.TabIndex = 5;
             // 
             // lblDni
             // 
@@ -128,12 +129,12 @@
             this.lblDni.TabIndex = 4;
             this.lblDni.Text = "DNI";
             // 
-            // textBox5
+            // tboxProvincia
             // 
-            this.textBox5.Location = new System.Drawing.Point(128, 296);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 15;
+            this.tboxProvincia.Location = new System.Drawing.Point(128, 296);
+            this.tboxProvincia.Name = "tboxProvincia";
+            this.tboxProvincia.Size = new System.Drawing.Size(100, 20);
+            this.tboxProvincia.TabIndex = 15;
             // 
             // lblProvincia
             // 
@@ -145,12 +146,12 @@
             this.lblProvincia.TabIndex = 14;
             this.lblProvincia.Text = "Provincia";
             // 
-            // textBox6
+            // tboxLocalidad
             // 
-            this.textBox6.Location = new System.Drawing.Point(128, 258);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
+            this.tboxLocalidad.Location = new System.Drawing.Point(128, 258);
+            this.tboxLocalidad.Name = "tboxLocalidad";
+            this.tboxLocalidad.Size = new System.Drawing.Size(100, 20);
+            this.tboxLocalidad.TabIndex = 13;
             // 
             // lblLocalidad
             // 
@@ -162,12 +163,12 @@
             this.lblLocalidad.TabIndex = 12;
             this.lblLocalidad.Text = "Localidad";
             // 
-            // textBox7
+            // tboxCalle
             // 
-            this.textBox7.Location = new System.Drawing.Point(128, 218);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 11;
+            this.tboxCalle.Location = new System.Drawing.Point(128, 218);
+            this.tboxCalle.Name = "tboxCalle";
+            this.tboxCalle.Size = new System.Drawing.Size(100, 20);
+            this.tboxCalle.TabIndex = 11;
             // 
             // lblCalle
             // 
@@ -179,12 +180,12 @@
             this.lblCalle.TabIndex = 10;
             this.lblCalle.Text = "Calle";
             // 
-            // textBox8
+            // tboxTelCelular
             // 
-            this.textBox8.Location = new System.Drawing.Point(128, 180);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 9;
+            this.tboxTelCelular.Location = new System.Drawing.Point(128, 180);
+            this.tboxTelCelular.Name = "tboxTelCelular";
+            this.tboxTelCelular.Size = new System.Drawing.Size(100, 20);
+            this.tboxTelCelular.TabIndex = 9;
             // 
             // lblTelCelular
             // 
@@ -196,12 +197,12 @@
             this.lblTelCelular.TabIndex = 8;
             this.lblTelCelular.Text = "Tel celular";
             // 
-            // textBox11
+            // tboxCuit
             // 
-            this.textBox11.Location = new System.Drawing.Point(128, 520);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 27;
+            this.tboxCuit.Location = new System.Drawing.Point(128, 520);
+            this.tboxCuit.Name = "tboxCuit";
+            this.tboxCuit.Size = new System.Drawing.Size(100, 20);
+            this.tboxCuit.TabIndex = 27;
             // 
             // lblCuit
             // 
@@ -213,12 +214,12 @@
             this.lblCuit.TabIndex = 26;
             this.lblCuit.Text = "CUIT";
             // 
-            // textBox12
+            // tboxEmail
             // 
-            this.textBox12.Location = new System.Drawing.Point(128, 482);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 25;
+            this.tboxEmail.Location = new System.Drawing.Point(128, 482);
+            this.tboxEmail.Name = "tboxEmail";
+            this.tboxEmail.Size = new System.Drawing.Size(100, 20);
+            this.tboxEmail.TabIndex = 25;
             // 
             // lblEmail
             // 
@@ -230,13 +231,6 @@
             this.lblEmail.TabIndex = 24;
             this.lblEmail.Text = "Email";
             // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(128, 447);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 23;
-            // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
@@ -246,13 +240,6 @@
             this.lblSexo.Size = new System.Drawing.Size(39, 16);
             this.lblSexo.TabIndex = 22;
             this.lblSexo.Text = "Sexo";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(128, 409);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 21;
             // 
             // lblFechaNac
             // 
@@ -264,12 +251,12 @@
             this.lblFechaNac.TabIndex = 20;
             this.lblFechaNac.Text = "Fecha nacimiento";
             // 
-            // textBox15
+            // tboxPais
             // 
-            this.textBox15.Location = new System.Drawing.Point(128, 369);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 20);
-            this.textBox15.TabIndex = 19;
+            this.tboxPais.Location = new System.Drawing.Point(128, 369);
+            this.tboxPais.Name = "tboxPais";
+            this.tboxPais.Size = new System.Drawing.Size(100, 20);
+            this.tboxPais.TabIndex = 19;
             // 
             // lblPais
             // 
@@ -281,12 +268,12 @@
             this.lblPais.TabIndex = 18;
             this.lblPais.Text = "Pais";
             // 
-            // textBox16
+            // tboxCp
             // 
-            this.textBox16.Location = new System.Drawing.Point(128, 331);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(100, 20);
-            this.textBox16.TabIndex = 17;
+            this.tboxCp.Location = new System.Drawing.Point(128, 331);
+            this.tboxCp.Name = "tboxCp";
+            this.tboxCp.Size = new System.Drawing.Size(100, 20);
+            this.tboxCp.TabIndex = 17;
             // 
             // lblCp
             // 
@@ -306,6 +293,7 @@
             this.btnAceptar.TabIndex = 28;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnVolver
             // 
@@ -315,43 +303,75 @@
             this.btnVolver.TabIndex = 29;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // dtpFechaNac
+            // 
+            this.dtpFechaNac.Location = new System.Drawing.Point(128, 409);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaNac.TabIndex = 30;
+            // 
+            // rbtMasculino
+            // 
+            this.rbtMasculino.AutoSize = true;
+            this.rbtMasculino.Location = new System.Drawing.Point(128, 446);
+            this.rbtMasculino.Name = "rbtMasculino";
+            this.rbtMasculino.Size = new System.Drawing.Size(34, 17);
+            this.rbtMasculino.TabIndex = 31;
+            this.rbtMasculino.TabStop = true;
+            this.rbtMasculino.Text = "M";
+            this.rbtMasculino.UseVisualStyleBackColor = true;
+            // 
+            // rbtFemenino
+            // 
+            this.rbtFemenino.AutoSize = true;
+            this.rbtFemenino.Location = new System.Drawing.Point(178, 446);
+            this.rbtFemenino.Name = "rbtFemenino";
+            this.rbtFemenino.Size = new System.Drawing.Size(31, 17);
+            this.rbtFemenino.TabIndex = 32;
+            this.rbtFemenino.TabStop = true;
+            this.rbtFemenino.Text = "F";
+            this.rbtFemenino.UseVisualStyleBackColor = true;
             // 
             // frmAgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 564);
+            this.Controls.Add(this.rbtFemenino);
+            this.Controls.Add(this.rbtMasculino);
+            this.Controls.Add(this.dtpFechaNac);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.tboxCuit);
             this.Controls.Add(this.lblCuit);
-            this.Controls.Add(this.textBox12);
+            this.Controls.Add(this.tboxEmail);
             this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.textBox13);
             this.Controls.Add(this.lblSexo);
-            this.Controls.Add(this.textBox14);
             this.Controls.Add(this.lblFechaNac);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.tboxPais);
             this.Controls.Add(this.lblPais);
-            this.Controls.Add(this.textBox16);
+            this.Controls.Add(this.tboxCp);
             this.Controls.Add(this.lblCp);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tboxProvincia);
             this.Controls.Add(this.lblProvincia);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.tboxLocalidad);
             this.Controls.Add(this.lblLocalidad);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.tboxCalle);
             this.Controls.Add(this.lblCalle);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.tboxTelCelular);
             this.Controls.Add(this.lblTelCelular);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tboxTelFijo);
             this.Controls.Add(this.lblTelFijo);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tboxDni);
             this.Controls.Add(this.lblDni);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tboxApellido);
             this.Controls.Add(this.lblApellido);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tboxNombre);
             this.Controls.Add(this.lblNombre);
             this.Name = "frmAgregarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAgregarCliente";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -361,34 +381,35 @@
         #endregion
 
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tboxNombre;
+        private System.Windows.Forms.TextBox tboxApellido;
         private System.Windows.Forms.Label lblApellido;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tboxTelFijo;
         private System.Windows.Forms.Label lblTelFijo;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tboxDni;
         private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tboxProvincia;
         private System.Windows.Forms.Label lblProvincia;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tboxLocalidad;
         private System.Windows.Forms.Label lblLocalidad;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox tboxCalle;
         private System.Windows.Forms.Label lblCalle;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tboxTelCelular;
         private System.Windows.Forms.Label lblTelCelular;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox tboxCuit;
         private System.Windows.Forms.Label lblCuit;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tboxEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.Label lblFechaNac;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox tboxPais;
         private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox tboxCp;
         private System.Windows.Forms.Label lblCp;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
+        private System.Windows.Forms.RadioButton rbtMasculino;
+        private System.Windows.Forms.RadioButton rbtFemenino;
     }
 }
