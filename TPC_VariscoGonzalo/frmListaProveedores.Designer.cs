@@ -60,6 +60,7 @@
             this.Controls.Add(this.dgvListaProveedores);
             this.Name = "frmListaProveedores";
             this.Text = "frmListaProveedores";
+            this.Load += new System.EventHandler(this.frmListaProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaProveedores)).EndInit();
             this.ResumeLayout(false);
 

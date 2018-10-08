@@ -38,10 +38,6 @@
             this.lblCalle = new System.Windows.Forms.Label();
             this.tboxProducto = new System.Windows.Forms.TextBox();
             this.lblProducto = new System.Windows.Forms.Label();
-            this.tboxPais = new System.Windows.Forms.TextBox();
-            this.lblPais = new System.Windows.Forms.Label();
-            this.tboxCp = new System.Windows.Forms.TextBox();
-            this.lblCp = new System.Windows.Forms.Label();
             this.tboxProvincia = new System.Windows.Forms.TextBox();
             this.lblProvincia = new System.Windows.Forms.Label();
             this.btnSumar = new System.Windows.Forms.Button();
@@ -131,38 +127,6 @@
             this.lblProducto.TabIndex = 14;
             this.lblProducto.Text = "Producto";
             // 
-            // tboxPais
-            // 
-            this.tboxPais.Location = new System.Drawing.Point(96, 293);
-            this.tboxPais.Name = "tboxPais";
-            this.tboxPais.Size = new System.Drawing.Size(100, 20);
-            this.tboxPais.TabIndex = 13;
-            // 
-            // lblPais
-            // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Location = new System.Drawing.Point(25, 293);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(27, 13);
-            this.lblPais.TabIndex = 12;
-            this.lblPais.Text = "Pais";
-            // 
-            // tboxCp
-            // 
-            this.tboxCp.Location = new System.Drawing.Point(96, 251);
-            this.tboxCp.Name = "tboxCp";
-            this.tboxCp.Size = new System.Drawing.Size(100, 20);
-            this.tboxCp.TabIndex = 11;
-            // 
-            // lblCp
-            // 
-            this.lblCp.AutoSize = true;
-            this.lblCp.Location = new System.Drawing.Point(25, 251);
-            this.lblCp.Name = "lblCp";
-            this.lblCp.Size = new System.Drawing.Size(21, 13);
-            this.lblCp.TabIndex = 10;
-            this.lblCp.Text = "CP";
-            // 
             // tboxProvincia
             // 
             this.tboxProvincia.Location = new System.Drawing.Point(96, 212);
@@ -200,16 +164,17 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(314, 335);
+            this.btnAceptar.Location = new System.Drawing.Point(314, 243);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(90, 36);
             this.btnAceptar.TabIndex = 18;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(410, 347);
+            this.btnVolver.Location = new System.Drawing.Point(410, 255);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(58, 24);
             this.btnVolver.TabIndex = 19;
@@ -221,17 +186,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 383);
+            this.ClientSize = new System.Drawing.Size(482, 307);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnSumar);
             this.Controls.Add(this.tboxProducto);
             this.Controls.Add(this.lblProducto);
-            this.Controls.Add(this.tboxPais);
-            this.Controls.Add(this.lblPais);
-            this.Controls.Add(this.tboxCp);
-            this.Controls.Add(this.lblCp);
             this.Controls.Add(this.tboxProvincia);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.tboxLocalidad);
@@ -262,10 +223,6 @@
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.TextBox tboxProducto;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.TextBox tboxPais;
-        private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.TextBox tboxCp;
-        private System.Windows.Forms.Label lblCp;
         private System.Windows.Forms.TextBox tboxProvincia;
         private System.Windows.Forms.Label lblProvincia;
         private System.Windows.Forms.Button btnSumar;

@@ -37,7 +37,7 @@ namespace TPC_VariscoGonzalo
             unCliente.FechaNacimiento = dtpFechaNac.Value;
             if (rbtMasculino.Checked == true) { unCliente.Sexo = "M"; } else { unCliente.Sexo = "F"; }
             unCliente.email = tboxEmail.Text.Trim();
-            unCliente.Cuit = Convert.ToInt32(tboxCuit.Text.Trim());
+            unCliente.Cuit = tboxCuit.Text.Trim();
 
             unGestorClientes.agregarCliente(unCliente);
 

@@ -29,7 +29,7 @@ namespace Negocio
                     aux.IdVenta = conexion.Lector.GetInt32(0);
                     aux.NumeroRegistro = conexion.Lector.GetInt32(1);
                     aux.Cliente = unGestorClientes.buscarCliente( conexion.Lector.GetInt32(2));
-                aux.VentaItems = unGestorVentas.buscarVentaItem(aux.IdVenta);
+                    aux.VentaItems = unGestorVentas.buscarVentaItem(aux.IdVenta);
                     aux.Fecha = conexion.Lector.GetDateTime(3);
                     aux.Total = conexion.Lector.GetDecimal(4);
                     aux.NumeroFacturacion = unGestorVentas.buscarFactura(conexion.Lector.GetInt32(5));

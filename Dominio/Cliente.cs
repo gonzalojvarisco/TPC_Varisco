@@ -18,6 +18,7 @@ namespace Dominio
         public DateTime FechaNacimiento { get; set; }
         public string Sexo { get; set; }
         public string email { get; set; }
-        public int Cuit { get; set; }
+        public string Cuit { get; set; }
     }
+
 }

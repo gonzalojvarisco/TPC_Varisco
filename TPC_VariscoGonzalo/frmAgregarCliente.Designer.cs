@@ -50,10 +50,6 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblFechaNac = new System.Windows.Forms.Label();
-            this.tboxPais = new System.Windows.Forms.TextBox();
-            this.lblPais = new System.Windows.Forms.Label();
-            this.tboxCp = new System.Windows.Forms.TextBox();
-            this.lblCp = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
@@ -199,7 +195,7 @@
             // 
             // tboxCuit
             // 
-            this.tboxCuit.Location = new System.Drawing.Point(128, 520);
+            this.tboxCuit.Location = new System.Drawing.Point(128, 448);
             this.tboxCuit.Name = "tboxCuit";
             this.tboxCuit.Size = new System.Drawing.Size(100, 20);
             this.tboxCuit.TabIndex = 27;
@@ -208,7 +204,7 @@
             // 
             this.lblCuit.AutoSize = true;
             this.lblCuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCuit.Location = new System.Drawing.Point(12, 520);
+            this.lblCuit.Location = new System.Drawing.Point(12, 448);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(39, 16);
             this.lblCuit.TabIndex = 26;
@@ -216,7 +212,7 @@
             // 
             // tboxEmail
             // 
-            this.tboxEmail.Location = new System.Drawing.Point(128, 482);
+            this.tboxEmail.Location = new System.Drawing.Point(128, 410);
             this.tboxEmail.Name = "tboxEmail";
             this.tboxEmail.Size = new System.Drawing.Size(100, 20);
             this.tboxEmail.TabIndex = 25;
@@ -225,7 +221,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(12, 482);
+            this.lblEmail.Location = new System.Drawing.Point(12, 410);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(42, 16);
             this.lblEmail.TabIndex = 24;
@@ -235,7 +231,7 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(12, 447);
+            this.lblSexo.Location = new System.Drawing.Point(12, 375);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(39, 16);
             this.lblSexo.TabIndex = 22;
@@ -245,49 +241,15 @@
             // 
             this.lblFechaNac.AutoSize = true;
             this.lblFechaNac.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaNac.Location = new System.Drawing.Point(12, 409);
+            this.lblFechaNac.Location = new System.Drawing.Point(12, 337);
             this.lblFechaNac.Name = "lblFechaNac";
             this.lblFechaNac.Size = new System.Drawing.Size(114, 16);
             this.lblFechaNac.TabIndex = 20;
             this.lblFechaNac.Text = "Fecha nacimiento";
             // 
-            // tboxPais
-            // 
-            this.tboxPais.Location = new System.Drawing.Point(128, 369);
-            this.tboxPais.Name = "tboxPais";
-            this.tboxPais.Size = new System.Drawing.Size(100, 20);
-            this.tboxPais.TabIndex = 19;
-            // 
-            // lblPais
-            // 
-            this.lblPais.AutoSize = true;
-            this.lblPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPais.Location = new System.Drawing.Point(12, 369);
-            this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(35, 16);
-            this.lblPais.TabIndex = 18;
-            this.lblPais.Text = "Pais";
-            // 
-            // tboxCp
-            // 
-            this.tboxCp.Location = new System.Drawing.Point(128, 331);
-            this.tboxCp.Name = "tboxCp";
-            this.tboxCp.Size = new System.Drawing.Size(100, 20);
-            this.tboxCp.TabIndex = 17;
-            // 
-            // lblCp
-            // 
-            this.lblCp.AutoSize = true;
-            this.lblCp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCp.Location = new System.Drawing.Point(12, 331);
-            this.lblCp.Name = "lblCp";
-            this.lblCp.Size = new System.Drawing.Size(26, 16);
-            this.lblCp.TabIndex = 16;
-            this.lblCp.Text = "CP";
-            // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(252, 454);
+            this.btnAceptar.Location = new System.Drawing.Point(252, 382);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(107, 48);
             this.btnAceptar.TabIndex = 28;
@@ -297,7 +259,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(252, 520);
+            this.btnVolver.Location = new System.Drawing.Point(252, 448);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(107, 32);
             this.btnVolver.TabIndex = 29;
@@ -307,7 +269,7 @@
             // 
             // dtpFechaNac
             // 
-            this.dtpFechaNac.Location = new System.Drawing.Point(128, 409);
+            this.dtpFechaNac.Location = new System.Drawing.Point(128, 337);
             this.dtpFechaNac.Name = "dtpFechaNac";
             this.dtpFechaNac.Size = new System.Drawing.Size(100, 20);
             this.dtpFechaNac.TabIndex = 30;
@@ -315,7 +277,7 @@
             // rbtMasculino
             // 
             this.rbtMasculino.AutoSize = true;
-            this.rbtMasculino.Location = new System.Drawing.Point(128, 446);
+            this.rbtMasculino.Location = new System.Drawing.Point(128, 374);
             this.rbtMasculino.Name = "rbtMasculino";
             this.rbtMasculino.Size = new System.Drawing.Size(34, 17);
             this.rbtMasculino.TabIndex = 31;
@@ -326,7 +288,7 @@
             // rbtFemenino
             // 
             this.rbtFemenino.AutoSize = true;
-            this.rbtFemenino.Location = new System.Drawing.Point(178, 446);
+            this.rbtFemenino.Location = new System.Drawing.Point(178, 374);
             this.rbtFemenino.Name = "rbtFemenino";
             this.rbtFemenino.Size = new System.Drawing.Size(31, 17);
             this.rbtFemenino.TabIndex = 32;
@@ -338,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(371, 564);
+            this.ClientSize = new System.Drawing.Size(382, 506);
             this.Controls.Add(this.rbtFemenino);
             this.Controls.Add(this.rbtMasculino);
             this.Controls.Add(this.dtpFechaNac);
@@ -350,10 +312,6 @@
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblFechaNac);
-            this.Controls.Add(this.tboxPais);
-            this.Controls.Add(this.lblPais);
-            this.Controls.Add(this.tboxCp);
-            this.Controls.Add(this.lblCp);
             this.Controls.Add(this.tboxProvincia);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.tboxLocalidad);
@@ -402,10 +360,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblFechaNac;
-        private System.Windows.Forms.TextBox tboxPais;
-        private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.TextBox tboxCp;
-        private System.Windows.Forms.Label lblCp;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DateTimePicker dtpFechaNac;
