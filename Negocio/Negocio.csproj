@@ -53,6 +53,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GestorClientes.cs" />
+    <Compile Include="GestorCompras.cs" />
+    <Compile Include="GestorProductos.cs" />
     <Compile Include="GestorProveedores.cs" />
     <Compile Include="GestorVentas.cs" />
     <Compile Include="Program.cs" />

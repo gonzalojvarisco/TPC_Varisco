@@ -33,6 +33,15 @@ namespace TPC_VariscoGonzalo
             unProveedor.Domicilio.Calle = tboxCalle.Text.Trim();
             unProveedor.Domicilio.Localidad = tboxLocalidad.Text.Trim();
             unProveedor.Domicilio.Provincia = tboxProvincia.Text.Trim();
+            //unProveedor.Productos=;
+        }
+
+        private void btnSumar_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void frmAgregarProveedores_Load(object sender, EventArgs e)
+        {
         }
     }
 }

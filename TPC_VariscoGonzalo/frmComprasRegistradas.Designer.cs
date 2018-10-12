@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.lblFecha = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvComprasRegistradas = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.ckBoxMes = new System.Windows.Forms.CheckBox();
             this.btnVolver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRegistradas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -46,13 +46,13 @@
             this.lblFecha.TabIndex = 0;
             this.lblFecha.Text = "Fecha";
             // 
-            // dataGridView1
+            // dgvComprasRegistradas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(474, 266);
-            this.dataGridView1.TabIndex = 4;
+            this.dgvComprasRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComprasRegistradas.Location = new System.Drawing.Point(15, 91);
+            this.dgvComprasRegistradas.Name = "dgvComprasRegistradas";
+            this.dgvComprasRegistradas.Size = new System.Drawing.Size(474, 266);
+            this.dgvComprasRegistradas.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
@@ -89,11 +89,12 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.ckBoxMes);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvComprasRegistradas);
             this.Controls.Add(this.lblFecha);
             this.Name = "frmComprasRegistradas";
             this.Text = "frmComprasRegistradas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmComprasRegistradas_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComprasRegistradas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,7 +103,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvComprasRegistradas;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox ckBoxMes;
         private System.Windows.Forms.Button btnVolver;
