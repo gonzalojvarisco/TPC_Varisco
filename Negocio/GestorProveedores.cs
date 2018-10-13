@@ -38,5 +38,13 @@ namespace Negocio
 
             return lista;
         }
+
+        public void agregar(Proveedor unProveedor)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            
+
+        }
     }
 }

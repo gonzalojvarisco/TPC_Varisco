@@ -11,5 +11,10 @@ namespace Dominio
         public int IdFactura { get; set; }
         public DateTime Fecha { get; set; }
         public Cliente Cliente { get; set; }
+
+        public override string ToString()
+        {
+            return IdFactura.ToString();
+        }
     }
 }

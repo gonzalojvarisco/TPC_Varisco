@@ -19,6 +19,12 @@ namespace Dominio
         public string Sexo { get; set; }
         public string email { get; set; }
         public string Cuit { get; set; }
+
+
+        public override string ToString()
+        {
+            return Apellido.Trim()+","+DNI.ToString();
+        }
     }
 
 }

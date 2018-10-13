@@ -26,7 +26,7 @@ namespace TPC_VariscoGonzalo
         private void frmVentasRegistradas_Load(object sender, EventArgs e)
         {
             GestorVentas unGestorVentas = new GestorVentas();
-           // dgvVentasRegistradas.DataSource = unGestorVentas.listar();
+            dgvVentasRegistradas.DataSource = unGestorVentas.listar();
         }
     }
 }

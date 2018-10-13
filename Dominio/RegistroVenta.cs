@@ -15,5 +15,6 @@ namespace Dominio
         public DateTime Fecha { get; set; }
         public decimal Total { get; set; }
         public Factura NumeroFacturacion { get; set; }
+
     }
 }

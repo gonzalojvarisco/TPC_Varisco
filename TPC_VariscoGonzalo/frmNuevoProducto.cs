@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace TPC_VariscoGonzalo
 {
@@ -25,6 +26,12 @@ namespace TPC_VariscoGonzalo
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void frmNuevoProducto_Load(object sender, EventArgs e)
+        {
+            GestorProductos unGestorProductos = new GestorProductos();
+            dgvProductos.DataSource = unGestorProductos.listarProductos();
         }
     }
 }

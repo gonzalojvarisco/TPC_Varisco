@@ -42,11 +42,11 @@
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.dgvProveedoresSeleccionados = new System.Windows.Forms.DataGridView();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedoresSeleccionados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTipo
@@ -166,13 +166,13 @@
             this.btnAgregar.Text = ">";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // dgvProveedoresSeleccionados
+            // dgvProductos
             // 
-            this.dgvProveedoresSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedoresSeleccionados.Location = new System.Drawing.Point(293, 285);
-            this.dgvProveedoresSeleccionados.Name = "dgvProveedoresSeleccionados";
-            this.dgvProveedoresSeleccionados.Size = new System.Drawing.Size(187, 150);
-            this.dgvProveedoresSeleccionados.TabIndex = 24;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(293, 285);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(187, 150);
+            this.dgvProductos.TabIndex = 24;
             // 
             // btnAceptar
             // 
@@ -201,7 +201,7 @@
             this.ClientSize = new System.Drawing.Size(493, 497);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.dgvProveedoresSeleccionados);
+            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProveedores);
@@ -218,8 +218,9 @@
             this.Controls.Add(this.lblTipo);
             this.Name = "frmNuevoProducto";
             this.Text = "frmNuevoProducto";
+            this.Load += new System.EventHandler(this.frmNuevoProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedoresSeleccionados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +242,7 @@
         private System.Windows.Forms.DataGridView dgvProveedores;
         private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.DataGridView dgvProveedoresSeleccionados;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnVolver;
     }

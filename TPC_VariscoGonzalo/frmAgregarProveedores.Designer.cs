@@ -52,6 +52,8 @@
             this.lblTipo = new System.Windows.Forms.Label();
             this.cboxTipo = new System.Windows.Forms.ComboBox();
             this.cboxMarca = new System.Windows.Forms.ComboBox();
+            this.btnAgregarProductos = new System.Windows.Forms.Button();
+            this.lblProducto = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNombreProveedor
@@ -250,11 +252,33 @@
             this.cboxMarca.Size = new System.Drawing.Size(100, 21);
             this.cboxMarca.TabIndex = 31;
             // 
+            // btnAgregarProductos
+            // 
+            this.btnAgregarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProductos.Location = new System.Drawing.Point(146, 252);
+            this.btnAgregarProductos.Name = "btnAgregarProductos";
+            this.btnAgregarProductos.Size = new System.Drawing.Size(50, 27);
+            this.btnAgregarProductos.TabIndex = 32;
+            this.btnAgregarProductos.Text = "+";
+            this.btnAgregarProductos.UseVisualStyleBackColor = true;
+            this.btnAgregarProductos.Click += new System.EventHandler(this.btnAgregarProductos_Click);
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Location = new System.Drawing.Point(25, 260);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(94, 13);
+            this.lblProducto.TabIndex = 33;
+            this.lblProducto.Text = "Agregar productos";
+            // 
             // frmAgregarProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(649, 338);
+            this.Controls.Add(this.lblProducto);
+            this.Controls.Add(this.btnAgregarProductos);
             this.Controls.Add(this.cboxMarca);
             this.Controls.Add(this.cboxTipo);
             this.Controls.Add(this.tboxPrecioVenta);
@@ -313,5 +337,7 @@
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.ComboBox cboxTipo;
         private System.Windows.Forms.ComboBox cboxMarca;
+        private System.Windows.Forms.Button btnAgregarProductos;
+        private System.Windows.Forms.Label lblProducto;
     }
 }

@@ -15,7 +15,7 @@ namespace Negocio
 
             AccesoDatos conexion = new AccesoDatos();
 
-            conexion.setearConsulta("SELECT c.idcliente c.nombre,c.apellido,c.dni FROM clientes");
+            conexion.setearConsulta("SELECT c.idcliente, c.nombre,c.apellido,c.dni FROM clientes as c");
 
             conexion.leerConsulta();
 
