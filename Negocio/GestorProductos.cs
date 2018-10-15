@@ -23,6 +23,9 @@ namespace Negocio
 
             while(conexion.Lector.Read())
             {
+                aux = new Producto();
+                aux.tipo = new TipoProducto();
+                aux.Marca = new Marca();
                 aux.Id = conexion.Lector.GetInt32(0);
                 aux.tipo.Nombre = conexion.Lector.GetString(1);
                 aux.Marca.Nombre = conexion.Lector.GetString(2);

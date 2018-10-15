@@ -13,5 +13,10 @@ namespace Dominio
         public string Cuit { get; set; }
         public Domicilio Domicilio { get; set; }
         public IList<Producto> Productos { get; set; }
+
+        public override string ToString()
+        {
+            return Nombre;
+        }
     }
 }

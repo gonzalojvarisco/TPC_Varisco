@@ -18,6 +18,11 @@ namespace Negocio
             get { return lector; }
         }
 
+        public SqlCommand Comando
+        {
+            get { return comando; }
+        }
+
         public AccesoDatos()
         {
             conexion = new SqlConnection(@"data source=.\SQLEXPRESS; initial catalog= tpc_VariscoGonzalo; integrated security= sspi");

@@ -51,9 +51,11 @@ namespace TPC_VariscoGonzalo
 
             unGestorProveedor.agregar(unProveedor);
 
+            MessageBox.Show("Proveedor agregado...Ahora agregue los productos con los que trabaja");
 
-            frmNuevoProducto frmNuevoProducto = new frmNuevoProducto();
+            frmNuevoProducto frmNuevoProducto = new frmNuevoProducto(unProveedor);
             frmNuevoProducto.Show();
+
         }
     }
 }

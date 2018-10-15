@@ -8,14 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
 
 namespace TPC_VariscoGonzalo
 {
     public partial class frmNuevoProducto : Form
     {
+        Proveedor unProveedor;
+
         public frmNuevoProducto()
         {
             InitializeComponent();
+        }
+
+        public frmNuevoProducto(Proveedor unProveedor)
+        {
+            InitializeComponent();
+            this.unProveedor = unProveedor;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,7 +40,16 @@ namespace TPC_VariscoGonzalo
         private void frmNuevoProducto_Load(object sender, EventArgs e)
         {
             GestorProductos unGestorProductos = new GestorProductos();
+            GestorProveedores unGestorProveedores = new GestorProveedores();
             dgvProductos.DataSource = unGestorProductos.listarProductos();
+
+            dgvProductos.Columns[1].Visible = false;
+            dgvProductos.Columns[4].Visible = false;
+            dgvProductos.Columns[5].Visible = false;
+            dgvProductos.Columns[6].Visible = false;
+            dgvProductos.Columns[7].Visible = false;
+            dgvProductos.Columns[8].Visible = false;
+            dgvProveedores.DataSource= unGestorProveedores.buscarProveedores();
         }
     }
 }

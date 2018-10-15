@@ -64,7 +64,6 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="RegistroCompra.cs" />
     <Compile Include="RegistroVenta.cs" />
-    <Compile Include="Stock.cs" />
     <Compile Include="TipoProducto.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="VentaItem.cs" />
