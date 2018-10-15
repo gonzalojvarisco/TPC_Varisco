@@ -40,7 +40,7 @@ namespace Negocio
             return lista;
         }
 
-        public IList<Proveedor> buscarProveedores()
+        public IList<Proveedor> buscarUltimoProveedor()
         {
             IList<Proveedor> aux1 = new List <Proveedor>();
             AccesoDatos conexion = new AccesoDatos();
@@ -57,6 +57,38 @@ namespace Negocio
 
                 aux1.Add(aux);
                 
+            }
+            return aux1;
+        }
+
+        public void agregarProducto(int idProducto)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            GestorProveedores unGestorProveedores = new GestorProveedores();
+            Proveedor unProveedor = new Proveedor();
+            unProveedor=unGestorProveedores.buscarUltProveedor();
+            conexion.setearConsulta("insert into PROVEEDORES_X_PRODUCTO values (@idProveedor,@idProducto)");
+            conexion.Comando.Parameters.AddWithValue("@idProveedor",unProveedor.IdProvedoor);
+            conexion.Comando.Parameters.AddWithValue("@idProducto",idProducto);
+
+            conexion.ejecutarAccion();
+            MessageBox.Show("Se agrego el producto correctamente");
+        }
+
+        private Proveedor buscarUltProveedor()
+        {
+            Proveedor aux1 = new Proveedor();
+            AccesoDatos conexion = new AccesoDatos();
+
+            conexion.setearConsulta("select top(1) p.IDPROVEEDOR,p.NOMBRE,p.CUIT from PROVEEDORES as p order by p.IDPROVEEDOR desc");
+            conexion.leerConsulta();
+
+            while (conexion.Lector.Read())
+            {
+                aux1.IdProvedoor = conexion.Lector.GetInt32(0);
+                aux1.Nombre = conexion.Lector.GetString(1);
+                aux1.Cuit = conexion.Lector.GetString(2);
+
             }
             return aux1;
         }

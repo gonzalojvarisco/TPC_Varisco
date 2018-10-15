@@ -160,6 +160,7 @@
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "<";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvProductos
             // 

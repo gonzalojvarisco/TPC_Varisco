@@ -55,7 +55,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marca.cs" />
     <Compile Include="ModeloDominio.cs" />
     <Compile Include="PerfilUsuario.cs" />
     <Compile Include="Producto.cs" />
@@ -64,7 +63,6 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="RegistroCompra.cs" />
     <Compile Include="RegistroVenta.cs" />
-    <Compile Include="TipoProducto.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="VentaItem.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

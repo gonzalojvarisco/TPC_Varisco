@@ -14,8 +14,6 @@ namespace Negocio
             IList<Producto> lista = new List<Producto>();
             AccesoDatos conexion = new AccesoDatos();
             Producto aux=new Producto();
-            aux.tipo = new TipoProducto();
-            aux.Marca = new Marca();
             GestorProductos unGestorProductos = new GestorProductos();
 
             conexion.setearConsulta("select p.IDPRODUCTO,t.nombre,m.nombre from productos as p inner join TIPOPRODUCTO as t on p.IDPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA");
@@ -24,11 +22,9 @@ namespace Negocio
             while(conexion.Lector.Read())
             {
                 aux = new Producto();
-                aux.tipo = new TipoProducto();
-                aux.Marca = new Marca();
                 aux.Id = conexion.Lector.GetInt32(0);
-                aux.tipo.Nombre = conexion.Lector.GetString(1);
-                aux.Marca.Nombre = conexion.Lector.GetString(2);
+                aux.TipoProducto = conexion.Lector.GetString(1);
+                aux.Marca = conexion.Lector.GetString(2);
 
                 lista.Add(aux);
             }

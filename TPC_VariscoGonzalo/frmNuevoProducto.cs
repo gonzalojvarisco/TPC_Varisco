@@ -49,7 +49,24 @@ namespace TPC_VariscoGonzalo
             dgvProductos.Columns[6].Visible = false;
             dgvProductos.Columns[7].Visible = false;
             dgvProductos.Columns[8].Visible = false;
-            dgvProveedores.DataSource= unGestorProveedores.buscarProveedores();
+            dgvProveedores.DataSource= unGestorProveedores.buscarUltimoProveedor();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Producto unProducto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
+            GestorProveedores unGestorProveedores = new GestorProveedores();
+
+            DialogResult r= MessageBox.Show("Esta por agregar un producto. Esta seguro?","Confirmacion",MessageBoxButtons.YesNo);
+
+            if(r==DialogResult.Yes)
+            {
+                unGestorProveedores.agregarProducto(unProducto.Id);
+            }
+            else
+            {
+
+            }
         }
     }
 }
