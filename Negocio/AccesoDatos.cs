@@ -23,6 +23,11 @@ namespace Negocio
             get { return comando; }
         }
 
+        public SqlConnection Conexion
+        {
+            get { return conexion; }
+        }
+
         public AccesoDatos()
         {
             conexion = new SqlConnection(@"data source=.\SQLEXPRESS; initial catalog= tpc_VariscoGonzalo; integrated security= sspi");
@@ -61,6 +66,43 @@ namespace Negocio
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+        public int ejecutarAccionReturn()
+        {
+            try
+            {
+                comando.Connection = conexion;
+                return (int)comando.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void abrirConexion()
+        {
+            try
+            {
+                conexion.Open();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void cerrarConexion()
+        {
+            try
+            {
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

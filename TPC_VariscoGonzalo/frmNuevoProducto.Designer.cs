@@ -48,6 +48,14 @@
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.lblNuevoProducto = new System.Windows.Forms.Label();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.tboxStockMinimo = new System.Windows.Forms.TextBox();
+            this.lblStockMinimo = new System.Windows.Forms.Label();
+            this.tboxStockActual = new System.Windows.Forms.TextBox();
+            this.lblStockActual = new System.Windows.Forms.Label();
+            this.cboxTipo = new System.Windows.Forms.ComboBox();
+            this.cboxMarca = new System.Windows.Forms.ComboBox();
+            this.lblIncluirTipo = new System.Windows.Forms.Label();
+            this.lblIncluirMarca = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +63,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(38, 333);
+            this.lblTipo.Location = new System.Drawing.Point(4, 333);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(28, 13);
             this.lblTipo.TabIndex = 0;
@@ -63,14 +71,14 @@
             // 
             // tboxTipo
             // 
-            this.tboxTipo.Location = new System.Drawing.Point(166, 330);
+            this.tboxTipo.Location = new System.Drawing.Point(261, 328);
             this.tboxTipo.Name = "tboxTipo";
             this.tboxTipo.Size = new System.Drawing.Size(100, 20);
             this.tboxTipo.TabIndex = 1;
             // 
             // tboxMarca
             // 
-            this.tboxMarca.Location = new System.Drawing.Point(166, 369);
+            this.tboxMarca.Location = new System.Drawing.Point(261, 369);
             this.tboxMarca.Name = "tboxMarca";
             this.tboxMarca.Size = new System.Drawing.Size(100, 20);
             this.tboxMarca.TabIndex = 3;
@@ -78,7 +86,7 @@
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(38, 372);
+            this.lblMarca.Location = new System.Drawing.Point(4, 372);
             this.lblMarca.Name = "lblMarca";
             this.lblMarca.Size = new System.Drawing.Size(37, 13);
             this.lblMarca.TabIndex = 2;
@@ -86,7 +94,7 @@
             // 
             // tboxCodigo
             // 
-            this.tboxCodigo.Location = new System.Drawing.Point(166, 413);
+            this.tboxCodigo.Location = new System.Drawing.Point(71, 412);
             this.tboxCodigo.Name = "tboxCodigo";
             this.tboxCodigo.Size = new System.Drawing.Size(100, 20);
             this.tboxCodigo.TabIndex = 5;
@@ -94,7 +102,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(38, 416);
+            this.lblCodigo.Location = new System.Drawing.Point(4, 416);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(40, 13);
             this.lblCodigo.TabIndex = 4;
@@ -102,7 +110,7 @@
             // 
             // tboxPrecioCosto
             // 
-            this.tboxPrecioCosto.Location = new System.Drawing.Point(446, 322);
+            this.tboxPrecioCosto.Location = new System.Drawing.Point(482, 328);
             this.tboxPrecioCosto.Name = "tboxPrecioCosto";
             this.tboxPrecioCosto.Size = new System.Drawing.Size(100, 20);
             this.tboxPrecioCosto.TabIndex = 7;
@@ -110,7 +118,7 @@
             // lblPrecioCosto
             // 
             this.lblPrecioCosto.AutoSize = true;
-            this.lblPrecioCosto.Location = new System.Drawing.Point(318, 325);
+            this.lblPrecioCosto.Location = new System.Drawing.Point(371, 331);
             this.lblPrecioCosto.Name = "lblPrecioCosto";
             this.lblPrecioCosto.Size = new System.Drawing.Size(66, 13);
             this.lblPrecioCosto.TabIndex = 6;
@@ -118,7 +126,7 @@
             // 
             // tboxPorcentajeGanancia
             // 
-            this.tboxPorcentajeGanancia.Location = new System.Drawing.Point(446, 366);
+            this.tboxPorcentajeGanancia.Location = new System.Drawing.Point(482, 372);
             this.tboxPorcentajeGanancia.Name = "tboxPorcentajeGanancia";
             this.tboxPorcentajeGanancia.Size = new System.Drawing.Size(100, 20);
             this.tboxPorcentajeGanancia.TabIndex = 9;
@@ -126,7 +134,7 @@
             // lblPorcentajeGanancia
             // 
             this.lblPorcentajeGanancia.AutoSize = true;
-            this.lblPorcentajeGanancia.Location = new System.Drawing.Point(318, 369);
+            this.lblPorcentajeGanancia.Location = new System.Drawing.Point(371, 375);
             this.lblPorcentajeGanancia.Name = "lblPorcentajeGanancia";
             this.lblPorcentajeGanancia.Size = new System.Drawing.Size(105, 13);
             this.lblPorcentajeGanancia.TabIndex = 8;
@@ -210,7 +218,7 @@
             // lblNuevoProducto
             // 
             this.lblNuevoProducto.AutoSize = true;
-            this.lblNuevoProducto.Location = new System.Drawing.Point(30, 284);
+            this.lblNuevoProducto.Location = new System.Drawing.Point(4, 284);
             this.lblNuevoProducto.Name = "lblNuevoProducto";
             this.lblNuevoProducto.Size = new System.Drawing.Size(96, 26);
             this.lblNuevoProducto.TabIndex = 28;
@@ -218,18 +226,93 @@
             // 
             // btnAgregarProducto
             // 
-            this.btnAgregarProducto.Location = new System.Drawing.Point(374, 413);
+            this.btnAgregarProducto.Location = new System.Drawing.Point(592, 419);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(84, 42);
             this.btnAgregarProducto.TabIndex = 29;
             this.btnAgregarProducto.Text = "Agregar producto";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            // 
+            // tboxStockMinimo
+            // 
+            this.tboxStockMinimo.Location = new System.Drawing.Point(482, 441);
+            this.tboxStockMinimo.Name = "tboxStockMinimo";
+            this.tboxStockMinimo.Size = new System.Drawing.Size(100, 20);
+            this.tboxStockMinimo.TabIndex = 33;
+            // 
+            // lblStockMinimo
+            // 
+            this.lblStockMinimo.AutoSize = true;
+            this.lblStockMinimo.Location = new System.Drawing.Point(371, 444);
+            this.lblStockMinimo.Name = "lblStockMinimo";
+            this.lblStockMinimo.Size = new System.Drawing.Size(70, 13);
+            this.lblStockMinimo.TabIndex = 32;
+            this.lblStockMinimo.Text = "Stock minimo";
+            // 
+            // tboxStockActual
+            // 
+            this.tboxStockActual.Location = new System.Drawing.Point(482, 409);
+            this.tboxStockActual.Name = "tboxStockActual";
+            this.tboxStockActual.Size = new System.Drawing.Size(100, 20);
+            this.tboxStockActual.TabIndex = 31;
+            // 
+            // lblStockActual
+            // 
+            this.lblStockActual.AutoSize = true;
+            this.lblStockActual.Location = new System.Drawing.Point(371, 412);
+            this.lblStockActual.Name = "lblStockActual";
+            this.lblStockActual.Size = new System.Drawing.Size(67, 13);
+            this.lblStockActual.TabIndex = 30;
+            this.lblStockActual.Text = "Stock actual";
+            // 
+            // cboxTipo
+            // 
+            this.cboxTipo.FormattingEnabled = true;
+            this.cboxTipo.Location = new System.Drawing.Point(50, 330);
+            this.cboxTipo.Name = "cboxTipo";
+            this.cboxTipo.Size = new System.Drawing.Size(121, 21);
+            this.cboxTipo.TabIndex = 34;
+            // 
+            // cboxMarca
+            // 
+            this.cboxMarca.FormattingEnabled = true;
+            this.cboxMarca.Location = new System.Drawing.Point(50, 369);
+            this.cboxMarca.Name = "cboxMarca";
+            this.cboxMarca.Size = new System.Drawing.Size(121, 21);
+            this.cboxMarca.TabIndex = 35;
+            // 
+            // lblIncluirTipo
+            // 
+            this.lblIncluirTipo.AutoSize = true;
+            this.lblIncluirTipo.Location = new System.Drawing.Point(177, 322);
+            this.lblIncluirTipo.Name = "lblIncluirTipo";
+            this.lblIncluirTipo.Size = new System.Drawing.Size(82, 26);
+            this.lblIncluirTipo.TabIndex = 36;
+            this.lblIncluirTipo.Text = "Si aun no existe\r\nIncluir tipo -->";
+            // 
+            // lblIncluirMarca
+            // 
+            this.lblIncluirMarca.AutoSize = true;
+            this.lblIncluirMarca.Location = new System.Drawing.Point(177, 364);
+            this.lblIncluirMarca.Name = "lblIncluirMarca";
+            this.lblIncluirMarca.Size = new System.Drawing.Size(83, 26);
+            this.lblIncluirMarca.TabIndex = 37;
+            this.lblIncluirMarca.Text = "Si aun no existe\r\nIncluir Marca -->";
             // 
             // frmNuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 473);
+            this.Controls.Add(this.lblIncluirMarca);
+            this.Controls.Add(this.lblIncluirTipo);
+            this.Controls.Add(this.cboxMarca);
+            this.Controls.Add(this.cboxTipo);
+            this.Controls.Add(this.tboxStockMinimo);
+            this.Controls.Add(this.lblStockMinimo);
+            this.Controls.Add(this.tboxStockActual);
+            this.Controls.Add(this.lblStockActual);
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.lblNuevoProducto);
             this.Controls.Add(this.lblProducto);
@@ -282,5 +365,13 @@
         private System.Windows.Forms.DataGridView dgvProveedores;
         private System.Windows.Forms.Label lblNuevoProducto;
         private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.TextBox tboxStockMinimo;
+        private System.Windows.Forms.Label lblStockMinimo;
+        private System.Windows.Forms.TextBox tboxStockActual;
+        private System.Windows.Forms.Label lblStockActual;
+        private System.Windows.Forms.ComboBox cboxTipo;
+        private System.Windows.Forms.ComboBox cboxMarca;
+        private System.Windows.Forms.Label lblIncluirTipo;
+        private System.Windows.Forms.Label lblIncluirMarca;
     }
 }

@@ -39,6 +39,11 @@ namespace TPC_VariscoGonzalo
 
         private void frmNuevoProducto_Load(object sender, EventArgs e)
         {
+            cargarFormulario();
+        }
+
+        private void cargarFormulario()
+        {
             GestorProductos unGestorProductos = new GestorProductos();
             GestorProveedores unGestorProveedores = new GestorProveedores();
             dgvProductos.DataSource = unGestorProductos.listarProductos();
@@ -49,7 +54,15 @@ namespace TPC_VariscoGonzalo
             dgvProductos.Columns[6].Visible = false;
             dgvProductos.Columns[7].Visible = false;
             dgvProductos.Columns[8].Visible = false;
-            dgvProveedores.DataSource= unGestorProveedores.buscarUltimoProveedor();
+            dgvProveedores.DataSource = unGestorProveedores.buscarUltimoProveedor();
+
+            cboxTipo.DataSource = unGestorProductos.listarTipos();
+            cboxTipo.DisplayMember = "Nombre";
+            cboxTipo.ValueMember = "Id";
+
+            cboxMarca.DataSource = unGestorProductos.listarMarcas();
+            cboxMarca.DisplayMember = "Nombre";
+            cboxMarca.ValueMember = "Id";
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -57,7 +70,7 @@ namespace TPC_VariscoGonzalo
             Producto unProducto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
             GestorProveedores unGestorProveedores = new GestorProveedores();
 
-            DialogResult r= MessageBox.Show("Esta por agregar un producto. Esta seguro?","Confirmacion",MessageBoxButtons.YesNo);
+            DialogResult r= MessageBox.Show("Esta por agregar un producto. ¿Esta seguro?","Confirmacion",MessageBoxButtons.YesNo);
 
             if(r==DialogResult.Yes)
             {
@@ -67,6 +80,59 @@ namespace TPC_VariscoGonzalo
             {
 
             }
+        }
+
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            GestorProductos unGestorProductos = new GestorProductos();
+            Producto unProducto = new Producto();
+            unProducto.Tipo = new TipoProducto();
+            unProducto.Marca = new Marca();
+            Double porcentaje;
+            bool banderaMarca=false;
+            bool banderaTipo=false;
+
+            unProducto.Codigo = tboxCodigo.Text.Trim();
+            unProducto.PrecioCosto = Convert.ToDecimal(tboxPrecioCosto.Text.Trim());
+            porcentaje = Convert.ToDouble(tboxPorcentajeGanancia.Text.Trim());
+            unProducto.StockActual = Convert.ToInt32(tboxStockActual.Text.Trim());
+            unProducto.StockMinimo = Convert.ToInt32(tboxStockMinimo.Text.Trim());
+            
+            if(tboxTipo.Text.Trim()=="")
+            {
+                unProducto.Tipo = (TipoProducto)cboxTipo.SelectedItem;
+            }
+            else
+            {
+                unProducto.Tipo.Nombre = tboxTipo.Text.Trim();
+                banderaTipo = true;
+            }
+
+            if (tboxMarca.Text.Trim() == "")
+            {
+                unProducto.Marca = (Marca)cboxMarca.SelectedItem;
+            }
+            else
+            {
+                unProducto.Marca.Nombre = tboxMarca.Text.Trim();
+                banderaMarca = true;
+            }
+
+            if (banderaTipo == true)
+            {
+               unProducto.Tipo.Id= unGestorProductos.agregarTipo(unProducto.Tipo);
+            }
+
+            if(banderaMarca==true)
+            {
+                unProducto.Marca.Id = unGestorProductos.agregarMarca(unProducto.Marca);
+            }
+
+             unGestorProductos.guardarProducto(unProducto);
+
+            MessageBox.Show("Producto guardado");
+
+            cargarFormulario();
         }
     }
 }

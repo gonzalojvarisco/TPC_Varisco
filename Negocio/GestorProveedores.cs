@@ -68,6 +68,7 @@ namespace Negocio
             Proveedor unProveedor = new Proveedor();
             unProveedor=unGestorProveedores.buscarUltProveedor();
             conexion.setearConsulta("insert into PROVEEDORES_X_PRODUCTO values (@idProveedor,@idProducto)");
+            conexion.Comando.Parameters.Clear();
             conexion.Comando.Parameters.AddWithValue("@idProveedor",unProveedor.IdProvedoor);
             conexion.Comando.Parameters.AddWithValue("@idProducto",idProducto);
 

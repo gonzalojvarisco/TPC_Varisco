@@ -10,8 +10,8 @@ namespace Dominio
     {
         public int Id { get; set; }
         public IList<Proveedor> Proveedores { get; set; }
-        public string TipoProducto { get; set; }
-        public string Marca { get; set; }
+        public TipoProducto Tipo { get; set; }
+        public Marca Marca { get; set; }
         public string Codigo { get; set; }
         public Decimal PrecioCosto { get; set; }
         public Decimal PrecioVenta { get; set; }
