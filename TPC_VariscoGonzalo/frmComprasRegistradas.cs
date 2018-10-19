@@ -27,7 +27,7 @@ namespace TPC_VariscoGonzalo
         {
             GestorCompras unGestorCompras = new GestorCompras();
 
-            //dgvComprasRegistradas.DataSource = unGestorCompras.listar();
+            dgvComprasRegistradas.DataSource = unGestorCompras.listar();
         }
     }
 }
