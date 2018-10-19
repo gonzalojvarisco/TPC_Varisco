@@ -24,18 +24,6 @@ namespace TPC_VariscoGonzalo
             this.Dispose();
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            //
-        }
-
-        private void btnSumar_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void frmAgregarProveedores_Load(object sender, EventArgs e)
-        {
-        }
 
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {

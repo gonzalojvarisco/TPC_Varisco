@@ -81,10 +81,10 @@ namespace Negocio
                 conexion.abrirConexion();
                 return conexion.ejecutarAccionReturn();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             finally
@@ -106,10 +106,10 @@ namespace Negocio
                 conexion.abrirConexion();
                 return conexion.ejecutarAccionReturn();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             finally
@@ -160,10 +160,10 @@ namespace Negocio
 
                 conexion.ejecutarAccion();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
 
             finally

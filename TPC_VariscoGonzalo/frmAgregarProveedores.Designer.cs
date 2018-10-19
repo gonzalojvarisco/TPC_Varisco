@@ -38,20 +38,7 @@
             this.lblCalle = new System.Windows.Forms.Label();
             this.tboxProvincia = new System.Windows.Forms.TextBox();
             this.lblProvincia = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.tboxPrecioVenta = new System.Windows.Forms.TextBox();
-            this.lblPrecioVenta = new System.Windows.Forms.Label();
-            this.tboxPrecioCosto = new System.Windows.Forms.TextBox();
-            this.lblPrecioCosto = new System.Windows.Forms.Label();
-            this.tboxCodigo = new System.Windows.Forms.TextBox();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.tboxMarcaNueva = new System.Windows.Forms.TextBox();
-            this.lblMarca = new System.Windows.Forms.Label();
-            this.tboxTipoNuevo = new System.Windows.Forms.TextBox();
-            this.lblTipo = new System.Windows.Forms.Label();
-            this.cboxTipo = new System.Windows.Forms.ComboBox();
-            this.cboxMarca = new System.Windows.Forms.ComboBox();
             this.btnAgregarProductos = new System.Windows.Forms.Button();
             this.lblProducto = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -136,121 +123,15 @@
             this.lblProvincia.TabIndex = 8;
             this.lblProvincia.Text = "Provincia";
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(483, 290);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(90, 36);
-            this.btnAceptar.TabIndex = 18;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(579, 302);
+            this.btnVolver.Location = new System.Drawing.Point(146, 302);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(58, 24);
             this.btnVolver.TabIndex = 19;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // tboxPrecioVenta
-            // 
-            this.tboxPrecioVenta.Location = new System.Drawing.Point(372, 215);
-            this.tboxPrecioVenta.Name = "tboxPrecioVenta";
-            this.tboxPrecioVenta.Size = new System.Drawing.Size(100, 20);
-            this.tboxPrecioVenta.TabIndex = 29;
-            // 
-            // lblPrecioVenta
-            // 
-            this.lblPrecioVenta.AutoSize = true;
-            this.lblPrecioVenta.Location = new System.Drawing.Point(267, 218);
-            this.lblPrecioVenta.Name = "lblPrecioVenta";
-            this.lblPrecioVenta.Size = new System.Drawing.Size(67, 13);
-            this.lblPrecioVenta.TabIndex = 28;
-            this.lblPrecioVenta.Text = "Precio venta";
-            // 
-            // tboxPrecioCosto
-            // 
-            this.tboxPrecioCosto.Location = new System.Drawing.Point(372, 171);
-            this.tboxPrecioCosto.Name = "tboxPrecioCosto";
-            this.tboxPrecioCosto.Size = new System.Drawing.Size(100, 20);
-            this.tboxPrecioCosto.TabIndex = 27;
-            // 
-            // lblPrecioCosto
-            // 
-            this.lblPrecioCosto.AutoSize = true;
-            this.lblPrecioCosto.Location = new System.Drawing.Point(267, 174);
-            this.lblPrecioCosto.Name = "lblPrecioCosto";
-            this.lblPrecioCosto.Size = new System.Drawing.Size(66, 13);
-            this.lblPrecioCosto.TabIndex = 26;
-            this.lblPrecioCosto.Text = "Precio costo";
-            // 
-            // tboxCodigo
-            // 
-            this.tboxCodigo.Location = new System.Drawing.Point(372, 128);
-            this.tboxCodigo.Name = "tboxCodigo";
-            this.tboxCodigo.Size = new System.Drawing.Size(100, 20);
-            this.tboxCodigo.TabIndex = 25;
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(267, 131);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
-            this.lblCodigo.TabIndex = 24;
-            this.lblCodigo.Text = "Codigo";
-            // 
-            // tboxMarcaNueva
-            // 
-            this.tboxMarcaNueva.Location = new System.Drawing.Point(537, 80);
-            this.tboxMarcaNueva.Name = "tboxMarcaNueva";
-            this.tboxMarcaNueva.Size = new System.Drawing.Size(100, 20);
-            this.tboxMarcaNueva.TabIndex = 23;
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(267, 87);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(37, 13);
-            this.lblMarca.TabIndex = 22;
-            this.lblMarca.Text = "Marca";
-            // 
-            // tboxTipoNuevo
-            // 
-            this.tboxTipoNuevo.Location = new System.Drawing.Point(537, 45);
-            this.tboxTipoNuevo.Name = "tboxTipoNuevo";
-            this.tboxTipoNuevo.Size = new System.Drawing.Size(100, 20);
-            this.tboxTipoNuevo.TabIndex = 21;
-            // 
-            // lblTipo
-            // 
-            this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(267, 48);
-            this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(28, 13);
-            this.lblTipo.TabIndex = 20;
-            this.lblTipo.Text = "Tipo";
-            // 
-            // cboxTipo
-            // 
-            this.cboxTipo.FormattingEnabled = true;
-            this.cboxTipo.Location = new System.Drawing.Point(372, 44);
-            this.cboxTipo.Name = "cboxTipo";
-            this.cboxTipo.Size = new System.Drawing.Size(100, 21);
-            this.cboxTipo.TabIndex = 30;
-            // 
-            // cboxMarca
-            // 
-            this.cboxMarca.FormattingEnabled = true;
-            this.cboxMarca.Location = new System.Drawing.Point(372, 87);
-            this.cboxMarca.Name = "cboxMarca";
-            this.cboxMarca.Size = new System.Drawing.Size(100, 21);
-            this.cboxMarca.TabIndex = 31;
             // 
             // btnAgregarProductos
             // 
@@ -276,23 +157,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 338);
+            this.ClientSize = new System.Drawing.Size(233, 346);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.btnAgregarProductos);
-            this.Controls.Add(this.cboxMarca);
-            this.Controls.Add(this.cboxTipo);
-            this.Controls.Add(this.tboxPrecioVenta);
-            this.Controls.Add(this.lblPrecioVenta);
-            this.Controls.Add(this.tboxPrecioCosto);
-            this.Controls.Add(this.lblPrecioCosto);
-            this.Controls.Add(this.tboxCodigo);
-            this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.tboxMarcaNueva);
-            this.Controls.Add(this.lblMarca);
-            this.Controls.Add(this.tboxTipoNuevo);
-            this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tboxProvincia);
             this.Controls.Add(this.lblProvincia);
             this.Controls.Add(this.tboxLocalidad);
@@ -305,7 +173,6 @@
             this.Controls.Add(this.lblNombreProveedor);
             this.Name = "frmAgregarProveedores";
             this.Text = "frmAgregarProveedores";
-            this.Load += new System.EventHandler(this.frmAgregarProveedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,20 +190,7 @@
         private System.Windows.Forms.Label lblCalle;
         private System.Windows.Forms.TextBox tboxProvincia;
         private System.Windows.Forms.Label lblProvincia;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.TextBox tboxPrecioVenta;
-        private System.Windows.Forms.Label lblPrecioVenta;
-        private System.Windows.Forms.TextBox tboxPrecioCosto;
-        private System.Windows.Forms.Label lblPrecioCosto;
-        private System.Windows.Forms.TextBox tboxCodigo;
-        private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.TextBox tboxMarcaNueva;
-        private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.TextBox tboxTipoNuevo;
-        private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.ComboBox cboxTipo;
-        private System.Windows.Forms.ComboBox cboxMarca;
         private System.Windows.Forms.Button btnAgregarProductos;
         private System.Windows.Forms.Label lblProducto;
     }
