@@ -14,6 +14,8 @@ namespace TPC_VariscoGonzalo
 {
     public partial class frmAgregarCliente : Form
     {
+        Cliente unCliente = new Cliente();
+
         public frmAgregarCliente()
         {
             InitializeComponent();
@@ -21,27 +23,33 @@ namespace TPC_VariscoGonzalo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Cliente unCliente = new Cliente();
-            GestorClientes unGestorClientes = new GestorClientes();
-            Domicilio unDomicilio = new Domicilio();
+                GestorClientes unGestorClientes = new GestorClientes();
 
-            unCliente.Nombre = tboxNombre.Text.Trim();
-            unCliente.Apellido = tboxApellido.Text.Trim();
-            unCliente.DNI = tboxDni.Text.Trim();
-            unCliente.TelefonoFijo = tboxTelFijo.Text.Trim();
-            unCliente.TelefonoCelular = tboxTelCelular.Text.Trim();
-            unDomicilio.Calle = tboxCalle.Text.Trim();
-            unDomicilio.Localidad = tboxLocalidad.Text.Trim();
-            unDomicilio.Provincia = tboxProvincia.Text.Trim();
-            unCliente.Domicilio = unDomicilio;
-            unCliente.FechaNacimiento = dtpFechaNac.Value;
-            if (rbtMasculino.Checked == true) { unCliente.Sexo = "M"; } else { unCliente.Sexo = "F"; }
-            unCliente.email = tboxEmail.Text.Trim();
-            unCliente.Cuit = tboxCuit.Text.Trim();
+                unCliente.Domicilio = new Domicilio();
 
-            unGestorClientes.agregarCliente(unCliente);
+                unCliente.Nombre = tboxNombre.Text.Trim();
+                unCliente.Apellido = tboxApellido.Text.Trim();
+                unCliente.DNI = tboxDni.Text.Trim();
+                unCliente.TelefonoFijo = tboxTelFijo.Text.Trim();
+                unCliente.TelefonoCelular = tboxTelCelular.Text.Trim();
+                unCliente.Domicilio.Calle = tboxCalle.Text.Trim();
+                unCliente.Domicilio.Localidad = tboxLocalidad.Text.Trim();
+                unCliente.Domicilio.Provincia = tboxProvincia.Text.Trim();
+                unCliente.FechaNacimiento = dtpFechaNac.Value;
+                if (rbtMasculino.Checked == true) { unCliente.Sexo = "M"; } else { unCliente.Sexo = "F"; }
+                unCliente.email = tboxEmail.Text.Trim();
+                unCliente.Cuit = tboxCuit.Text.Trim();
 
-            MessageBox.Show("El cliente fue agregado");
+            if(unCliente.IdCliente>0)
+            {
+                unGestorClientes.modificar(unCliente);
+                MessageBox.Show("El cliente fue modificado");
+            }
+            else
+            {
+                unGestorClientes.agregarCliente(unCliente);
+                MessageBox.Show("El cliente fue agregado");
+            }
 
             this.Dispose();
         }
@@ -49,6 +57,26 @@ namespace TPC_VariscoGonzalo
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        public void setearRegistro(Cliente x)
+        {
+            unCliente.Domicilio = new Domicilio();
+
+            unCliente = x;
+            tboxNombre.Text = x.Nombre;
+            tboxApellido.Text = x.Apellido;
+            tboxDni.Text = x.DNI;
+            tboxTelFijo.Text = x.TelefonoFijo;
+            tboxTelCelular.Text = x.TelefonoCelular;
+            tboxCalle.Text = x.Domicilio.Calle;
+            tboxLocalidad.Text = x.Domicilio.Localidad;
+            tboxProvincia.Text = x.Domicilio.Provincia;
+            dtpFechaNac.Value = x.FechaNacimiento;
+            tboxEmail.Text = x.email;
+            tboxCuit.Text = x.Cuit;
+
+
         }
     }
 }

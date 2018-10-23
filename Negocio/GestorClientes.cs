@@ -64,6 +64,37 @@ namespace Negocio
             return lista;
         }
 
+        public void modificar(Cliente unCliente)
+        {
+            AccesoDatos conexion;
+
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("update clientes set NOMBRE=@nombre,APELLIDO=@apellido,DNI=@dni,TELEFONOFIJO=@telefonofijo,TELEFONOCELULAR=@telefonocelular,CALLE=@calle,LOCALIDAD=@localidad,PROVINCIA=@provincia,FECHANACIMIENTO=@fechanacimiento,SEXO=@sexo,EMAIL=@email,CUIT=@cuit where IDCLIENTE= @id");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@nombre", unCliente.Nombre);
+                conexion.Comando.Parameters.AddWithValue("@apellido", unCliente.Apellido);
+                conexion.Comando.Parameters.AddWithValue("@dni", unCliente.DNI);
+                conexion.Comando.Parameters.AddWithValue("@telefonofijo", unCliente.TelefonoFijo);
+                conexion.Comando.Parameters.AddWithValue("@telefonocelular", unCliente.TelefonoCelular);
+                conexion.Comando.Parameters.AddWithValue("@calle", unCliente.Domicilio.Calle);
+                conexion.Comando.Parameters.AddWithValue("@localidad", unCliente.Domicilio.Localidad);
+                conexion.Comando.Parameters.AddWithValue("@provincia", unCliente.Domicilio.Provincia);
+                conexion.Comando.Parameters.AddWithValue("@fechanacimiento", unCliente.FechaNacimiento);
+                conexion.Comando.Parameters.AddWithValue("@sexo", unCliente.Sexo);
+                conexion.Comando.Parameters.AddWithValue("@email", unCliente.email);
+                conexion.Comando.Parameters.AddWithValue("@cuit", unCliente.Cuit);
+                conexion.Comando.Parameters.AddWithValue("@id", unCliente.IdCliente);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void eliminarLogico(int id)
         {
             AccesoDatos conexion;

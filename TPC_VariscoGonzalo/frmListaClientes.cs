@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
 
 namespace TPC_VariscoGonzalo
 {
@@ -58,6 +59,21 @@ namespace TPC_VariscoGonzalo
             {
 
                 throw;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {//btn modificar registro
+            if(dgwClientes.SelectedRows.Count>0)
+            {
+                frmAgregarCliente unForm = new frmAgregarCliente();
+                unForm.setearRegistro((Cliente)dgwClientes.CurrentRow.DataBoundItem);
+                unForm.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro");
             }
         }
     }

@@ -33,6 +33,7 @@
             this.tboxDNI = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnEliminacionLogica = new System.Windows.Forms.Button();
+            this.btnModificarRegistro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             // 
             // btnEliminacionLogica
             // 
-            this.btnEliminacionLogica.Location = new System.Drawing.Point(605, 105);
+            this.btnEliminacionLogica.Location = new System.Drawing.Point(605, 192);
             this.btnEliminacionLogica.Name = "btnEliminacionLogica";
             this.btnEliminacionLogica.Size = new System.Drawing.Size(71, 26);
             this.btnEliminacionLogica.TabIndex = 4;
@@ -81,11 +82,22 @@
             this.btnEliminacionLogica.UseVisualStyleBackColor = true;
             this.btnEliminacionLogica.Click += new System.EventHandler(this.btnEliminacionLogica_Click);
             // 
+            // btnModificarRegistro
+            // 
+            this.btnModificarRegistro.Location = new System.Drawing.Point(605, 105);
+            this.btnModificarRegistro.Name = "btnModificarRegistro";
+            this.btnModificarRegistro.Size = new System.Drawing.Size(71, 60);
+            this.btnModificarRegistro.TabIndex = 5;
+            this.btnModificarRegistro.Text = "Modificar datos cliente";
+            this.btnModificarRegistro.UseVisualStyleBackColor = true;
+            this.btnModificarRegistro.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmListaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(688, 481);
+            this.Controls.Add(this.btnModificarRegistro);
             this.Controls.Add(this.btnEliminacionLogica);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tboxDNI);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.TextBox tboxDNI;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnEliminacionLogica;
+        private System.Windows.Forms.Button btnModificarRegistro;
     }
 }
