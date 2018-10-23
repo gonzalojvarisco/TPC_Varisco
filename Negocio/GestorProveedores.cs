@@ -17,7 +17,7 @@ namespace Negocio
             Proveedor aux;
             Domicilio aux1;
 
-            conexion.setearConsulta("SELECT P.IDPROVEEDOR,P.NOMBRE,P.CUIT,P.CALLE,P.LOCALIDAD,P.PROVINCIA FROM PROVEEDORES AS P");
+            conexion.setearConsulta("SELECT P.IDPROVEEDOR,P.NOMBRE,P.CUIT,P.CALLE,P.LOCALIDAD,P.PROVINCIA FROM PROVEEDORES AS P where p.activo=1");
             conexion.leerConsulta();
 
             while(conexion.Lector.Read())
@@ -38,6 +38,25 @@ namespace Negocio
             }
 
             return lista;
+        }
+
+        public void eliminarLogico(int id)
+        {
+            AccesoDatos conexion;
+
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("update proveedores set activo=0 where IDPROVEEDOR=@id");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@id",id);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public IList<Proveedor> buscarUltimoProveedor()
@@ -98,13 +117,14 @@ namespace Negocio
         {
             AccesoDatos conexion = new AccesoDatos();
             
-            conexion.setearConsulta("insert into PROVEEDORES values(@nombre,@cuit,@calle,@localidad,@provincia)");
+            conexion.setearConsulta("insert into PROVEEDORES values(@nombre,@cuit,@calle,@localidad,@provincia,@activo)");
             conexion.Comando.Parameters.Clear();
             conexion.Comando.Parameters.AddWithValue("@nombre",unProveedor.Nombre);
             conexion.Comando.Parameters.AddWithValue("@cuit",unProveedor.Cuit);
             conexion.Comando.Parameters.AddWithValue("@calle",unProveedor.Domicilio.Calle);
             conexion.Comando.Parameters.AddWithValue("@localidad",unProveedor.Domicilio.Localidad);
             conexion.Comando.Parameters.AddWithValue("@provincia",unProveedor.Domicilio.Provincia);
+            conexion.Comando.Parameters.AddWithValue("@activo", 1);
 
             conexion.ejecutarAccion();
 

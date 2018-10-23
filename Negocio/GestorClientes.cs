@@ -35,7 +35,7 @@ namespace Negocio
             IList<Cliente> lista = new List<Cliente>();
             AccesoDatos conexion = new AccesoDatos();
 
-            conexion.setearConsulta("SELECT C.IDCLIENTE,C.NOMBRE,C.APELLIDO,C.DNI,C.TELEFONOFIJO,C.TELEFONOCELULAR,C.CALLE,C.LOCALIDAD,C.PROVINCIA,C.FECHANACIMIENTO,C.SEXO,C.EMAIL,C.CUIT FROM CLIENTES AS C");
+            conexion.setearConsulta("SELECT C.IDCLIENTE,C.NOMBRE,C.APELLIDO,C.DNI,C.TELEFONOFIJO,C.TELEFONOCELULAR,C.CALLE,C.LOCALIDAD,C.PROVINCIA,C.FECHANACIMIENTO,C.SEXO,C.EMAIL,C.CUIT FROM CLIENTES AS C where c.ACTIVO=1");
             conexion.leerConsulta();
 
             while(conexion.Lector.Read())
@@ -64,6 +64,25 @@ namespace Negocio
             return lista;
         }
 
+        public void eliminarLogico(int id)
+        {
+            AccesoDatos conexion;
+
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("update clientes set activo=0 where IDCLIENTE=@id");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@id",id);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void agregarCliente(Cliente unCliente)
         {
             AccesoDatos conexion = new AccesoDatos();
@@ -74,7 +93,7 @@ namespace Negocio
             consulta += "'" + unCliente.TelefonoCelular + "','" + unCliente.Domicilio.Calle + "',";
             consulta += "'" + unCliente.Domicilio.Localidad + "','" + unCliente.Domicilio.Provincia + "',";
             consulta += "'" + unCliente.FechaNacimiento.ToString() + "',";
-            consulta+="'"+unCliente.Sexo+"','"+unCliente.email+"','"+unCliente.Cuit+"')";
+            consulta+="'"+unCliente.Sexo+"','"+unCliente.email+"','"+unCliente.Cuit + "',"+1+")";
 
             conexion.setearConsulta(consulta);
             conexion.ejecutarAccion();

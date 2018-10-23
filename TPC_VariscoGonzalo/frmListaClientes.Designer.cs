@@ -32,6 +32,7 @@
             this.lblFiltro = new System.Windows.Forms.Label();
             this.tboxDNI = new System.Windows.Forms.TextBox();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnEliminacionLogica = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,11 +71,22 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnEliminacionLogica
+            // 
+            this.btnEliminacionLogica.Location = new System.Drawing.Point(605, 105);
+            this.btnEliminacionLogica.Name = "btnEliminacionLogica";
+            this.btnEliminacionLogica.Size = new System.Drawing.Size(71, 26);
+            this.btnEliminacionLogica.TabIndex = 4;
+            this.btnEliminacionLogica.Text = "Eliminar";
+            this.btnEliminacionLogica.UseVisualStyleBackColor = true;
+            this.btnEliminacionLogica.Click += new System.EventHandler(this.btnEliminacionLogica_Click);
+            // 
             // frmListaClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 481);
+            this.ClientSize = new System.Drawing.Size(688, 481);
+            this.Controls.Add(this.btnEliminacionLogica);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tboxDNI);
             this.Controls.Add(this.lblFiltro);
@@ -94,5 +106,6 @@
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.TextBox tboxDNI;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnEliminacionLogica;
     }
 }
