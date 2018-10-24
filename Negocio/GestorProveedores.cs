@@ -40,6 +40,30 @@ namespace Negocio
             return lista;
         }
 
+        public void modificar(Proveedor unProveedor)
+        {
+            AccesoDatos conexion= new AccesoDatos();
+
+            try
+            {
+                conexion.setearConsulta("update PROVEEDORES set NOMBRE=@nombre, CUIT=@cuit, CALLE=@calle, LOCALIDAD=@localidad,PROVINCIA=@provincia where IDPROVEEDOR=@id");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@nombre", unProveedor.Nombre);
+                conexion.Comando.Parameters.AddWithValue("@cuit", unProveedor.Cuit);
+                conexion.Comando.Parameters.AddWithValue("@calle", unProveedor.Domicilio.Calle);
+                conexion.Comando.Parameters.AddWithValue("@localidad", unProveedor.Domicilio.Localidad);
+                conexion.Comando.Parameters.AddWithValue("@provincia", unProveedor.Domicilio.Provincia);
+                conexion.Comando.Parameters.AddWithValue("@id", unProveedor.IdProvedoor);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public void eliminarLogico(int id)
         {
             AccesoDatos conexion;

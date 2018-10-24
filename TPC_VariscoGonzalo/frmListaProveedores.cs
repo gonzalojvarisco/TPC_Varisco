@@ -63,5 +63,20 @@ namespace TPC_VariscoGonzalo
                 throw ex;
             }
         }
+
+        private void btnModificarRegistro_Click(object sender, EventArgs e)
+        {
+            if(dgvListaProveedores.SelectedRows.Count>0)
+            {
+                frmAgregarProveedores unForm = new frmAgregarProveedores();
+                unForm.setearRegistro((Proveedor)dgvListaProveedores.CurrentRow.DataBoundItem);
+                unForm.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro");
+            }
+        }
     }
 }

@@ -42,7 +42,7 @@
             this.dgwClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwClientes.Location = new System.Drawing.Point(21, 105);
             this.dgwClientes.Name = "dgwClientes";
-            this.dgwClientes.Size = new System.Drawing.Size(563, 331);
+            this.dgwClientes.Size = new System.Drawing.Size(605, 331);
             this.dgwClientes.TabIndex = 0;
             // 
             // lblFiltro
@@ -64,7 +64,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(495, 446);
+            this.btnVolver.Location = new System.Drawing.Point(625, 446);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(89, 23);
             this.btnVolver.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             // btnEliminacionLogica
             // 
-            this.btnEliminacionLogica.Location = new System.Drawing.Point(605, 192);
+            this.btnEliminacionLogica.Location = new System.Drawing.Point(643, 192);
             this.btnEliminacionLogica.Name = "btnEliminacionLogica";
             this.btnEliminacionLogica.Size = new System.Drawing.Size(71, 26);
             this.btnEliminacionLogica.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             // btnModificarRegistro
             // 
-            this.btnModificarRegistro.Location = new System.Drawing.Point(605, 105);
+            this.btnModificarRegistro.Location = new System.Drawing.Point(643, 105);
             this.btnModificarRegistro.Name = "btnModificarRegistro";
             this.btnModificarRegistro.Size = new System.Drawing.Size(71, 60);
             this.btnModificarRegistro.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 481);
+            this.ClientSize = new System.Drawing.Size(726, 481);
             this.Controls.Add(this.btnModificarRegistro);
             this.Controls.Add(this.btnEliminacionLogica);
             this.Controls.Add(this.btnVolver);
