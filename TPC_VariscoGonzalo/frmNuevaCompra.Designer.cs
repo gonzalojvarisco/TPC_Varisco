@@ -41,6 +41,7 @@
             this.tboxProveedor = new System.Windows.Forms.TextBox();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
@@ -74,6 +75,7 @@
             this.btnQuitar.TabIndex = 21;
             this.btnQuitar.Text = "-";
             this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnAgregar
             // 
@@ -84,6 +86,7 @@
             this.btnAgregar.TabIndex = 20;
             this.btnAgregar.Text = ">";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvProductosComprados
             // 
@@ -114,9 +117,9 @@
             // dgvProveedor
             // 
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Location = new System.Drawing.Point(28, 103);
+            this.dgvProveedor.Location = new System.Drawing.Point(28, 86);
             this.dgvProveedor.Name = "dgvProveedor";
-            this.dgvProveedor.Size = new System.Drawing.Size(180, 88);
+            this.dgvProveedor.Size = new System.Drawing.Size(357, 126);
             this.dgvProveedor.TabIndex = 16;
             // 
             // lblDni
@@ -165,11 +168,22 @@
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
             this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(409, 174);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(89, 38);
+            this.btnSeleccionar.TabIndex = 25;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
             // frmNuevaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 464);
+            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnNuevoProducto);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
@@ -185,6 +199,7 @@
             this.Controls.Add(this.lblProveedor);
             this.Name = "frmNuevaCompra";
             this.Text = "frmNuevaCompra";
+            this.Load += new System.EventHandler(this.frmNuevaCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
@@ -208,5 +223,6 @@
         private System.Windows.Forms.TextBox tboxProveedor;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.Button btnNuevoProducto;
+        private System.Windows.Forms.Button btnSeleccionar;
     }
 }
