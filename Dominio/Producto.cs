@@ -18,5 +18,10 @@ namespace Dominio
         public int StockActual { get; set; }
         public int StockMinimo { get; set; }
 
+        public override string ToString()
+        {
+            return Tipo.ToString();//+ ',' + Marca.ToString();
+        }
+
     }
 }

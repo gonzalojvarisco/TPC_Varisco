@@ -31,6 +31,7 @@ namespace TPC_VariscoGonzalo
         {
             unProveedor.Domicilio = new Domicilio();
             GestorProveedores unGestorProveedor = new GestorProveedores();
+            int bandera;
 
             unProveedor.Nombre = tboxNombre.Text.Trim();
             unProveedor.Cuit = tboxCuit.Text.Trim();
@@ -42,15 +43,17 @@ namespace TPC_VariscoGonzalo
             {
                 unGestorProveedor.modificar(unProveedor);
                 MessageBox.Show("Datos de proveedor modificados...Ahora verifique los productos con los que trabaja");
+                bandera = 0;
             }
             else
             {
                 unGestorProveedor.agregar(unProveedor);
                 MessageBox.Show("Proveedor agregado...Ahora agregue los productos con los que trabaja");
+                bandera = 1;
             }
 
 
-            frmNuevoProducto frmNuevoProducto = new frmNuevoProducto(unProveedor);
+            frmNuevoProducto frmNuevoProducto = new frmNuevoProducto(unProveedor,bandera);
             frmNuevoProducto.Show();
 
         }

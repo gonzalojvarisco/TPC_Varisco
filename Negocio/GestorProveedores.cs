@@ -14,6 +14,7 @@ namespace Negocio
         {
             AccesoDatos conexion = new AccesoDatos();
             IList<Proveedor> lista = new List<Proveedor>();
+            GestorProductos unGestorProductos = new GestorProductos();
             Proveedor aux;
             Domicilio aux1;
 
@@ -32,6 +33,7 @@ namespace Negocio
                 aux1.Localidad = conexion.Lector.GetString(4);
                 aux1.Provincia = conexion.Lector.GetString(5);
                 aux.Domicilio = aux1;
+                aux.Productos = unGestorProductos.listarProductosProveedor(aux.IdProvedoor);
 
                 lista.Add(aux);
                 
@@ -62,6 +64,43 @@ namespace Negocio
                 throw ex;
             }
 
+        }
+
+        public IList<Proveedor> buscarProveedor(int idProvedoor)
+        {
+            AccesoDatos conexion;
+            Proveedor aux;
+            IList<Proveedor> lista = new List<Proveedor>();
+            GestorProductos unGestorProductos = new GestorProductos();
+
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("select IDPROVEEDOR,NOMBRE,CUIT,CALLE,LOCALIDAD,PROVINCIA from PROVEEDORES where IDPROVEEDOR="+idProvedoor);
+                conexion.leerConsulta();
+                
+                while(conexion.Lector.Read())
+                {
+                    aux = new Proveedor();
+                    aux.Domicilio = new Domicilio();
+                    aux.IdProvedoor = conexion.Lector.GetInt32(0);
+                    aux.Nombre = conexion.Lector.GetString(1);
+                    aux.Cuit = conexion.Lector.GetString(2);
+                    aux.Domicilio.Calle = conexion.Lector.GetString(3);
+                    aux.Domicilio.Localidad = conexion.Lector.GetString(4);
+                    aux.Domicilio.Provincia = conexion.Lector.GetString(5);
+                    aux.Productos = unGestorProductos.listarProductosProveedor(idProvedoor);
+
+                    lista.Add(aux);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return lista;
         }
 
         public void eliminarLogico(int id)
@@ -116,7 +155,6 @@ namespace Negocio
             conexion.Comando.Parameters.AddWithValue("@idProducto",idProducto);
 
             conexion.ejecutarAccion();
-            MessageBox.Show("Se agrego el producto correctamente");
         }
 
         private Proveedor buscarUltProveedor()

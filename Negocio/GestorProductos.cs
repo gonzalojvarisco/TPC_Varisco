@@ -142,6 +142,62 @@ namespace Negocio
             return tipos;
         }
 
+        public IList<Producto> listarProductosProveedor(int idProvedoor)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            IList<Producto> lista = new List<Producto>();
+            GestorProductos unGestor = new GestorProductos();
+
+            try
+            {
+                conexion.setearConsulta("select IDPRODUCTO from PROVEEDORES_X_PRODUCTO where IDPROVEEDOR="+idProvedoor);
+                conexion.leerConsulta();
+
+                while(conexion.Lector.Read())
+                {
+                    lista.Add(unGestor.buscarProducto(conexion.Lector.GetInt32(0)));
+                }
+
+                return lista;
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        private Producto buscarProducto(int idProducto)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            Producto unProducto = new Producto();
+            unProducto.Tipo = new TipoProducto();
+            unProducto.Marca = new Marca();
+
+            try
+            {
+                conexion.setearConsulta("select t.NOMBRE,m.NOMBRE from PRODUCTOS as p inner join TIPOPRODUCTO as t on p.IDTIPOPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA where p.idproducto="+idProducto);
+                conexion.leerConsulta();
+
+                while(conexion.Lector.Read())
+                {
+                    unProducto.Id = idProducto;
+                    unProducto.Tipo.Nombre = conexion.Lector.GetString(0);
+                    unProducto.Marca.Nombre = conexion.Lector.GetString(1);
+
+                }
+
+                return unProducto;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void guardarProducto(Producto unProducto)
         {
             AccesoDatos conexion = new AccesoDatos();

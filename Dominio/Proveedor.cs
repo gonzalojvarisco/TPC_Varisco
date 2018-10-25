@@ -14,9 +14,27 @@ namespace Dominio
         public Domicilio Domicilio { get; set; }
         public IList<Producto> Productos { get; set; }
 
+       public Proveedor()
+        {
+            this.Productos = new List<Producto>();
+        }
+
         public override string ToString()
         {
             return Nombre;
+        }
+
+        public string ProveedorProducto
+        {
+            get
+            {
+                string x = "";
+                foreach(Producto p in this.Productos)
+                {
+                    x += (x == "" ? "" : ", ") + p.ToString();
+                }
+                  return x;
+            }
         }
     }
 }

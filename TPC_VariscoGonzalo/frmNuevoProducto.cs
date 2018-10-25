@@ -15,16 +15,18 @@ namespace TPC_VariscoGonzalo
     public partial class frmNuevoProducto : Form
     {
         Proveedor unProveedor;
+        int bandera;
 
         public frmNuevoProducto()
         {
             InitializeComponent();
         }
 
-        public frmNuevoProducto(Proveedor unProveedor)
+        public frmNuevoProducto(Proveedor unProveedor, int bandera)
         {
             InitializeComponent();
             this.unProveedor = unProveedor;
+            this.bandera = bandera;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,8 +56,24 @@ namespace TPC_VariscoGonzalo
             dgvProductos.Columns[6].Visible = false;
             dgvProductos.Columns[7].Visible = false;
             dgvProductos.Columns[8].Visible = false;
-            dgvProveedores.DataSource = unGestorProveedores.buscarUltimoProveedor();
 
+            if (bandera == 1)
+            {
+                dgvProveedores.DataSource = unGestorProveedores.buscarUltimoProveedor();
+                dgvProveedores.Columns[0].Visible = false;
+                dgvProveedores.Columns[2].Visible = false;
+                dgvProveedores.Columns[3].Visible = false;
+                dgvProveedores.Columns[4].Visible = false;
+            }
+            else
+            {
+                dgvProveedores.DataSource = unGestorProveedores.buscarProveedor(unProveedor.IdProvedoor);
+                dgvProveedores.Columns[0].Visible = false;
+                dgvProveedores.Columns[2].Visible = false;
+                dgvProveedores.Columns[3].Visible = false;
+                dgvProveedores.Columns[4].Visible = false;
+
+            }
             cboxTipo.DataSource = unGestorProductos.listarTipos();
             cboxTipo.DisplayMember = "Nombre";
             cboxTipo.ValueMember = "Id";
@@ -80,6 +98,8 @@ namespace TPC_VariscoGonzalo
             {
 
             }
+            MessageBox.Show("Se agrego el producto correctamente");
+            cargarFormulario();
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
