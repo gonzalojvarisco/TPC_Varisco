@@ -73,6 +73,7 @@
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(100, 20);
             this.tboxNombre.TabIndex = 1;
+            this.tboxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxNombre_KeyPress);
             // 
             // tboxApellido
             // 
@@ -114,6 +115,7 @@
             this.tboxDni.Name = "tboxDni";
             this.tboxDni.Size = new System.Drawing.Size(100, 20);
             this.tboxDni.TabIndex = 5;
+            this.tboxDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxDni_KeyPress);
             // 
             // lblDni
             // 

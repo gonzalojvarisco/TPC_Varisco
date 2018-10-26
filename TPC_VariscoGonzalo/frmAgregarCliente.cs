@@ -15,6 +15,7 @@ namespace TPC_VariscoGonzalo
     public partial class frmAgregarCliente : Form
     {
         Cliente unCliente = new Cliente();
+        Validaciones v = new Validaciones();
 
         public frmAgregarCliente()
         {
@@ -27,7 +28,10 @@ namespace TPC_VariscoGonzalo
 
                 unCliente.Domicilio = new Domicilio();
 
-                unCliente.Nombre = tboxNombre.Text.Trim();
+                if (tboxNombre.Text != "")
+                {
+                    unCliente.Nombre = tboxNombre.Text.Trim();
+                }
                 unCliente.Apellido = tboxApellido.Text.Trim();
                 unCliente.DNI = tboxDni.Text.Trim();
                 unCliente.TelefonoFijo = tboxTelFijo.Text.Trim();
@@ -39,7 +43,11 @@ namespace TPC_VariscoGonzalo
                 if (rbtMasculino.Checked == true) { unCliente.Sexo = "M"; } else { unCliente.Sexo = "F"; }
                 unCliente.email = tboxEmail.Text.Trim();
                 unCliente.Cuit = tboxCuit.Text.Trim();
-
+               /* else
+                {
+                    MessageBox.Show("Faltan completar datos");
+                    return;
+                }*/
             if(unCliente.IdCliente>0)
             {
                 unGestorClientes.modificar(unCliente);
@@ -77,6 +85,16 @@ namespace TPC_VariscoGonzalo
             tboxCuit.Text = x.Cuit;
 
 
+        }
+
+        private void tboxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloLetras(e);
+        }
+
+        private void tboxDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumeros(e);
         }
     }
 }
