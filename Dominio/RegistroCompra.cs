@@ -9,9 +9,9 @@ namespace Dominio
     public class RegistroCompra
     {
         public int IdCompra { get; set; }
-        public string NumeroRegistro { get; set; }
-        public DateTime fecha { get; set; }
+        public Proveedor Proveedor { get; set; }
         public IList<CompraItem> CompraItems { get; set; }
-        public Proveedor proveedor { get; set; }
+        public DateTime Fecha { get; set; }
+        public decimal Total { get; set; }
     }
 }

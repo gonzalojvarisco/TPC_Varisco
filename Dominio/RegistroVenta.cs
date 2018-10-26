@@ -9,7 +9,6 @@ namespace Dominio
     public class RegistroVenta
     {
         public int IdVenta { get; set; }
-        public int NumeroRegistro { get; set; }
         public Cliente Cliente { get; set; }
         public IList<VentaItem> VentaItems { get; set; }
         public DateTime Fecha { get; set; }

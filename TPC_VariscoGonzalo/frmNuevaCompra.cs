@@ -82,5 +82,10 @@ namespace TPC_VariscoGonzalo
         {
             dgvProductosComprados.DataSource = listaProducto;
         }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
