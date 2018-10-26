@@ -85,7 +85,22 @@ namespace TPC_VariscoGonzalo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            GestorCompras unGestorCompras = new GestorCompras();
 
+            try
+            {
+                int idProveedor;
+                int idCompra;
+                idProveedor = (int)dgvProveedor.CurrentRow.Cells[0].Value;
+                idCompra=unGestorCompras.guardarCompra(idProveedor);
+
+                unGestorCompras.guardarCompraItems(idCompra,listaProducto);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

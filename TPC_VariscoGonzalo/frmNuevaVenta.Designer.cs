@@ -37,9 +37,10 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.dgvProductosComprados = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.btnListo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).BeginInit();
@@ -87,14 +88,14 @@
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Location = new System.Drawing.Point(28, 103);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(180, 88);
+            this.dgvCliente.Size = new System.Drawing.Size(510, 158);
             this.dgvCliente.TabIndex = 4;
             // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
             this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.Location = new System.Drawing.Point(25, 215);
+            this.lblProducto.Location = new System.Drawing.Point(25, 264);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(81, 20);
             this.lblProducto.TabIndex = 5;
@@ -103,7 +104,7 @@
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(28, 241);
+            this.dgvProductos.Location = new System.Drawing.Point(28, 290);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(214, 147);
             this.dgvProductos.TabIndex = 6;
@@ -111,7 +112,7 @@
             // dgvProductosComprados
             // 
             this.dgvProductosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosComprados.Location = new System.Drawing.Point(324, 241);
+            this.dgvProductosComprados.Location = new System.Drawing.Point(324, 290);
             this.dgvProductosComprados.Name = "dgvProductosComprados";
             this.dgvProductosComprados.Size = new System.Drawing.Size(214, 147);
             this.dgvProductosComprados.TabIndex = 7;
@@ -119,26 +120,17 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(258, 268);
+            this.btnAgregar.Location = new System.Drawing.Point(258, 317);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(50, 35);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = ">";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.Location = new System.Drawing.Point(258, 321);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(50, 35);
-            this.btnQuitar.TabIndex = 9;
-            this.btnQuitar.Text = "-";
-            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(381, 410);
+            this.btnAceptar.Location = new System.Drawing.Point(382, 443);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(106, 35);
             this.btnAceptar.TabIndex = 10;
@@ -147,7 +139,7 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(506, 410);
+            this.btnVolver.Location = new System.Drawing.Point(507, 443);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(65, 35);
             this.btnVolver.TabIndex = 11;
@@ -155,14 +147,35 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.Location = new System.Drawing.Point(559, 103);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(106, 35);
+            this.btnSeleccionar.TabIndex = 12;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = true;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
+            // btnListo
+            // 
+            this.btnListo.Location = new System.Drawing.Point(248, 368);
+            this.btnListo.Name = "btnListo";
+            this.btnListo.Size = new System.Drawing.Size(70, 36);
+            this.btnListo.TabIndex = 13;
+            this.btnListo.Text = "Listo!";
+            this.btnListo.UseVisualStyleBackColor = true;
+            this.btnListo.Click += new System.EventHandler(this.btnListo_Click);
+            // 
             // frmNuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 457);
+            this.ClientSize = new System.Drawing.Size(677, 489);
+            this.Controls.Add(this.btnListo);
+            this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductosComprados);
             this.Controls.Add(this.dgvProductos);
@@ -174,6 +187,7 @@
             this.Controls.Add(this.lblCliente);
             this.Name = "frmNuevaVenta";
             this.Text = "frmNuevaVenta";
+            this.Load += new System.EventHandler(this.frmNuevaVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).EndInit();
@@ -193,8 +207,9 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.DataGridView dgvProductosComprados;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Button btnListo;
     }
 }

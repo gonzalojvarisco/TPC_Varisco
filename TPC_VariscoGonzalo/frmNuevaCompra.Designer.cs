@@ -40,7 +40,6 @@
             this.btnProveedorNuevo = new System.Windows.Forms.Button();
             this.tboxProveedor = new System.Windows.Forms.TextBox();
             this.lblProveedor = new System.Windows.Forms.Label();
-            this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -159,16 +158,6 @@
             this.lblProveedor.TabIndex = 12;
             this.lblProveedor.Text = "Proveedor";
             // 
-            // btnNuevoProducto
-            // 
-            this.btnNuevoProducto.Location = new System.Drawing.Point(28, 410);
-            this.btnNuevoProducto.Name = "btnNuevoProducto";
-            this.btnNuevoProducto.Size = new System.Drawing.Size(89, 38);
-            this.btnNuevoProducto.TabIndex = 24;
-            this.btnNuevoProducto.Text = "¿Nuevo producto?";
-            this.btnNuevoProducto.UseVisualStyleBackColor = true;
-            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
-            // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.Location = new System.Drawing.Point(409, 174);
@@ -185,7 +174,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 464);
             this.Controls.Add(this.btnSeleccionar);
-            this.Controls.Add(this.btnNuevoProducto);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnQuitar);
@@ -223,7 +211,6 @@
         private System.Windows.Forms.Button btnProveedorNuevo;
         private System.Windows.Forms.TextBox tboxProveedor;
         private System.Windows.Forms.Label lblProveedor;
-        private System.Windows.Forms.Button btnNuevoProducto;
         private System.Windows.Forms.Button btnSeleccionar;
     }
 }

@@ -31,5 +31,33 @@ namespace Negocio
 
 
         }
+
+        public int guardarCompra(int idProveedor)
+        {
+            AccesoDatos conexion;
+
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("insert into REGISTROCOMPRAS output inserted.IDCOMPRA values(getdate(),0,@idProveedor)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@idProveedor",idProveedor);
+                conexion.abrirConexion();
+                return conexion.ejecutarAccionReturn();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void guardarCompraItems(int idCompra,IList<Producto> listaProductos)
+        {
+            foreach(Producto p in listaProductos)
+            {
+                
+            }
+        }
     }
 }
