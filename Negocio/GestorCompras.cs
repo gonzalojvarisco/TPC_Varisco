@@ -98,5 +98,49 @@ namespace Negocio
                 throw ex;
             }
         }
+
+        public void actualizarMontoTotal(decimal monto, int idCompra)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                conexion.setearConsulta("UPDATE REGISTROCOMPRAS SET TOTAL=@MONTO WHERE IDCOMPRA=@IDCOMPRA");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@MONTO", monto);
+                conexion.Comando.Parameters.AddWithValue("@IDCOMPRA", idCompra);
+                conexion.ejecutarAccion();
+                conexion.cerrarConexion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public decimal totalCompra(int idCompra)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            decimal totalCompra = 0;
+
+            try
+            {
+                conexion.setearConsulta("SELECT SUM(PRECIOUNITARIO) FROM COMPRAITEMS WHERE IDCOMPRA="+idCompra);
+                conexion.leerConsulta();
+
+                while(conexion.Lector.Read())
+                {
+                    totalCompra= conexion.Lector.GetDecimal(0);
+                }
+                
+                return totalCompra;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

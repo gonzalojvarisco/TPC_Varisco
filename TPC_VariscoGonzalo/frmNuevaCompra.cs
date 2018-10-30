@@ -91,10 +91,13 @@ namespace TPC_VariscoGonzalo
             {
                 int idProveedor;
                 int idCompra;
+                decimal monto;
                 idProveedor = (int)dgvProveedor.CurrentRow.Cells[0].Value;
                 idCompra=unGestorCompras.guardarCompra(idProveedor);
 
                 unGestorCompras.guardarCompraItems(idCompra,listaProducto);
+                monto=unGestorCompras.totalCompra(idCompra);
+                unGestorCompras.actualizarMontoTotal(monto,idCompra);
                 unGestorCompras.actualizarStockProductos(listaProducto);
 
                 MessageBox.Show("Compra registrada");
