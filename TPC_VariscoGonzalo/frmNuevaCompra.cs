@@ -95,6 +95,9 @@ namespace TPC_VariscoGonzalo
                 idCompra=unGestorCompras.guardarCompra(idProveedor);
 
                 unGestorCompras.guardarCompraItems(idCompra,listaProducto);
+                unGestorCompras.actualizarStockProductos(listaProducto);
+
+                MessageBox.Show("Compra registrada");
             }
             catch (Exception ex)
             {
