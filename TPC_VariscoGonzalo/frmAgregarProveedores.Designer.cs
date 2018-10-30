@@ -58,6 +58,7 @@
             this.tboxNombre.Name = "tboxNombre";
             this.tboxNombre.Size = new System.Drawing.Size(100, 20);
             this.tboxNombre.TabIndex = 1;
+            this.tboxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxNombre_KeyPress);
             // 
             // tboxCuit
             // 
@@ -65,6 +66,7 @@
             this.tboxCuit.Name = "tboxCuit";
             this.tboxCuit.Size = new System.Drawing.Size(100, 20);
             this.tboxCuit.TabIndex = 3;
+            this.tboxCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCuit_KeyPress);
             // 
             // lblCuit
             // 

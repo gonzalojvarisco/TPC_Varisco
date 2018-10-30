@@ -24,14 +24,13 @@ namespace TPC_VariscoGonzalo
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-                GestorClientes unGestorClientes = new GestorClientes();
+            GestorClientes unGestorClientes = new GestorClientes();
 
-                unCliente.Domicilio = new Domicilio();
+            unCliente.Domicilio = new Domicilio();
 
-                if (tboxNombre.Text != "")
-                {
-                    unCliente.Nombre = tboxNombre.Text.Trim();
-                }
+            if (tboxNombre.Text != "" & tboxApellido.Text != "" & tboxDni.Text != "" & tboxTelCelular.Text != "" & tboxCalle.Text != "" & tboxLocalidad.Text != "" & tboxProvincia.Text != "" & tboxEmail.Text != "" & tboxCuit.Text != "")
+            {
+                unCliente.Nombre = tboxNombre.Text.Trim();
                 unCliente.Apellido = tboxApellido.Text.Trim();
                 unCliente.DNI = tboxDni.Text.Trim();
                 unCliente.TelefonoFijo = tboxTelFijo.Text.Trim();
@@ -43,23 +42,25 @@ namespace TPC_VariscoGonzalo
                 if (rbtMasculino.Checked == true) { unCliente.Sexo = "M"; } else { unCliente.Sexo = "F"; }
                 unCliente.email = tboxEmail.Text.Trim();
                 unCliente.Cuit = tboxCuit.Text.Trim();
-               /* else
+
+                if (unCliente.IdCliente > 0)
                 {
-                    MessageBox.Show("Faltan completar datos");
-                    return;
-                }*/
-            if(unCliente.IdCliente>0)
-            {
-                unGestorClientes.modificar(unCliente);
-                MessageBox.Show("El cliente fue modificado");
-            }
-            else
-            {
-                unGestorClientes.agregarCliente(unCliente);
-                MessageBox.Show("El cliente fue agregado");
+                    unGestorClientes.modificar(unCliente);
+                    MessageBox.Show("El cliente fue modificado");
+                }
+                else
+                {
+                    unGestorClientes.agregarCliente(unCliente);
+                    MessageBox.Show("El cliente fue agregado");
+                }
+
+                this.Dispose();
             }
 
-            this.Dispose();
+            else
+            {
+                MessageBox.Show("Deben completarse todos los datos para guardar el registro");
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -80,7 +81,7 @@ namespace TPC_VariscoGonzalo
             tboxCalle.Text = x.Domicilio.Calle;
             tboxLocalidad.Text = x.Domicilio.Localidad;
             tboxProvincia.Text = x.Domicilio.Provincia;
-            dtpFechaNac.Value = x.FechaNacimiento;
+            //dtpFechaNac.Value = x.FechaNacimiento;
             tboxEmail.Text = x.email;
             tboxCuit.Text = x.Cuit;
 
@@ -93,6 +94,26 @@ namespace TPC_VariscoGonzalo
         }
 
         private void tboxDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumeros(e);
+        }
+
+        private void tboxApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloLetras(e);
+        }
+
+        private void tboxTelFijo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumeros(e);
+        }
+
+        private void tboxTelCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumeros(e);
+        }
+
+        private void tboxCuit_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.soloNumeros(e);
         }

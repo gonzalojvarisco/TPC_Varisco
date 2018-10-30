@@ -143,12 +143,19 @@ namespace Negocio
             return aux1;
         }
 
-        public void agregarProducto(int idProducto)
+        public void agregarProducto(int idProducto,int idProveedor,int bandera)
         {
             AccesoDatos conexion = new AccesoDatos();
             GestorProveedores unGestorProveedores = new GestorProveedores();
             Proveedor unProveedor = new Proveedor();
-            unProveedor=unGestorProveedores.buscarUltProveedor();
+            if(bandera==1)
+            {
+                unProveedor = unGestorProveedores.buscarUltProveedor();
+            }
+            else
+            {
+                unProveedor.IdProvedoor = idProveedor;
+            }
             conexion.setearConsulta("insert into PROVEEDORES_X_PRODUCTO values (@idProveedor,@idProducto)");
             conexion.Comando.Parameters.Clear();
             conexion.Comando.Parameters.AddWithValue("@idProveedor",unProveedor.IdProvedoor);

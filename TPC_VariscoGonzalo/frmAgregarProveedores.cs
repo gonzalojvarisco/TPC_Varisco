@@ -15,6 +15,7 @@ namespace TPC_VariscoGonzalo
     public partial class frmAgregarProveedores : Form
     {
         Proveedor unProveedor=new Proveedor();
+        Validaciones v = new Validaciones();
 
         public frmAgregarProveedores()
         {
@@ -29,33 +30,39 @@ namespace TPC_VariscoGonzalo
 
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
-            unProveedor.Domicilio = new Domicilio();
-            GestorProveedores unGestorProveedor = new GestorProveedores();
-            int bandera;
-
-            unProveedor.Nombre = tboxNombre.Text.Trim();
-            unProveedor.Cuit = tboxCuit.Text.Trim();
-            unProveedor.Domicilio.Calle = tboxCalle.Text.Trim();
-            unProveedor.Domicilio.Localidad = tboxLocalidad.Text.Trim();
-            unProveedor.Domicilio.Provincia = tboxProvincia.Text.Trim();
-
-            if(unProveedor.IdProvedoor>0)
+            if (tboxNombre.Text != "" & tboxCuit.Text != "" & tboxCalle.Text != "" & tboxLocalidad.Text != "" & tboxProvincia.Text != "")
             {
-                unGestorProveedor.modificar(unProveedor);
-                MessageBox.Show("Datos de proveedor modificados...Ahora verifique los productos con los que trabaja");
-                bandera = 0;
+                unProveedor.Domicilio = new Domicilio();
+                GestorProveedores unGestorProveedor = new GestorProveedores();
+                int bandera;
+
+                unProveedor.Nombre = tboxNombre.Text.Trim();
+                unProveedor.Cuit = tboxCuit.Text.Trim();
+                unProveedor.Domicilio.Calle = tboxCalle.Text.Trim();
+                unProveedor.Domicilio.Localidad = tboxLocalidad.Text.Trim();
+                unProveedor.Domicilio.Provincia = tboxProvincia.Text.Trim();
+
+                if (unProveedor.IdProvedoor > 0)
+                {
+                    unGestorProveedor.modificar(unProveedor);
+                    MessageBox.Show("Datos de proveedor modificados...Ahora verifique los productos con los que trabaja");
+                    bandera = 0;
+                }
+                else
+                {
+                    unGestorProveedor.agregar(unProveedor);
+                    MessageBox.Show("Proveedor agregado...Ahora agregue los productos con los que trabaja");
+                    bandera = 1;
+                }
+
+
+                frmNuevoProducto frmNuevoProducto = new frmNuevoProducto(unProveedor, bandera);
+                frmNuevoProducto.Show();
             }
             else
             {
-                unGestorProveedor.agregar(unProveedor);
-                MessageBox.Show("Proveedor agregado...Ahora agregue los productos con los que trabaja");
-                bandera = 1;
+                MessageBox.Show("Deben completarse todos los datos para guardar el registro");
             }
-
-
-            frmNuevoProducto frmNuevoProducto = new frmNuevoProducto(unProveedor,bandera);
-            frmNuevoProducto.Show();
-
         }
 
         public void setearRegistro(Proveedor x)
@@ -67,6 +74,16 @@ namespace TPC_VariscoGonzalo
             tboxCalle.Text = unProveedor.Domicilio.Calle;
             tboxLocalidad.Text = unProveedor.Domicilio.Localidad;
             tboxProvincia.Text = unProveedor.Domicilio.Provincia;
+        }
+
+        private void tboxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloLetras(e);
+        }
+
+        private void tboxCuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            v.soloNumeros(e);
         }
     }
 }

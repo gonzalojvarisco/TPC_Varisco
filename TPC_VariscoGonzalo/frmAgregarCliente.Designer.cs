@@ -81,6 +81,7 @@
             this.tboxApellido.Name = "tboxApellido";
             this.tboxApellido.Size = new System.Drawing.Size(100, 20);
             this.tboxApellido.TabIndex = 3;
+            this.tboxApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxApellido_KeyPress);
             // 
             // lblApellido
             // 
@@ -98,6 +99,7 @@
             this.tboxTelFijo.Name = "tboxTelFijo";
             this.tboxTelFijo.Size = new System.Drawing.Size(100, 20);
             this.tboxTelFijo.TabIndex = 7;
+            this.tboxTelFijo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxTelFijo_KeyPress);
             // 
             // lblTelFijo
             // 
@@ -184,6 +186,7 @@
             this.tboxTelCelular.Name = "tboxTelCelular";
             this.tboxTelCelular.Size = new System.Drawing.Size(100, 20);
             this.tboxTelCelular.TabIndex = 9;
+            this.tboxTelCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxTelCelular_KeyPress);
             // 
             // lblTelCelular
             // 
@@ -201,6 +204,7 @@
             this.tboxCuit.Name = "tboxCuit";
             this.tboxCuit.Size = new System.Drawing.Size(100, 20);
             this.tboxCuit.TabIndex = 27;
+            this.tboxCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCuit_KeyPress);
             // 
             // lblCuit
             // 

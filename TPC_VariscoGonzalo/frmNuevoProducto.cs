@@ -92,7 +92,7 @@ namespace TPC_VariscoGonzalo
 
             if(r==DialogResult.Yes)
             {
-                unGestorProveedores.agregarProducto(unProducto.Id);
+                unGestorProveedores.agregarProducto(unProducto.Id,unProveedor.IdProvedoor,bandera);
             }
             else
             {
