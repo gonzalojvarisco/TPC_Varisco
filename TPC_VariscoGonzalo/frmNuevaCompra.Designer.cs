@@ -30,7 +30,6 @@
         {
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvProductosComprados = new System.Windows.Forms.DataGridView();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
@@ -41,6 +40,8 @@
             this.tboxProveedor = new System.Windows.Forms.TextBox();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.txtCant = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
@@ -66,21 +67,10 @@
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.Location = new System.Drawing.Point(258, 321);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(50, 35);
-            this.btnQuitar.TabIndex = 21;
-            this.btnQuitar.Text = "-";
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
-            // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(258, 268);
+            this.btnAgregar.Location = new System.Drawing.Point(259, 289);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(50, 35);
             this.btnAgregar.TabIndex = 20;
@@ -110,9 +100,10 @@
             this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProducto.Location = new System.Drawing.Point(25, 215);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(81, 20);
+            this.lblProducto.Size = new System.Drawing.Size(73, 20);
             this.lblProducto.TabIndex = 17;
-            this.lblProducto.Text = "Productos";
+            this.lblProducto.Text = "Producto";
+            this.lblProducto.Click += new System.EventHandler(this.lblProducto_Click);
             // 
             // dgvProveedor
             // 
@@ -168,15 +159,34 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // txtCant
+            // 
+            this.txtCant.Location = new System.Drawing.Point(259, 241);
+            this.txtCant.Name = "txtCant";
+            this.txtCant.Size = new System.Drawing.Size(46, 20);
+            this.txtCant.TabIndex = 26;
+            this.txtCant.Text = "1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(255, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 20);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Cant";
+            // 
             // frmNuevaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(588, 464);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtCant);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProductosComprados);
             this.Controls.Add(this.dgvProductos);
@@ -201,7 +211,6 @@
 
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvProductosComprados;
         private System.Windows.Forms.DataGridView dgvProductos;
@@ -212,5 +221,7 @@
         private System.Windows.Forms.TextBox tboxProveedor;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.TextBox txtCant;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -15,6 +15,7 @@ namespace TPC_VariscoGonzalo
     public partial class frmNuevaCompra : Form
     {
         IList<Producto> listaProducto = new List<Producto>();
+        IList<CompraItem> listaItems = new List<CompraItem>();
 
         public frmNuevaCompra()
         {
@@ -72,10 +73,36 @@ namespace TPC_VariscoGonzalo
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
             Producto unProducto = new Producto();
             unProducto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
-            listaProducto.Add(unProducto);
 
+            bool yaEstaEnLista = false;
+            foreach (CompraItem i in listaItems)
+            {
+                if ( i.Producto.Id == unProducto.Id )
+                {
+                    yaEstaEnLista = true;
+                    i.Cantidad += Convert.ToInt32(txtCant.Text);
+                    i.PrecioParcial += i.PrecioUnitario * i.Cantidad;
+                }
+            }
+
+            if (  yaEstaEnLista == false)
+            {
+                CompraItem item = new CompraItem();
+                item.Producto = unProducto;
+                item.Cantidad = Convert.ToInt32(txtCant.Text);
+                item.PrecioUnitario = unProducto.PrecioVenta;
+                item.PrecioParcial = item.PrecioUnitario * item.Cantidad;
+                listaItems.Add(item);
+            }
+
+
+            dgvProductosComprados.DataSource = null;
+            dgvProductosComprados.DataSource = listaItems;
+
+            txtCant.Text = "1";
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -95,18 +122,23 @@ namespace TPC_VariscoGonzalo
                 idProveedor = (int)dgvProveedor.CurrentRow.Cells[0].Value;
                 idCompra=unGestorCompras.guardarCompra(idProveedor);
 
-                unGestorCompras.guardarCompraItems(idCompra,listaProducto);
+                unGestorCompras.guardarCompraItems(idCompra,listaItems);
                 monto=unGestorCompras.totalCompra(idCompra);
                 unGestorCompras.actualizarMontoTotal(monto,idCompra);
-                unGestorCompras.actualizarStockProductos(listaProducto);
+                unGestorCompras.actualizarStockProductos(listaItems);
 
-                MessageBox.Show("Compra registrada");
+                MessageBox.Show("Compra registrada - ID COMPRA:" + idCompra.ToString());
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
+        }
+
+        private void lblProducto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

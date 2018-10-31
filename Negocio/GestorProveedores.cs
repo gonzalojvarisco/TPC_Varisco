@@ -103,6 +103,40 @@ namespace Negocio
             return lista;
         }
 
+        public Proveedor buscarPorId(int idProvedoor)
+        {
+            AccesoDatos conexion;
+            Proveedor aux;
+            aux = new Proveedor();
+            GestorProductos unGestorProductos = new GestorProductos();
+
+            try
+            {
+                conexion = new AccesoDatos();
+                conexion.setearConsulta("select IDPROVEEDOR,NOMBRE,CUIT,CALLE,LOCALIDAD,PROVINCIA from PROVEEDORES where IDPROVEEDOR=" + idProvedoor);
+                conexion.leerConsulta();
+
+                while (conexion.Lector.Read())
+                {
+                    aux.Domicilio = new Domicilio();
+                    aux.IdProvedoor = conexion.Lector.GetInt32(0);
+                    aux.Nombre = conexion.Lector.GetString(1);
+                    aux.Cuit = conexion.Lector.GetString(2);
+                    aux.Domicilio.Calle = conexion.Lector.GetString(3);
+                    aux.Domicilio.Localidad = conexion.Lector.GetString(4);
+                    aux.Domicilio.Provincia = conexion.Lector.GetString(5);
+                    aux.Productos = unGestorProductos.listarProductosProveedor(idProvedoor);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return aux;
+        }
+
         public void eliminarLogico(int id)
         {
             AccesoDatos conexion;

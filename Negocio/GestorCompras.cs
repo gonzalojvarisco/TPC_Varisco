@@ -10,20 +10,23 @@ namespace Negocio
     public class GestorCompras
     {
 
-        public IList<CompraItem> listar()
+        public IList<RegistroCompra> listar()
         {
             AccesoDatos conexion = new AccesoDatos();
-            IList<CompraItem> lista = new List<CompraItem>();
-            CompraItem aux;
+            IList<RegistroCompra> lista = new List<RegistroCompra>();
+            RegistroCompra aux;
+            GestorProveedores gp = new GestorProveedores();
 
-            conexion.setearConsulta("select c.idcompraitem from COMPRAITEMS as c");
+            conexion.setearConsulta("SELECT idcompra,fecha,idproveedor,total FROM REGISTROCOMPRAS");
             conexion.leerConsulta();
 
             while(conexion.Lector.Read())
             {
-                aux = new CompraItem();
-                aux.IdCompraItem = conexion.Lector.GetInt32(0);
-
+                aux = new RegistroCompra();
+                aux.IdCompra = conexion.Lector.GetInt32(0);
+                aux.Fecha = conexion.Lector.GetDateTime(1);
+                aux.Proveedor = gp.buscarPorId( conexion.Lector.GetInt32(2) );
+                aux.Total = conexion.Lector.GetDecimal(3);
                 lista.Add(aux);
             }
 
@@ -52,19 +55,20 @@ namespace Negocio
             }
         }
 
-        public void guardarCompraItems(int idCompra,IList<Producto> listaProductos)
+        public void guardarCompraItems(int idCompra,IList<CompraItem> listaItems)
         {
             AccesoDatos conexion = new AccesoDatos();
             try
             {
-                foreach (Producto p in listaProductos)
+                foreach ( CompraItem p in listaItems)
                 {
-                    conexion.setearConsulta("INSERT INTO COMPRAITEMS (IDCOMPRA,IDPRODUCTO,CANTIDAD,PRECIOUNITARIO,PRECIOPARCIAL) VALUES(@IDCOMPRA,@IDPRODUCTO,1,@PRECIOUNITARIO,@PRECIOUNIT)");
+                    conexion.setearConsulta("INSERT INTO COMPRAITEMS (IDCOMPRA,IDPRODUCTO,CANTIDAD,PRECIOUNITARIO,PRECIOPARCIAL) VALUES(@IDCOMPRA,@IDPRODUCTO,@CANTIDAD,@PRECIOUNITARIO,@PRECIOPARCIAL)");
                     conexion.Comando.Parameters.Clear();
                     conexion.Comando.Parameters.AddWithValue("@IDCOMPRA", idCompra);
-                    conexion.Comando.Parameters.AddWithValue("@IDPRODUCTO", p.Id);
-                    conexion.Comando.Parameters.AddWithValue("@PRECIOUNITARIO", p.PrecioVenta);
-                    conexion.Comando.Parameters.AddWithValue("@PRECIOUNIT", p.PrecioVenta);
+                    conexion.Comando.Parameters.AddWithValue("@IDPRODUCTO", p.Producto.Id);
+                    conexion.Comando.Parameters.AddWithValue("@CANTIDAD", p.Cantidad);
+                    conexion.Comando.Parameters.AddWithValue("@PRECIOUNITARIO", p.PrecioUnitario);
+                    conexion.Comando.Parameters.AddWithValue("@PRECIOPARCIAL", p.PrecioParcial);
                     conexion.ejecutarAccion();
                     conexion.cerrarConexion();
                 }
@@ -78,17 +82,18 @@ namespace Negocio
 
         }
 
-        public void actualizarStockProductos(IList<Producto> listaProductos)
+        public void actualizarStockProductos(IList<CompraItem> listaItems)
         {
             AccesoDatos conexion = new AccesoDatos();
 
             try
             {
-                foreach (Producto p in listaProductos)
+                foreach ( CompraItem p in listaItems)
                 {
-                    conexion.setearConsulta("UPDATE PRODUCTOS SET STOCKACTUAL=STOCKACTUAL+1 WHERE IDPRODUCTO=@idProducto");
+                    conexion.setearConsulta("UPDATE PRODUCTOS SET STOCKACTUAL=STOCKACTUAL+@CANTIDAD WHERE IDPRODUCTO=@idProducto");
                     conexion.Comando.Parameters.Clear();
-                    conexion.Comando.Parameters.AddWithValue("@idProducto", p.Id);
+                    conexion.Comando.Parameters.AddWithValue("@idProducto", p.Producto.Id);
+                    conexion.Comando.Parameters.AddWithValue("@CANTIDAD", p.Cantidad);
                     conexion.ejecutarAccion();
                     conexion.cerrarConexion();
                 }
