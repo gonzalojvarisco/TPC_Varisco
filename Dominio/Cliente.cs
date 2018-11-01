@@ -23,7 +23,7 @@ namespace Dominio
 
         public override string ToString()
         {
-            return Apellido.Trim()+","+DNI.ToString();
+            return Apellido.Trim()+","+"DNI:"+DNI.ToString();
         }
     }
 

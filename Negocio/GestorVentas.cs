@@ -11,6 +11,7 @@ namespace Negocio
     {
         public IList<RegistroVenta> listar()
         {
+
             IList<RegistroVenta> lista = new List<RegistroVenta>();
             AccesoDatos conexion = new AccesoDatos();
 
@@ -19,15 +20,16 @@ namespace Negocio
                 conexion.setearConsulta("select * from REGISTROVENTAS");
 
                 conexion.leerConsulta();
-            GestorClientes unGestorClientes = new GestorClientes();
-            GestorVentas unGestorVentas = new GestorVentas();
+                GestorClientes unGestorClientes = new GestorClientes();
+                GestorVentas unGestorVentas = new GestorVentas();
 
-                while(conexion.Lector.Read())
+                while (conexion.Lector.Read())
                 {
                     RegistroVenta aux = new RegistroVenta();
-               
+                    aux.Cliente = new Cliente();
+
                     aux.IdVenta = conexion.Lector.GetInt32(0);
-                    aux.Cliente = unGestorClientes.buscarCliente( conexion.Lector.GetInt32(1));
+                    aux.Cliente = unGestorClientes.buscarCliente(conexion.Lector.GetInt32(1));
                     aux.VentaItems = unGestorVentas.buscarVentaItem(aux.IdVenta);
                     aux.Fecha = conexion.Lector.GetDateTime(2);
                     aux.Total = conexion.Lector.GetDecimal(3);
