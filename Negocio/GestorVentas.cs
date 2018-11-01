@@ -82,5 +82,144 @@ namespace Negocio
 
             return aux;
         }
+
+        public int inicioVenta(int idCliente)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            int idFactura=0;
+
+
+            try
+            {
+                idFactura=generacionFactura(idCliente);
+
+                conexion.setearConsulta("insert into REGISTROVENTAS output inserted.IDVENTA values (@idCliente,GETDATE(),0,@idFacturacion)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@idCliente", idCliente);
+                conexion.Comando.Parameters.AddWithValue("@idFacturacion", idFactura);
+                conexion.abrirConexion();
+
+                return conexion.ejecutarAccionReturn();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        private int generacionFactura(int idCliente)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                conexion.setearConsulta("insert into FACTURAS output inserted.IDFACTURA values (GETDATE(),@idCliente)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@idCliente", idCliente);
+                conexion.abrirConexion();
+
+                return conexion.ejecutarAccionReturn();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void guardarCompraItems(int idVenta, IList<VentaItem> listaItems)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                foreach (VentaItem v in listaItems)
+                {
+                    conexion.setearConsulta("insert into VENTAITEMS values(@IDVENTA,@IDPRODUCTO,@CANTIDAD,@PRECIOUNITARIO,@PRECIOPARCIAL)");
+                    conexion.Comando.Parameters.Clear();
+                    conexion.Comando.Parameters.AddWithValue("@IDVENTA", idVenta);
+                    conexion.Comando.Parameters.AddWithValue("@IDPRODUCTO", v.Producto.Id );
+                    conexion.Comando.Parameters.AddWithValue("@CANTIDAD", v.Cantidad);
+                    conexion.Comando.Parameters.AddWithValue("@PRECIOUNITARIO", v.PrecioUnitario);
+                    conexion.Comando.Parameters.AddWithValue("@PRECIOPARCIAL", v.PrecioParcial);
+
+                    conexion.ejecutarAccion();
+                    conexion.cerrarConexion();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void actualizarStockProductos(IList<VentaItem> listaItems)
+        {
+                AccesoDatos conexion = new AccesoDatos();
+
+                try
+                {
+                    foreach (VentaItem v in listaItems)
+                    {
+                        conexion.setearConsulta("UPDATE PRODUCTOS SET STOCKACTUAL=STOCKACTUAL-@CANTIDAD WHERE IDPRODUCTO=@idProducto");
+                        conexion.Comando.Parameters.Clear();
+                        conexion.Comando.Parameters.AddWithValue("@idProducto", v.Producto.Id);
+                        conexion.Comando.Parameters.AddWithValue("@CANTIDAD", v.Cantidad);
+                        conexion.ejecutarAccion();
+                        conexion.cerrarConexion();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+        }
+
+        public void actualizarMontoVenta(decimal monto, int idVenta)
+        {
+                AccesoDatos conexion = new AccesoDatos();
+
+                try
+                {
+                    conexion.setearConsulta("UPDATE REGISTROVENTAS SET TOTAL=@MONTO WHERE IDVENTA=@IDVENTA");
+                    conexion.Comando.Parameters.Clear();
+                    conexion.Comando.Parameters.AddWithValue("@MONTO", monto);
+                    conexion.Comando.Parameters.AddWithValue("@IDVENTA", idVenta);
+                    conexion.ejecutarAccion();
+                    conexion.cerrarConexion();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+        }
+
+        public decimal totalVenta(int idVenta)
+        {
+                AccesoDatos conexion = new AccesoDatos();
+                decimal totalVenta = 0;
+
+                try
+                {
+                    conexion.setearConsulta("SELECT SUM(PRECIOPARCIAL) FROM VENTAITEMS WHERE IDVENTA=" + idVenta);
+                    conexion.leerConsulta();
+
+                    while (conexion.Lector.Read())
+                    {
+                         totalVenta = conexion.Lector.GetDecimal(0);
+                    }
+
+                    return totalVenta;
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace TPC_VariscoGonzalo
         {
             GestorVentas unGestorVentas = new GestorVentas();
             dgvVentasRegistradas.DataSource = unGestorVentas.listar();
+            dgvVentasRegistradas.Columns[2].Visible = false;
         }
     }
 }

@@ -74,7 +74,7 @@ namespace TPC_VariscoGonzalo
 
         private void tboxNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            v.soloLetras(e);
+           // v.soloLetras(e);
         }
 
         private void tboxCuit_KeyPress(object sender, KeyPressEventArgs e)

@@ -40,7 +40,7 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.btnListo = new System.Windows.Forms.Button();
+            this.tboxCantidad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductosComprados)).BeginInit();
@@ -88,7 +88,7 @@
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Location = new System.Drawing.Point(28, 103);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(510, 158);
+            this.dgvCliente.Size = new System.Drawing.Size(340, 158);
             this.dgvCliente.TabIndex = 4;
             // 
             // lblProducto
@@ -106,23 +106,23 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(28, 290);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(214, 147);
+            this.dgvProductos.Size = new System.Drawing.Size(343, 147);
             this.dgvProductos.TabIndex = 6;
             // 
             // dgvProductosComprados
             // 
             this.dgvProductosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosComprados.Location = new System.Drawing.Point(324, 290);
+            this.dgvProductosComprados.Location = new System.Drawing.Point(473, 290);
             this.dgvProductosComprados.Name = "dgvProductosComprados";
-            this.dgvProductosComprados.Size = new System.Drawing.Size(214, 147);
+            this.dgvProductosComprados.Size = new System.Drawing.Size(339, 147);
             this.dgvProductosComprados.TabIndex = 7;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(258, 317);
+            this.btnAgregar.Location = new System.Drawing.Point(398, 372);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(50, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(59, 35);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = ">";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -130,16 +130,17 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(382, 443);
+            this.btnAceptar.Location = new System.Drawing.Point(622, 443);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(106, 35);
             this.btnAceptar.TabIndex = 10;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(507, 443);
+            this.btnVolver.Location = new System.Drawing.Point(747, 443);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(65, 35);
             this.btnVolver.TabIndex = 11;
@@ -149,30 +150,29 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(559, 103);
+            this.btnSeleccionar.Location = new System.Drawing.Point(374, 103);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(106, 35);
+            this.btnSeleccionar.Size = new System.Drawing.Size(83, 35);
             this.btnSeleccionar.TabIndex = 12;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // btnListo
+            // tboxCantidad
             // 
-            this.btnListo.Location = new System.Drawing.Point(248, 368);
-            this.btnListo.Name = "btnListo";
-            this.btnListo.Size = new System.Drawing.Size(70, 36);
-            this.btnListo.TabIndex = 13;
-            this.btnListo.Text = "Listo!";
-            this.btnListo.UseVisualStyleBackColor = true;
-            this.btnListo.Click += new System.EventHandler(this.btnListo_Click);
+            this.tboxCantidad.Location = new System.Drawing.Point(398, 315);
+            this.tboxCantidad.Name = "tboxCantidad";
+            this.tboxCantidad.Size = new System.Drawing.Size(59, 20);
+            this.tboxCantidad.TabIndex = 13;
+            this.tboxCantidad.Text = "1";
+            this.tboxCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxCantidad_KeyPress);
             // 
             // frmNuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 489);
-            this.Controls.Add(this.btnListo);
+            this.ClientSize = new System.Drawing.Size(824, 489);
+            this.Controls.Add(this.tboxCantidad);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAceptar);
@@ -210,6 +210,6 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.Button btnListo;
+        private System.Windows.Forms.TextBox tboxCantidad;
     }
 }

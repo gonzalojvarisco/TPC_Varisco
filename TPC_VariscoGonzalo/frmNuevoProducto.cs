@@ -99,13 +99,14 @@ namespace TPC_VariscoGonzalo
             Producto unProducto = new Producto();
             unProducto.Tipo = new TipoProducto();
             unProducto.Marca = new Marca();
-            Double porcentaje;
+            decimal porcentaje;
             bool banderaMarca=false;
             bool banderaTipo=false;
 
             unProducto.Codigo = tboxCodigo.Text.Trim();
             unProducto.PrecioCosto = Convert.ToDecimal(tboxPrecioCosto.Text.Trim());
-            porcentaje = Convert.ToDouble(tboxPorcentajeGanancia.Text.Trim());
+            porcentaje = Convert.ToDecimal(tboxPorcentajeGanancia.Text.Trim());
+            unProducto.PrecioVenta = unProducto.PrecioCosto * porcentaje;
             unProducto.StockActual = Convert.ToInt32(tboxStockActual.Text.Trim());
             unProducto.StockMinimo = Convert.ToInt32(tboxStockMinimo.Text.Trim());
             
