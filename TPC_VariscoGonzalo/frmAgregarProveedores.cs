@@ -34,7 +34,6 @@ namespace TPC_VariscoGonzalo
             {
                 unProveedor.Domicilio = new Domicilio();
                 GestorProveedores unGestorProveedor = new GestorProveedores();
-                int bandera;
 
                 unProveedor.Nombre = tboxNombre.Text.Trim();
                 unProveedor.Cuit = tboxCuit.Text.Trim();
@@ -45,18 +44,15 @@ namespace TPC_VariscoGonzalo
                 if (unProveedor.IdProvedoor > 0)
                 {
                     unGestorProveedor.modificar(unProveedor);
-                    MessageBox.Show("Datos de proveedor modificados...Ahora verifique los productos con los que trabaja");
-                    bandera = 0;
+                    MessageBox.Show("Datos de proveedor modificados. Ahora verifique los productos con los que trabaja");
                 }
                 else
                 {
                     unGestorProveedor.agregar(unProveedor);
-                    MessageBox.Show("Proveedor agregado...Ahora agregue los productos con los que trabaja");
-                    bandera = 1;
+                    MessageBox.Show("Proveedor agregado. Ahora asocie los productos con los que trabaja");
                 }
 
-
-                frmNuevoProducto frmNuevoProducto = new frmNuevoProducto(unProveedor, bandera);
+                frmNuevoProducto frmNuevoProducto = new frmNuevoProducto(unProveedor);
                 frmNuevoProducto.Show();
             }
             else
@@ -84,6 +80,11 @@ namespace TPC_VariscoGonzalo
         private void tboxCuit_KeyPress(object sender, KeyPressEventArgs e)
         {
             v.soloNumeros(e);
+        }
+
+        private void frmAgregarProveedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

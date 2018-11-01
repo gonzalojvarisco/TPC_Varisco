@@ -131,7 +131,7 @@ namespace Negocio
 
             try
             {
-                conexion.setearConsulta("SELECT SUM(PRECIOUNITARIO) FROM COMPRAITEMS WHERE IDCOMPRA="+idCompra);
+                conexion.setearConsulta("SELECT SUM(PRECIOPARCIAL) FROM COMPRAITEMS WHERE IDCOMPRA="+idCompra);
                 conexion.leerConsulta();
 
                 while(conexion.Lector.Read())

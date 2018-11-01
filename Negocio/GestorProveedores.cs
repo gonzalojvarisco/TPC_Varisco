@@ -177,22 +177,14 @@ namespace Negocio
             return aux1;
         }
 
-        public void agregarProducto(int idProducto,int idProveedor,int bandera)
+        public void agregarProducto(int idProducto,int idProveedor)
         {
             AccesoDatos conexion = new AccesoDatos();
             GestorProveedores unGestorProveedores = new GestorProveedores();
-            Proveedor unProveedor = new Proveedor();
-            if(bandera==1)
-            {
-                unProveedor = unGestorProveedores.buscarUltProveedor();
-            }
-            else
-            {
-                unProveedor.IdProvedoor = idProveedor;
-            }
+
             conexion.setearConsulta("insert into PROVEEDORES_X_PRODUCTO values (@idProveedor,@idProducto)");
             conexion.Comando.Parameters.Clear();
-            conexion.Comando.Parameters.AddWithValue("@idProveedor",unProveedor.IdProvedoor);
+            conexion.Comando.Parameters.AddWithValue("@idProveedor",idProveedor);
             conexion.Comando.Parameters.AddWithValue("@idProducto",idProducto);
 
             conexion.ejecutarAccion();
@@ -231,7 +223,8 @@ namespace Negocio
 
             conexion.ejecutarAccion();
 
-            
+            Proveedor nuevoProveedor = this.buscarUltProveedor();
+            unProveedor.IdProvedoor = nuevoProveedor.IdProvedoor;
 
         }
     }

@@ -151,9 +151,9 @@
             this.lblProducto.AutoSize = true;
             this.lblProducto.Location = new System.Drawing.Point(25, 260);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(94, 13);
+            this.lblProducto.Size = new System.Drawing.Size(92, 13);
             this.lblProducto.TabIndex = 33;
-            this.lblProducto.Text = "Agregar productos";
+            this.lblProducto.Text = "Asociar productos";
             // 
             // frmAgregarProveedores
             // 
@@ -175,6 +175,7 @@
             this.Controls.Add(this.lblNombreProveedor);
             this.Name = "frmAgregarProveedores";
             this.Text = "frmAgregarProveedores";
+            this.Load += new System.EventHandler(this.frmAgregarProveedores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

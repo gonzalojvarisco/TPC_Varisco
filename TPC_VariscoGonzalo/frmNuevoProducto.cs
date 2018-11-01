@@ -15,18 +15,16 @@ namespace TPC_VariscoGonzalo
     public partial class frmNuevoProducto : Form
     {
         Proveedor unProveedor;
-        int bandera;
 
         public frmNuevoProducto()
         {
             InitializeComponent();
         }
 
-        public frmNuevoProducto(Proveedor unProveedor, int bandera)
+        public frmNuevoProducto(Proveedor unProveedor)
         {
             InitializeComponent();
             this.unProveedor = unProveedor;
-            this.bandera = bandera;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,6 +46,8 @@ namespace TPC_VariscoGonzalo
         {
             GestorProductos unGestorProductos = new GestorProductos();
             GestorProveedores unGestorProveedores = new GestorProveedores();
+
+            dgvProductos.DataSource = null;
             dgvProductos.DataSource = unGestorProductos.listarProductos();
 
             dgvProductos.Columns[1].Visible = false;
@@ -57,23 +57,14 @@ namespace TPC_VariscoGonzalo
             dgvProductos.Columns[7].Visible = false;
             dgvProductos.Columns[8].Visible = false;
 
-            if (bandera == 1)
-            {
-                dgvProveedores.DataSource = unGestorProveedores.buscarUltimoProveedor();
-                dgvProveedores.Columns[0].Visible = false;
-                dgvProveedores.Columns[2].Visible = false;
-                dgvProveedores.Columns[3].Visible = false;
-                dgvProveedores.Columns[4].Visible = false;
-            }
-            else
-            {
-                dgvProveedores.DataSource = unGestorProveedores.buscarProveedor(unProveedor.IdProvedoor);
-                dgvProveedores.Columns[0].Visible = false;
-                dgvProveedores.Columns[2].Visible = false;
-                dgvProveedores.Columns[3].Visible = false;
-                dgvProveedores.Columns[4].Visible = false;
+            dgvProveedores.DataSource = null;
+            dgvProveedores.DataSource = unGestorProveedores.buscarProveedor(unProveedor.IdProvedoor);
 
-            }
+            dgvProveedores.Columns[0].Visible = false;
+            dgvProveedores.Columns[2].Visible = false;
+            dgvProveedores.Columns[3].Visible = false;
+            dgvProveedores.Columns[4].Visible = false;
+
             cboxTipo.DataSource = unGestorProductos.listarTipos();
             cboxTipo.DisplayMember = "Nombre";
             cboxTipo.ValueMember = "Id";
@@ -88,17 +79,17 @@ namespace TPC_VariscoGonzalo
             Producto unProducto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
             GestorProveedores unGestorProveedores = new GestorProveedores();
 
-            DialogResult r= MessageBox.Show("Esta por agregar un producto. ¿Esta seguro?","Confirmacion",MessageBoxButtons.YesNo);
+            DialogResult r= MessageBox.Show("Esta por asociar un producto. ¿Esta seguro?","Confirmacion",MessageBoxButtons.YesNo);
 
             if(r==DialogResult.Yes)
             {
-                unGestorProveedores.agregarProducto(unProducto.Id,unProveedor.IdProvedoor,bandera);
+                unGestorProveedores.agregarProducto(unProducto.Id,unProveedor.IdProvedoor);
             }
             else
             {
 
             }
-            MessageBox.Show("Se agrego el producto correctamente");
+            MessageBox.Show("Se asocio el producto correctamente");
             cargarFormulario();
         }
 

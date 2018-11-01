@@ -84,7 +84,7 @@ namespace TPC_VariscoGonzalo
                 {
                     yaEstaEnLista = true;
                     i.Cantidad += Convert.ToInt32(txtCant.Text);
-                    i.PrecioParcial += i.PrecioUnitario * i.Cantidad;
+                    i.PrecioParcial = i.PrecioUnitario * i.Cantidad;
                 }
             }
 
@@ -101,6 +101,8 @@ namespace TPC_VariscoGonzalo
 
             dgvProductosComprados.DataSource = null;
             dgvProductosComprados.DataSource = listaItems;
+            dgvProductosComprados.Columns[0].Visible = false;
+            dgvProductosComprados.Columns[1].Visible = false;
 
             txtCant.Text = "1";
         }

@@ -178,14 +178,21 @@ namespace Negocio
 
             try
             {
-                conexion.setearConsulta("select t.NOMBRE,m.NOMBRE from PRODUCTOS as p inner join TIPOPRODUCTO as t on p.IDTIPOPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA where p.idproducto="+idProducto);
+                conexion.setearConsulta("select t.IDTIPOPRODUCTO,t.NOMBRE,m.IDMARCA,m.NOMBRE,p.CODIGO,p.PRECIOCOSTO,p.PRECIOVENTA,p.STOCKACTUAL,p.STOCKMINIMO from PRODUCTOS as p inner join TIPOPRODUCTO as t on p.IDTIPOPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA where p.idproducto=" + idProducto);
                 conexion.leerConsulta();
 
                 while(conexion.Lector.Read())
                 {
                     unProducto.Id = idProducto;
-                    unProducto.Tipo.Nombre = conexion.Lector.GetString(0);
-                    unProducto.Marca.Nombre = conexion.Lector.GetString(1);
+                    unProducto.Tipo.Id = conexion.Lector.GetInt32(0);
+                    unProducto.Tipo.Nombre = conexion.Lector.GetString(1);
+                    unProducto.Marca.Id = conexion.Lector.GetInt32(2);
+                    unProducto.Marca.Nombre = conexion.Lector.GetString(3);
+                    unProducto.Codigo = conexion.Lector.GetString(4);
+                    unProducto.PrecioCosto = conexion.Lector.GetDecimal(5);
+                    unProducto.PrecioVenta = conexion.Lector.GetDecimal(6);
+                    unProducto.StockActual = conexion.Lector.GetInt32(7);
+                    unProducto.StockMinimo = conexion.Lector.GetInt32(8);
 
                 }
 
