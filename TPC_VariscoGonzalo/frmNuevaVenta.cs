@@ -55,6 +55,7 @@ namespace TPC_VariscoGonzalo
                 dgvProductos.Columns[4].Visible = false;
                 dgvProductos.Columns[5].Visible = false;
                 dgvProductos.Columns[8].Visible = false;
+                dgvProductosComprados.DataSource = null;
 
 
             }
@@ -139,20 +140,35 @@ namespace TPC_VariscoGonzalo
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             GestorVentas unGestorVenta = new GestorVentas();
+            List<Producto> LStockProductosInsuficiente = new List<Producto>();
 
             int idCliente;
             int idVenta;
             decimal monto;
             try
             {
-                idCliente = (int)dgvCliente.CurrentRow.Cells[0].Value;
-                idVenta = unGestorVenta.inicioVenta(idCliente);
-                unGestorVenta.guardarCompraItems(idVenta,listaItems);
-                monto = unGestorVenta.totalVenta(idVenta);
-                unGestorVenta.actualizarMontoVenta(monto,idVenta);
-                unGestorVenta.actualizarStockProductos(listaItems);
-
-                MessageBox.Show("Venta registrada. - ID VENTA" + idVenta.ToString());
+                if(dgvProductosComprados.DataSource==null)
+                {
+                    MessageBox.Show("No hay ningun producto agregado para realizar la venta");
+                    return;
+                }
+                LStockProductosInsuficiente=unGestorVenta.verificarStock(listaItems);
+                if (LStockProductosInsuficiente.Count == 0)
+                {
+                    idCliente = (int)dgvCliente.CurrentRow.Cells[0].Value;
+                    idVenta = unGestorVenta.inicioVenta(idCliente);
+                    unGestorVenta.guardarCompraItems(idVenta, listaItems);
+                    monto = unGestorVenta.totalVenta(idVenta);
+                    unGestorVenta.actualizarMontoVenta(monto, idVenta);
+                    unGestorVenta.actualizarStockProductos(listaItems);
+                    MessageBox.Show("Venta registrada. - ID VENTA" + idVenta.ToString());
+                    cargar();
+                }
+                else
+                {
+                    frmStockInsuficiente unform = new frmStockInsuficiente(LStockProductosInsuficiente);
+                    unform.Show();
+                }
 
             }
             catch (Exception ex)

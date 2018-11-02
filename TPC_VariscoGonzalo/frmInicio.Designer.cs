@@ -33,6 +33,7 @@
             this.btnRegistroCompra = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
+            this.btnProductos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBienvenida
@@ -85,11 +86,22 @@
             this.btnProveedores.UseVisualStyleBackColor = true;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
+            // btnProductos
+            // 
+            this.btnProductos.Location = new System.Drawing.Point(513, 363);
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(107, 33);
+            this.btnProductos.TabIndex = 5;
+            this.btnProductos.Text = "Productos";
+            this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 408);
+            this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.btnRegistroCompra);
@@ -109,6 +121,7 @@
         private System.Windows.Forms.Button btnRegistroCompra;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnProveedores;
+        private System.Windows.Forms.Button btnProductos;
     }
 }
 

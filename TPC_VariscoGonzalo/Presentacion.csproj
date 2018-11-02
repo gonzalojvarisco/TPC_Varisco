@@ -105,6 +105,12 @@
     <Compile Include="frmNuevoProducto.Designer.cs">
       <DependentUpon>frmNuevoProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,12 @@
     </Compile>
     <Compile Include="frmRegistroVenta.Designer.cs">
       <DependentUpon>frmRegistroVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockInsuficiente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockInsuficiente.Designer.cs">
+      <DependentUpon>frmStockInsuficiente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVentasRegistradas.cs">
       <SubType>Form</SubType>
@@ -161,6 +173,9 @@
     <EmbeddedResource Include="frmNuevoProducto.resx">
       <DependentUpon>frmNuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistroVenta.resx">
       <DependentUpon>frmRegistroVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStockInsuficiente.resx">
+      <DependentUpon>frmStockInsuficiente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentasRegistradas.resx">
       <DependentUpon>frmVentasRegistradas.cs</DependentUpon>

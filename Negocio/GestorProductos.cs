@@ -16,7 +16,7 @@ namespace Negocio
             Producto aux;
             GestorProductos unGestorProductos = new GestorProductos();
 
-            conexion.setearConsulta("select p.IDPRODUCTO,p.IDTIPOPRODUCTO,t.nombre,p.IDMARCA,m.nombre,p.CODIGO,p.PRECIOCOSTO,p.PRECIOVENTA,p.STOCKACTUAL,p.STOCKMINIMO from productos as p inner join TIPOPRODUCTO as t on p.IDPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA");
+            conexion.setearConsulta("select p.IDPRODUCTO,p.IDTIPOPRODUCTO,t.nombre,p.IDMARCA,m.nombre,p.CODIGO,p.PRECIOCOSTO,p.PRECIOVENTA,p.STOCKACTUAL,p.STOCKMINIMO from productos as p inner join TIPOPRODUCTO as t on p.IDPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA order by p.STOCKMINIMO asc");
             conexion.leerConsulta();
 
             while(conexion.Lector.Read())

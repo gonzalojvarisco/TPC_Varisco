@@ -158,6 +158,37 @@ namespace Negocio
             }
         }
 
+        public List<Producto> verificarStock(IList<VentaItem> listaItems)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            int stockActual = 0;
+            List<Producto> LStockProductosInsuficiente = new List<Producto>();
+            try
+            {
+                foreach (VentaItem v in listaItems)
+                {
+                    conexion.setearConsulta("select p.STOCKACTUAL from productos as p where IDPRODUCTO=" + v.Producto.Id);
+                    conexion.leerConsulta();
+
+                    while(conexion.Lector.Read())
+                    {
+                        stockActual = conexion.Lector.GetInt32(0);
+                        if(v.Cantidad> stockActual)
+                        {
+                            LStockProductosInsuficiente.Add(v.Producto);
+                        }
+                    }
+                    conexion.cerrarConexion();
+                }
+                return LStockProductosInsuficiente;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public void actualizarStockProductos(IList<VentaItem> listaItems)
         {
                 AccesoDatos conexion = new AccesoDatos();
