@@ -25,9 +25,41 @@ namespace TPC_VariscoGonzalo
 
         private void frmProductos_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        private void cargar()
+        {
             GestorProductos unGestorProductos = new GestorProductos();
             dgvProductos.DataSource = unGestorProductos.listarProductos();
             dgvProductos.Columns[1].Visible = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            GestorProductos unGestorProductos = new GestorProductos();
+
+            try
+            {
+                if (dgvProductos.SelectedRows.Count > 0)
+                {
+                    if (MessageBox.Show("Está seguro de que desea eliminar el registro?", "Confirmacion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        unGestorProductos.eliminarLogico((int)dgvProductos.CurrentRow.Cells[0].Value);
+                        MessageBox.Show("Producto eliminado");
+                        cargar();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar un registro");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

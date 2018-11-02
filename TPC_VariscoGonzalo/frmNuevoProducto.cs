@@ -78,18 +78,30 @@ namespace TPC_VariscoGonzalo
         {
             Producto unProducto = (Producto)dgvProductos.CurrentRow.DataBoundItem;
             GestorProveedores unGestorProveedores = new GestorProveedores();
+            IList<Producto> listaProductos = new List<Producto>();
 
             DialogResult r= MessageBox.Show("Esta por asociar un producto. ¿Esta seguro?","Confirmacion",MessageBoxButtons.YesNo);
 
             if(r==DialogResult.Yes)
             {
+                listaProductos=unGestorProveedores.confirmarNoSeaRepetido(unProveedor.IdProvedoor);
+
+                foreach(Producto p in listaProductos)
+                {
+                    if(p.Id==unProducto.Id)
+                    {
+                        MessageBox.Show("El proveedor ya cuenta con este producto");
+                        return;
+                    }
+                }
+
                 unGestorProveedores.agregarProducto(unProducto.Id,unProveedor.IdProvedoor);
+                MessageBox.Show("Se asocio el producto correctamente");
             }
             else
             {
 
             }
-            MessageBox.Show("Se asocio el producto correctamente");
             cargarFormulario();
         }
 

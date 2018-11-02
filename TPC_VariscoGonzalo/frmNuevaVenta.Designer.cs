@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.lblCliente = new System.Windows.Forms.Label();
-            this.tboxCliente = new System.Windows.Forms.TextBox();
             this.btnClienteNuevo = new System.Windows.Forms.Button();
-            this.lblDni = new System.Windows.Forms.Label();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.lblProducto = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
@@ -56,13 +54,6 @@
             this.lblCliente.TabIndex = 0;
             this.lblCliente.Text = "Cliente";
             // 
-            // tboxCliente
-            // 
-            this.tboxCliente.Location = new System.Drawing.Point(28, 63);
-            this.tboxCliente.Name = "tboxCliente";
-            this.tboxCliente.Size = new System.Drawing.Size(100, 20);
-            this.tboxCliente.TabIndex = 1;
-            // 
             // btnClienteNuevo
             // 
             this.btnClienteNuevo.Location = new System.Drawing.Point(180, 26);
@@ -73,29 +64,19 @@
             this.btnClienteNuevo.UseVisualStyleBackColor = true;
             this.btnClienteNuevo.Click += new System.EventHandler(this.btnClienteNuevo_Click);
             // 
-            // lblDni
-            // 
-            this.lblDni.AutoSize = true;
-            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(150, 63);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(37, 20);
-            this.lblDni.TabIndex = 3;
-            this.lblDni.Text = "DNI";
-            // 
             // dgvCliente
             // 
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(28, 103);
+            this.dgvCliente.Location = new System.Drawing.Point(28, 73);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(340, 158);
+            this.dgvCliente.Size = new System.Drawing.Size(340, 161);
             this.dgvCliente.TabIndex = 4;
             // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
             this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProducto.Location = new System.Drawing.Point(25, 264);
+            this.lblProducto.Location = new System.Drawing.Point(25, 250);
             this.lblProducto.Name = "lblProducto";
             this.lblProducto.Size = new System.Drawing.Size(81, 20);
             this.lblProducto.TabIndex = 5;
@@ -104,25 +85,25 @@
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(28, 290);
+            this.dgvProductos.Location = new System.Drawing.Point(28, 275);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(343, 147);
+            this.dgvProductos.Size = new System.Drawing.Size(343, 162);
             this.dgvProductos.TabIndex = 6;
             // 
             // dgvProductosComprados
             // 
             this.dgvProductosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosComprados.Location = new System.Drawing.Point(473, 290);
+            this.dgvProductosComprados.Location = new System.Drawing.Point(473, 275);
             this.dgvProductosComprados.Name = "dgvProductosComprados";
-            this.dgvProductosComprados.Size = new System.Drawing.Size(339, 147);
+            this.dgvProductosComprados.Size = new System.Drawing.Size(339, 162);
             this.dgvProductosComprados.TabIndex = 7;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(398, 372);
+            this.btnAgregar.Location = new System.Drawing.Point(398, 357);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(59, 35);
+            this.btnAgregar.Size = new System.Drawing.Size(59, 50);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = ">";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -150,7 +131,7 @@
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(374, 103);
+            this.btnSeleccionar.Location = new System.Drawing.Point(374, 73);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(83, 35);
             this.btnSeleccionar.TabIndex = 12;
@@ -160,7 +141,7 @@
             // 
             // tboxCantidad
             // 
-            this.tboxCantidad.Location = new System.Drawing.Point(398, 315);
+            this.tboxCantidad.Location = new System.Drawing.Point(398, 300);
             this.tboxCantidad.Name = "tboxCantidad";
             this.tboxCantidad.Size = new System.Drawing.Size(59, 20);
             this.tboxCantidad.TabIndex = 13;
@@ -181,9 +162,7 @@
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.dgvCliente);
-            this.Controls.Add(this.lblDni);
             this.Controls.Add(this.btnClienteNuevo);
-            this.Controls.Add(this.tboxCliente);
             this.Controls.Add(this.lblCliente);
             this.Name = "frmNuevaVenta";
             this.Text = "frmNuevaVenta";
@@ -199,9 +178,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblCliente;
-        private System.Windows.Forms.TextBox tboxCliente;
         private System.Windows.Forms.Button btnClienteNuevo;
-        private System.Windows.Forms.Label lblDni;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.DataGridView dgvProductos;

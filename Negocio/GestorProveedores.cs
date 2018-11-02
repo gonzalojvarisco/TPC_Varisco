@@ -103,6 +103,33 @@ namespace Negocio
             return lista;
         }
 
+        public IList<Producto> confirmarNoSeaRepetido(int idProvedoor)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            IList<Producto> listaProductos = new List<Producto>();
+            Producto aux;
+
+            try
+            {
+                conexion.setearConsulta("select pxp.IDPRODUCTO from PROVEEDORES_X_PRODUCTO as pxp where IDPROVEEDOR="+idProvedoor);
+                conexion.leerConsulta();
+
+                while(conexion.Lector.Read())
+                {
+                    aux = new Producto();
+                    aux.Id = conexion.Lector.GetInt32(0);
+
+                    listaProductos.Add(aux);
+                }
+                return listaProductos;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public Proveedor buscarPorId(int idProvedoor)
         {
             AccesoDatos conexion;

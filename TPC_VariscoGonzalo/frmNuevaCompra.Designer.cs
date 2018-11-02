@@ -35,9 +35,6 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.lblProducto = new System.Windows.Forms.Label();
             this.dgvProveedor = new System.Windows.Forms.DataGridView();
-            this.lblDni = new System.Windows.Forms.Label();
-            this.btnProveedorNuevo = new System.Windows.Forms.Button();
-            this.tboxProveedor = new System.Windows.Forms.TextBox();
             this.lblProveedor = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.txtCant = new System.Windows.Forms.TextBox();
@@ -108,36 +105,10 @@
             // dgvProveedor
             // 
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Location = new System.Drawing.Point(28, 86);
+            this.dgvProveedor.Location = new System.Drawing.Point(28, 68);
             this.dgvProveedor.Name = "dgvProveedor";
-            this.dgvProveedor.Size = new System.Drawing.Size(357, 126);
+            this.dgvProveedor.Size = new System.Drawing.Size(357, 144);
             this.dgvProveedor.TabIndex = 16;
-            // 
-            // lblDni
-            // 
-            this.lblDni.AutoSize = true;
-            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(150, 63);
-            this.lblDni.Name = "lblDni";
-            this.lblDni.Size = new System.Drawing.Size(37, 20);
-            this.lblDni.TabIndex = 15;
-            this.lblDni.Text = "DNI";
-            // 
-            // btnProveedorNuevo
-            // 
-            this.btnProveedorNuevo.Location = new System.Drawing.Point(180, 26);
-            this.btnProveedorNuevo.Name = "btnProveedorNuevo";
-            this.btnProveedorNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnProveedorNuevo.TabIndex = 14;
-            this.btnProveedorNuevo.Text = "¿Nuevo?";
-            this.btnProveedorNuevo.UseVisualStyleBackColor = true;
-            // 
-            // tboxProveedor
-            // 
-            this.tboxProveedor.Location = new System.Drawing.Point(28, 63);
-            this.tboxProveedor.Name = "tboxProveedor";
-            this.tboxProveedor.Size = new System.Drawing.Size(100, 20);
-            this.tboxProveedor.TabIndex = 13;
             // 
             // lblProveedor
             // 
@@ -192,9 +163,6 @@
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.dgvProveedor);
-            this.Controls.Add(this.lblDni);
-            this.Controls.Add(this.btnProveedorNuevo);
-            this.Controls.Add(this.tboxProveedor);
             this.Controls.Add(this.lblProveedor);
             this.Name = "frmNuevaCompra";
             this.Text = "frmNuevaCompra";
@@ -216,9 +184,6 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.DataGridView dgvProveedor;
-        private System.Windows.Forms.Label lblDni;
-        private System.Windows.Forms.Button btnProveedorNuevo;
-        private System.Windows.Forms.TextBox tboxProveedor;
         private System.Windows.Forms.Label lblProveedor;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.TextBox txtCant;

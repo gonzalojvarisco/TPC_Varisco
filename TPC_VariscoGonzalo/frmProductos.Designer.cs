@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 357);
+            this.ClientSize = new System.Drawing.Size(594, 357);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvProductos);
             this.Name = "frmProductos";

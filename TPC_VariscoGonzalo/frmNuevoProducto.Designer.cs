@@ -39,11 +39,8 @@
             this.tboxPorcentajeGanancia = new System.Windows.Forms.TextBox();
             this.lblPorcentajeGanancia = new System.Windows.Forms.Label();
             this.lblProveedores = new System.Windows.Forms.Label();
-            this.btnQuitar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.lblProducto = new System.Windows.Forms.Label();
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.lblNuevoProducto = new System.Windows.Forms.Label();
@@ -149,20 +146,10 @@
             this.lblProveedores.TabIndex = 10;
             this.lblProveedores.Text = "Proveedores";
             // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuitar.Location = new System.Drawing.Point(311, 133);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(50, 35);
-            this.btnQuitar.TabIndex = 23;
-            this.btnQuitar.Text = "-";
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(311, 80);
+            this.btnAgregar.Location = new System.Drawing.Point(311, 108);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(50, 35);
             this.btnAgregar.TabIndex = 22;
@@ -177,26 +164,6 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(302, 150);
             this.dgvProductos.TabIndex = 24;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(374, 204);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(84, 42);
-            this.btnAceptar.TabIndex = 25;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Location = new System.Drawing.Point(482, 214);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(60, 32);
-            this.btnVolver.TabIndex = 26;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // lblProducto
             // 
@@ -316,10 +283,7 @@
             this.Controls.Add(this.btnAgregarProducto);
             this.Controls.Add(this.lblNuevoProducto);
             this.Controls.Add(this.lblProducto);
-            this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.dgvProductos);
-            this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvProveedores);
             this.Controls.Add(this.lblProveedores);
@@ -356,11 +320,8 @@
         private System.Windows.Forms.TextBox tboxPorcentajeGanancia;
         private System.Windows.Forms.Label lblPorcentajeGanancia;
         private System.Windows.Forms.Label lblProveedores;
-        private System.Windows.Forms.Button btnQuitar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.DataGridView dgvProveedores;
         private System.Windows.Forms.Label lblNuevoProducto;

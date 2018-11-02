@@ -121,6 +121,13 @@ namespace TPC_VariscoGonzalo
                 int idProveedor;
                 int idCompra;
                 decimal monto;
+
+                if (dgvProductosComprados.DataSource == null)
+                {
+                    MessageBox.Show("No hay ningun producto agregado para realizar la compra");
+                    return;
+                }
+
                 idProveedor = (int)dgvProveedor.CurrentRow.Cells[0].Value;
                 idCompra=unGestorCompras.guardarCompra(idProveedor);
 
