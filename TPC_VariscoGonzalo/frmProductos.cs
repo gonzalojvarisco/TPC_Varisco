@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Dominio;
 
 namespace TPC_VariscoGonzalo
 {
@@ -33,6 +34,7 @@ namespace TPC_VariscoGonzalo
             GestorProductos unGestorProductos = new GestorProductos();
             dgvProductos.DataSource = unGestorProductos.listarProductos();
             dgvProductos.Columns[1].Visible = false;
+            dgvProductos.Columns[4].Visible = false;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -59,6 +61,21 @@ namespace TPC_VariscoGonzalo
             {
 
                 throw ex;
+            }
+        }
+
+        private void btnEditarProducto_Click(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                frmEditarProductos unForm = new frmEditarProductos();
+                unForm.setearRegistro((Producto)dgvProductos.CurrentRow.DataBoundItem);
+                unForm.ShowDialog();
+                cargar();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un registro");
             }
         }
     }

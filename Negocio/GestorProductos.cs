@@ -16,7 +16,7 @@ namespace Negocio
             Producto aux;
             GestorProductos unGestorProductos = new GestorProductos();
 
-            conexion.setearConsulta("select p.IDPRODUCTO,p.IDTIPOPRODUCTO,t.nombre,p.IDMARCA,m.nombre,p.CODIGO,p.PRECIOCOSTO,p.PRECIOVENTA,p.STOCKACTUAL,p.STOCKMINIMO from productos as p inner join TIPOPRODUCTO as t on p.IDTIPOPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA order by p.STOCKMINIMO asc");
+            conexion.setearConsulta("select p.IDPRODUCTO,p.IDTIPOPRODUCTO,t.nombre,p.IDMARCA,m.nombre,p.CODIGO,p.PRECIOCOSTO,p.PRECIOVENTA,p.STOCKACTUAL,p.STOCKMINIMO from productos as p inner join TIPOPRODUCTO as t on p.IDTIPOPRODUCTO = t.IDTIPOPRODUCTO inner join MARCAS as m on p.IDMARCA = m.IDMARCA order by p.STOCKACTUAL asc");
             conexion.leerConsulta();
 
             while(conexion.Lector.Read())
@@ -39,6 +39,65 @@ namespace Negocio
             }
 
             return lista;
+        }
+
+        public void modificarMarca(Marca marca)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                conexion.setearConsulta("update MARCAS set NOMBRE=@nombre where IDMARCA=@id");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@nombre", marca.Nombre);
+                conexion.Comando.Parameters.AddWithValue("@id",marca.Id);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void modificarTipo(TipoProducto tipo)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                conexion.setearConsulta("update TIPOPRODUCTO set NOMBRE=@nombre where IDTIPOPRODUCTO=@id");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@nombre", tipo.Nombre);
+                conexion.Comando.Parameters.AddWithValue("@id", tipo.Id);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void modificarProducto(Producto unProducto)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+            try
+            {
+                conexion.setearConsulta("update PRODUCTOS set PRECIOCOSTO=@precioCosto,PRECIOVENTA=@precioVenta,STOCKMINIMO=@stockMinimo where IDPRODUCTO=@idProducto");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@precioCosto", unProducto.PrecioCosto);
+                conexion.Comando.Parameters.AddWithValue("@precioVenta", unProducto.PrecioVenta);
+                conexion.Comando.Parameters.AddWithValue("@stockMinimo", unProducto.StockMinimo);
+                conexion.Comando.Parameters.AddWithValue("@idProducto", unProducto.Id);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex )
+            {
+
+                throw ex;
+            }
         }
 
         public void eliminarLogico(int id)

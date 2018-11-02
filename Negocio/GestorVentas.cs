@@ -48,6 +48,39 @@ namespace Negocio
 
         }
 
+        public IList<VentaItem> detalleRegistro(RegistroVenta detalleRegistro)
+        {
+            IList<VentaItem> listaVenta = new List<VentaItem>();
+            AccesoDatos conexion = new AccesoDatos();
+            VentaItem aux = new VentaItem();
+            aux.Producto = new Producto();
+            aux.Producto.Tipo = new TipoProducto();
+            try
+            {
+                conexion.setearConsulta("select v.IDVENTA,t.NOMBRE,v.CANTIDAD,v.PRECIOUNITARIO,v.PRECIOPARCIAL from VENTAITEMS as v inner join PRODUCTOS as p on v.IDPRODUCTO = p.IDPRODUCTO inner join TIPOPRODUCTO as t on t.IDTIPOPRODUCTO = p.IDTIPOPRODUCTO where v.IDVENTA ="+detalleRegistro.IdVenta);
+                conexion.leerConsulta();
+
+                while(conexion.Lector.Read())
+                {
+                    aux = new VentaItem();
+                    aux.Producto = new Producto();
+                    aux.Producto.Tipo=new TipoProducto();
+                    aux.IdVentaItem = conexion.Lector.GetInt32(0);
+                    aux.Producto.Tipo.Nombre = conexion.Lector.GetString(1);
+                    aux.Cantidad = conexion.Lector.GetInt32(2);
+                    aux.PrecioUnitario = conexion.Lector.GetDecimal(3);
+                    aux.PrecioParcial = conexion.Lector.GetDecimal(4);
+
+                    listaVenta.Add(aux);
+                }
+                return listaVenta;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public IList<VentaItem> buscarVentaItem(int idVenta)
         {

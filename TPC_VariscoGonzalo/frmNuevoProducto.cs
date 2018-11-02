@@ -107,13 +107,15 @@ namespace TPC_VariscoGonzalo
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
+            if (tboxPrecioCosto.Text != "" & tboxPorcentajeGanancia.Text != "" & tboxStockActual.Text != "" & tboxStockMinimo.Text != "")
+         { 
             GestorProductos unGestorProductos = new GestorProductos();
             Producto unProducto = new Producto();
             unProducto.Tipo = new TipoProducto();
             unProducto.Marca = new Marca();
             decimal porcentaje;
-            bool banderaMarca=false;
-            bool banderaTipo=false;
+            bool banderaMarca = false;
+            bool banderaTipo = false;
 
             unProducto.Codigo = tboxCodigo.Text.Trim();
             unProducto.PrecioCosto = Convert.ToDecimal(tboxPrecioCosto.Text.Trim());
@@ -121,8 +123,8 @@ namespace TPC_VariscoGonzalo
             unProducto.PrecioVenta = unProducto.PrecioCosto * porcentaje;
             unProducto.StockActual = Convert.ToInt32(tboxStockActual.Text.Trim());
             unProducto.StockMinimo = Convert.ToInt32(tboxStockMinimo.Text.Trim());
-            
-            if(tboxTipo.Text.Trim()=="")
+
+            if (tboxTipo.Text.Trim() == "")
             {
                 unProducto.Tipo = (TipoProducto)cboxTipo.SelectedItem;
             }
@@ -144,19 +146,25 @@ namespace TPC_VariscoGonzalo
 
             if (banderaTipo == true)
             {
-               unProducto.Tipo.Id= unGestorProductos.agregarTipo(unProducto.Tipo);
+                unProducto.Tipo.Id = unGestorProductos.agregarTipo(unProducto.Tipo);
             }
 
-            if(banderaMarca==true)
+            if (banderaMarca == true)
             {
                 unProducto.Marca.Id = unGestorProductos.agregarMarca(unProducto.Marca);
             }
 
-             unGestorProductos.guardarProducto(unProducto);
+            unGestorProductos.guardarProducto(unProducto);
 
             MessageBox.Show("Producto guardado");
 
             cargarFormulario();
+         }
+            else
+            {
+                MessageBox.Show("Es obligatorio completar los campos Precio costo, Porcentaje ganancia, Stock actual y Stock minimo");
+                return;
+            }
         }
     }
 }

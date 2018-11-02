@@ -30,6 +30,7 @@
         {
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.btnEditarProducto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,11 +52,22 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // btnEditarProducto
+            // 
+            this.btnEditarProducto.Location = new System.Drawing.Point(510, 43);
+            this.btnEditarProducto.Name = "btnEditarProducto";
+            this.btnEditarProducto.Size = new System.Drawing.Size(75, 35);
+            this.btnEditarProducto.TabIndex = 2;
+            this.btnEditarProducto.Text = "Editar producto";
+            this.btnEditarProducto.UseVisualStyleBackColor = true;
+            this.btnEditarProducto.Click += new System.EventHandler(this.btnEditarProducto_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 357);
+            this.Controls.Add(this.btnEditarProducto);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvProductos);
             this.Name = "frmProductos";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnEditarProducto;
     }
 }
