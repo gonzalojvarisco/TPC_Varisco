@@ -34,7 +34,10 @@ namespace TPC_VariscoGonzalo
             GestorProveedores unGestorProveedores = new GestorProveedores();
 
             dgvListaProveedores.DataSource = unGestorProveedores.listarProveedores();
+            dgvListaProveedores.Columns[0].Visible = false;
             dgvListaProveedores.Columns[4].Visible = false;
+            dgvListaProveedores.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvListaProveedores.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
         private void btnEliminacionLogica_Click(object sender, EventArgs e)

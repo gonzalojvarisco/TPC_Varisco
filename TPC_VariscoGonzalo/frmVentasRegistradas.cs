@@ -34,8 +34,9 @@ namespace TPC_VariscoGonzalo
             GestorVentas unGestorVentas = new GestorVentas();
             dgvVentasRegistradas.DataSource = unGestorVentas.listar();
             dgvVentasRegistradas.Columns[2].Visible = false;
-            //dgvVentasRegistradas.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //dgvVentasRegistradas.Columns[2].Visible = false;
+            dgvVentasRegistradas.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvVentasRegistradas.Columns[0].Visible = false;
+            dgvVentasRegistradas.Columns[5].Visible = false;
         }
 
         private void btnDetalleVenta_Click(object sender, EventArgs e)

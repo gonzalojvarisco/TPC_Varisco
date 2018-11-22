@@ -33,6 +33,11 @@ namespace TPC_VariscoGonzalo
         {
             GestorClientes unGestorClientes = new GestorClientes();
             dgwClientes.DataSource = unGestorClientes.listarClientes();
+            dgwClientes.Columns[0].Visible = false;
+            dgwClientes.Columns[7].Visible = false;
+            dgwClientes.Columns[8].Visible = false;
+            dgwClientes.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgwClientes.Columns[9].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }
 
         private void btnEliminacionLogica_Click(object sender, EventArgs e)
