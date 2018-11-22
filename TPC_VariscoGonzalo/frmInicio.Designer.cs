@@ -34,6 +34,7 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
+            this.btnAdminUsuarios = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBienvenida
@@ -96,11 +97,22 @@
             this.btnProductos.UseVisualStyleBackColor = true;
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
+            // btnAdminUsuarios
+            // 
+            this.btnAdminUsuarios.Location = new System.Drawing.Point(12, 363);
+            this.btnAdminUsuarios.Name = "btnAdminUsuarios";
+            this.btnAdminUsuarios.Size = new System.Drawing.Size(122, 33);
+            this.btnAdminUsuarios.TabIndex = 6;
+            this.btnAdminUsuarios.Text = "Admin usuarios";
+            this.btnAdminUsuarios.UseVisualStyleBackColor = true;
+            this.btnAdminUsuarios.Click += new System.EventHandler(this.btnAdminUsuarios_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 408);
+            this.Controls.Add(this.btnAdminUsuarios);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.btnProveedores);
             this.Controls.Add(this.btnClientes);
@@ -123,6 +135,7 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnProductos;
+        private System.Windows.Forms.Button btnAdminUsuarios;
     }
 }
 

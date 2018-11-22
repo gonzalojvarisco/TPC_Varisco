@@ -153,6 +153,12 @@
     <Compile Include="frmStockInsuficiente.Designer.cs">
       <DependentUpon>frmStockInsuficiente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentasRegistradas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStockInsuficiente.resx">
       <DependentUpon>frmStockInsuficiente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentasRegistradas.resx">
       <DependentUpon>frmVentasRegistradas.cs</DependentUpon>

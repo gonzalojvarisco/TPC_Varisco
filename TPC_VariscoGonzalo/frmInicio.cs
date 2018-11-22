@@ -76,5 +76,11 @@ namespace TPC_VariscoGonzalo
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void btnAdminUsuarios_Click(object sender, EventArgs e)
+        {
+            frmUsuarios unForm = new frmUsuarios();
+            unForm.Show();
+        }
     }
 }
