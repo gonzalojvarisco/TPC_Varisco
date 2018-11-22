@@ -76,6 +76,12 @@ namespace TPC_VariscoGonzalo
                     btnProveedores.Enabled = false;
                     btnAdminUsuarios.Enabled = false;
                 }
+                else
+                {
+                    lblPerfil.Text = usuarioLogueado.NombreUsuario;
+                    btnProveedores.Enabled = true;
+                    btnAdminUsuarios.Enabled = true;
+                }
 
             }
             catch (Exception ex)

@@ -60,7 +60,7 @@ namespace TPC_VariscoGonzalo
             catch (Exception ex)
             {
 
-                throw ex;
+                MessageBox.Show(ex.ToString());
             }
         }
 

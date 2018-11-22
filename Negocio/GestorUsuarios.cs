@@ -40,7 +40,66 @@ namespace Negocio
             }
         }
 
-        public IList<PerfilUsuario> listarUsuarios()
+        public IList<Usuario1> listarUsuarios()
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            IList<Usuario1> lista = new List<Usuario1>();
+            Usuario1 aux;
+
+            try
+            {
+                //le paso el select a mi objeto conexion (de mi clase custom)
+                conexion.setearConsulta("select IDUSUARIO, NOMBRE From USUARIOS1");
+                //ejecuto la lectura
+                conexion.leerConsulta();
+
+                //leo lector que quedó dentro de mi objeto.
+                while (conexion.Lector.Read())
+                {
+                    //por cada lectura creo un aux cone el constructor de Marca
+                    aux = new Usuario1();
+                    aux.Id = conexion.Lector.GetInt32(0);
+                    aux.NombreUsuario = conexion.Lector.GetString(1);
+                    //lo agrego a la lista.
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.cerrarConexion();
+                conexion = null;
+            }
+        }
+
+        public void modificarUsuario(Usuario1 unUsuario)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+
+            try
+            {
+                conexion.setearConsulta("update USUARIOS1 set NOMBRE=@nombre, PASS=@PASS, IDPERFILUSUARIO=@IDPERFILUSUARIO where IDUSUARIO=@IDUSUARIO");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@nombre", unUsuario.NombreUsuario);
+                conexion.Comando.Parameters.AddWithValue("@PASS", unUsuario.Pass);
+                conexion.Comando.Parameters.AddWithValue("@IDPERFILUSUARIO", unUsuario.Perfil.Id);
+                conexion.Comando.Parameters.AddWithValue("@IDUSUARIO", unUsuario.Id);
+
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public IList<PerfilUsuario> listarPerfiles()
         {
             AccesoDatos conexion = new AccesoDatos();
             IList<PerfilUsuario> lista = new List<PerfilUsuario>();

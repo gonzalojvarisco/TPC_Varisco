@@ -55,10 +55,10 @@ namespace TPC_VariscoGonzalo
                     MessageBox.Show("Debe seleccionar un registro");
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                MessageBox.Show(ex.ToString());
             }
         }
 
