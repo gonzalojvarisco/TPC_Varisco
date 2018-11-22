@@ -7,11 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
+using Negocio;
 
 namespace TPC_VariscoGonzalo
 {
     public partial class frmInicio : Form
     {
+
+        private Usuario1 usuarioLogueado;
+
+        public Usuario1 UsuarioLogueado
+        {
+            get { return usuarioLogueado; }
+        }
+
         public frmInicio()
         {
             InitializeComponent();
@@ -45,6 +55,26 @@ namespace TPC_VariscoGonzalo
         {
             frmProductos unForm = new frmProductos();
             unForm.Show();
+        }
+
+        private void frmInicio_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                usuarioLogueado = new Usuario1();
+                frmLogin login = new frmLogin(usuarioLogueado);
+                login.ShowDialog();
+
+                if (usuarioLogueado.Perfil.Id == 2)
+                {
+                    btnProveedores.Enabled = false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

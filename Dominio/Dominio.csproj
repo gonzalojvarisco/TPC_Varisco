@@ -66,6 +66,7 @@
     <Compile Include="RegistroVenta.cs" />
     <Compile Include="TipoProducto.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="Usuario1.cs" />
     <Compile Include="VentaItem.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
