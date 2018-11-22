@@ -60,6 +60,7 @@
             // 
             this.tboxPass.Location = new System.Drawing.Point(110, 74);
             this.tboxPass.Name = "tboxPass";
+            this.tboxPass.PasswordChar = '*';
             this.tboxPass.Size = new System.Drawing.Size(100, 20);
             this.tboxPass.TabIndex = 9;
             // 

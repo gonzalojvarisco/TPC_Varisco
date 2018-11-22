@@ -59,6 +59,11 @@ namespace TPC_VariscoGonzalo
 
         private void frmInicio_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        private void cargar()
+        {
             try
             {
                 usuarioLogueado = new Usuario1();
@@ -67,7 +72,9 @@ namespace TPC_VariscoGonzalo
 
                 if (usuarioLogueado.Perfil.Id == 2)
                 {
+                    lblPerfil.Text = usuarioLogueado.NombreUsuario;
                     btnProveedores.Enabled = false;
+                    btnAdminUsuarios.Enabled = false;
                 }
 
             }
@@ -81,6 +88,11 @@ namespace TPC_VariscoGonzalo
         {
             frmUsuarios unForm = new frmUsuarios();
             unForm.Show();
+        }
+
+        private void btnCambiarUsuario_Click(object sender, EventArgs e)
+        {
+            cargar();
         }
     }
 }

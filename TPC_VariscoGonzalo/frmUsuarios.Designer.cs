@@ -34,11 +34,13 @@
             this.lblUsuariosActuales = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tboxNombreUsuario = new System.Windows.Forms.TextBox();
+            this.tboxClave = new System.Windows.Forms.TextBox();
             this.cboxUsuarios = new System.Windows.Forms.ComboBox();
             this.lblPerfil = new System.Windows.Forms.Label();
             this.cboxPerfil = new System.Windows.Forms.ComboBox();
+            this.tboxConfirmacionClave = new System.Windows.Forms.TextBox();
+            this.lblConfirmarClave = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblNuevoUsuario
@@ -79,12 +81,13 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(262, 137);
+            this.btnGuardar.Location = new System.Drawing.Point(262, 160);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnModificar
             // 
@@ -95,19 +98,20 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tboxNombreUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 6;
+            this.tboxNombreUsuario.Location = new System.Drawing.Point(112, 55);
+            this.tboxNombreUsuario.Name = "tboxNombreUsuario";
+            this.tboxNombreUsuario.Size = new System.Drawing.Size(100, 20);
+            this.tboxNombreUsuario.TabIndex = 6;
             // 
-            // textBox2
+            // tboxClave
             // 
-            this.textBox2.Location = new System.Drawing.Point(112, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.tboxClave.Location = new System.Drawing.Point(112, 96);
+            this.tboxClave.Name = "tboxClave";
+            this.tboxClave.PasswordChar = '*';
+            this.tboxClave.Size = new System.Drawing.Size(100, 20);
+            this.tboxClave.TabIndex = 7;
             // 
             // cboxUsuarios
             // 
@@ -120,7 +124,7 @@
             // lblPerfil
             // 
             this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Location = new System.Drawing.Point(15, 147);
+            this.lblPerfil.Location = new System.Drawing.Point(15, 170);
             this.lblPerfil.Name = "lblPerfil";
             this.lblPerfil.Size = new System.Drawing.Size(30, 13);
             this.lblPerfil.TabIndex = 9;
@@ -129,21 +133,40 @@
             // cboxPerfil
             // 
             this.cboxPerfil.FormattingEnabled = true;
-            this.cboxPerfil.Location = new System.Drawing.Point(112, 139);
+            this.cboxPerfil.Location = new System.Drawing.Point(112, 162);
             this.cboxPerfil.Name = "cboxPerfil";
             this.cboxPerfil.Size = new System.Drawing.Size(121, 21);
             this.cboxPerfil.TabIndex = 10;
+            // 
+            // tboxConfirmacionClave
+            // 
+            this.tboxConfirmacionClave.Location = new System.Drawing.Point(112, 122);
+            this.tboxConfirmacionClave.Name = "tboxConfirmacionClave";
+            this.tboxConfirmacionClave.PasswordChar = '*';
+            this.tboxConfirmacionClave.Size = new System.Drawing.Size(100, 20);
+            this.tboxConfirmacionClave.TabIndex = 12;
+            // 
+            // lblConfirmarClave
+            // 
+            this.lblConfirmarClave.AutoSize = true;
+            this.lblConfirmarClave.Location = new System.Drawing.Point(12, 122);
+            this.lblConfirmarClave.Name = "lblConfirmarClave";
+            this.lblConfirmarClave.Size = new System.Drawing.Size(80, 13);
+            this.lblConfirmarClave.TabIndex = 11;
+            this.lblConfirmarClave.Text = "Confirmar clave";
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 324);
+            this.Controls.Add(this.tboxConfirmacionClave);
+            this.Controls.Add(this.lblConfirmarClave);
             this.Controls.Add(this.cboxPerfil);
             this.Controls.Add(this.lblPerfil);
             this.Controls.Add(this.cboxUsuarios);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tboxClave);
+            this.Controls.Add(this.tboxNombreUsuario);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.lblUsuariosActuales);
@@ -166,10 +189,12 @@
         private System.Windows.Forms.Label lblUsuariosActuales;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tboxNombreUsuario;
+        private System.Windows.Forms.TextBox tboxClave;
         private System.Windows.Forms.ComboBox cboxUsuarios;
         private System.Windows.Forms.Label lblPerfil;
         private System.Windows.Forms.ComboBox cboxPerfil;
+        private System.Windows.Forms.TextBox tboxConfirmacionClave;
+        private System.Windows.Forms.Label lblConfirmarClave;
     }
 }

@@ -75,5 +75,27 @@ namespace Negocio
                 conexion = null;
             }
         }
+
+        public void guardarNuevoUsuario(Usuario1 unUsuario)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+
+
+            try
+            {
+                conexion.setearConsulta("insert into USUARIOS1 values (@NombreUsuario,@Pass,@idPerfil)");
+                conexion.Comando.Parameters.Clear();
+                conexion.Comando.Parameters.AddWithValue("@NombreUsuario", unUsuario.NombreUsuario);
+                conexion.Comando.Parameters.AddWithValue("@Pass", unUsuario.Pass);
+                conexion.Comando.Parameters.AddWithValue("@idPerfil", unUsuario.Perfil.Id);
+
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

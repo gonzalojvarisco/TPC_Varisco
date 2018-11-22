@@ -35,6 +35,8 @@
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnAdminUsuarios = new System.Windows.Forms.Button();
+            this.lblPerfil = new System.Windows.Forms.Label();
+            this.btnCambiarUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblBienvenida
@@ -107,11 +109,33 @@
             this.btnAdminUsuarios.UseVisualStyleBackColor = true;
             this.btnAdminUsuarios.Click += new System.EventHandler(this.btnAdminUsuarios_Click);
             // 
+            // lblPerfil
+            // 
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerfil.Location = new System.Drawing.Point(25, 46);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Size = new System.Drawing.Size(139, 24);
+            this.lblPerfil.TabIndex = 7;
+            this.lblPerfil.Text = "Administrador";
+            // 
+            // btnCambiarUsuario
+            // 
+            this.btnCambiarUsuario.Location = new System.Drawing.Point(28, 73);
+            this.btnCambiarUsuario.Name = "btnCambiarUsuario";
+            this.btnCambiarUsuario.Size = new System.Drawing.Size(122, 22);
+            this.btnCambiarUsuario.TabIndex = 8;
+            this.btnCambiarUsuario.Text = "Cambiar usuario";
+            this.btnCambiarUsuario.UseVisualStyleBackColor = true;
+            this.btnCambiarUsuario.Click += new System.EventHandler(this.btnCambiarUsuario_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 408);
+            this.Controls.Add(this.btnCambiarUsuario);
+            this.Controls.Add(this.lblPerfil);
             this.Controls.Add(this.btnAdminUsuarios);
             this.Controls.Add(this.btnProductos);
             this.Controls.Add(this.btnProveedores);
@@ -136,6 +160,8 @@
         private System.Windows.Forms.Button btnProveedores;
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.Button btnAdminUsuarios;
+        private System.Windows.Forms.Label lblPerfil;
+        private System.Windows.Forms.Button btnCambiarUsuario;
     }
 }
 
