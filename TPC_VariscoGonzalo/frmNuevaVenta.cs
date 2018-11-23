@@ -51,6 +51,7 @@ namespace TPC_VariscoGonzalo
                 unGestorProductos = new GestorProductos();
                 dgvCliente.DataSource = unGestorClientes.listarClientes();
                 dgvProductos.DataSource = unGestorProductos.listarProductos();
+                dgvProductos.Columns[0].Visible = false;
                 dgvProductos.Columns[1].Visible = false;
                 dgvProductos.Columns[4].Visible = false;
                 dgvProductos.Columns[5].Visible = false;

@@ -35,6 +35,40 @@ namespace Negocio
 
         }
 
+        public IList<CompraItem> detalleRegistro(RegistroCompra detalleRegistro)
+        {
+            IList<CompraItem> listaCompra = new List<CompraItem>();
+            AccesoDatos conexion = new AccesoDatos();
+            CompraItem aux = new CompraItem();
+            aux.Producto = new Producto();
+            aux.Producto.Tipo = new TipoProducto();
+            try
+            {
+                conexion.setearConsulta("select C.IDCOMPRA,t.NOMBRE,C.CANTIDAD,C.PRECIOUNITARIO,C.PRECIOPARCIAL from COMPRAITEMS as C inner join PRODUCTOS as p on C.IDPRODUCTO = p.IDPRODUCTO inner join TIPOPRODUCTO as t on t.IDTIPOPRODUCTO = p.IDTIPOPRODUCTO where C.IDCOMPRA =" + detalleRegistro.IdCompra);
+                conexion.leerConsulta();
+
+                while (conexion.Lector.Read())
+                {
+                    aux = new CompraItem();
+                    aux.Producto = new Producto();
+                    aux.Producto.Tipo = new TipoProducto();
+                    aux.IdCompraItem = conexion.Lector.GetInt32(0);
+                    aux.Producto.Tipo.Nombre = conexion.Lector.GetString(1);
+                    aux.Cantidad = conexion.Lector.GetInt32(2);
+                    aux.PrecioUnitario = conexion.Lector.GetDecimal(3);
+                    aux.PrecioParcial = conexion.Lector.GetDecimal(4);
+
+                    listaCompra.Add(aux);
+                }
+                return listaCompra;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public int guardarCompra(int idProveedor)
         {
             AccesoDatos conexion;

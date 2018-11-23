@@ -67,7 +67,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(259, 289);
+            this.btnAgregar.Location = new System.Drawing.Point(463, 289);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(50, 35);
             this.btnAgregar.TabIndex = 20;
@@ -78,9 +78,9 @@
             // dgvProductosComprados
             // 
             this.dgvProductosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductosComprados.Location = new System.Drawing.Point(324, 241);
+            this.dgvProductosComprados.Location = new System.Drawing.Point(528, 241);
             this.dgvProductosComprados.Name = "dgvProductosComprados";
-            this.dgvProductosComprados.Size = new System.Drawing.Size(214, 147);
+            this.dgvProductosComprados.Size = new System.Drawing.Size(233, 147);
             this.dgvProductosComprados.TabIndex = 19;
             // 
             // dgvProductos
@@ -88,7 +88,7 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(28, 241);
             this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(214, 147);
+            this.dgvProductos.Size = new System.Drawing.Size(414, 147);
             this.dgvProductos.TabIndex = 18;
             // 
             // lblProducto
@@ -132,7 +132,7 @@
             // 
             // txtCant
             // 
-            this.txtCant.Location = new System.Drawing.Point(259, 241);
+            this.txtCant.Location = new System.Drawing.Point(463, 241);
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(46, 20);
             this.txtCant.TabIndex = 26;
@@ -142,7 +142,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(255, 215);
+            this.label1.Location = new System.Drawing.Point(459, 215);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 20);
             this.label1.TabIndex = 27;
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(588, 464);
+            this.ClientSize = new System.Drawing.Size(785, 464);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCant);
             this.Controls.Add(this.btnSeleccionar);

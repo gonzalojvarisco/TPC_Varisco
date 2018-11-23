@@ -57,6 +57,9 @@ namespace TPC_VariscoGonzalo
                 if (dgvProveedor.SelectedRows.Count > 0)
                 {
                    dgvProductos.DataSource = unGestorProductos.listarProductosProveedor((int)dgvProveedor.CurrentRow.Cells[0].Value);
+                    dgvProductos.Columns[0].Visible = false;
+                    dgvProductos.Columns[1].Visible = false;
+                    dgvProductos.Columns[4].Visible = false;
                 }
                 else
                 {
@@ -103,6 +106,8 @@ namespace TPC_VariscoGonzalo
             dgvProductosComprados.DataSource = listaItems;
             dgvProductosComprados.Columns[0].Visible = false;
             dgvProductosComprados.Columns[1].Visible = false;
+            dgvProductosComprados.Columns[4].Visible = false;
+            dgvProductosComprados.Columns[5].Visible = false;
 
             txtCant.Text = "1";
         }
